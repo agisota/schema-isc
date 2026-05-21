@@ -2,7 +2,7 @@
 
 Generated: 2026-05-21
 
-Status: pre-deploy QA report for the static handoff pack. Live deployment proof is reported by the operator after GitHub Pages publishes the commit.
+Status: deployed static handoff pack. GitHub Pages and Cloudflare proof was collected after publishing v3.
 
 ## Scope
 
@@ -17,10 +17,10 @@ This report covers the static ministry review pack under `/visuals/`:
 
 | Check | Status | Evidence |
 |---|---|---|
-| HTTP route | pass | `http://go.buildworth.org/visuals/` returned 200 before v3 commit. |
+| HTTP route | pass | `http://go.buildworth.org/visuals/review_v3.html` returned 200 after v3 commit. |
 | HTTPS direct GitHub Pages | blocked | GitHub Pages certificate for `go.buildworth.org` did not exist; `https_enforced=true` failed with "The certificate does not exist yet". |
 | Cloudflare DNS | improved | `go.buildworth.org` CNAME changed from DNS-only to proxied Cloudflare CNAME targeting `agisota.github.io`. |
-| HTTPS through Cloudflare | pass after DNS resolution | `curl --resolve go.buildworth.org:443:188.114.96.12 https://go.buildworth.org/visuals/` returned 200 via Cloudflare. |
+| HTTPS through Cloudflare | pass | `https://go.buildworth.org/visuals/review_v3.html` and the ZIP returned 200 via Cloudflare. |
 
 Note: local OS DNS cache may temporarily keep old GitHub AAAA/A records. Public resolvers should converge to Cloudflare proxied addresses.
 
@@ -34,7 +34,7 @@ Note: local OS DNS cache may temporarily keep old GitHub AAAA/A records. Public 
 | SVG parse | pass | 10 SVG files are XML-valid and include `viewBox`. |
 | HTML parse | pass | `index.html` and `review_v3.html` expose expected v3 links and require no external JS. |
 | ZIP integrity | pass | ZIP contains HTML, SVG, schema, sample graph, evidence matrix, visual grammar, specs, diagrams, and QA report. |
-| Browser smoke | pass locally | Playwright checked `index.html` and `review_v3.html` at desktop/mobile widths: no console/page/request errors, no broken SVG objects, no unintended horizontal overflow. |
+| Browser smoke | pass locally and live | Playwright checked `index.html` and `review_v3.html` at desktop/mobile widths locally and over `https://go.buildworth.org/visuals/`; live screenshots are stored under `~/.ai-agent-hub/evidence/playwright-smoke/shmh-schema-2026-05-21/visuals-v3/`. |
 
 ## Legal Wording Gates
 
