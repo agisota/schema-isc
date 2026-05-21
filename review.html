@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Схема ИСЦ — режим рассмотрения</title>
+  <meta name="description" content="Министерский обзор инвестиционно-строительного цикла: путь 1250 -> 1000 дней, этапы, узкие места, точки решения." />
+  <link rel="icon" href="data:," />
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #5f6675;
+      --paper: #f7f3ea;
+      --panel: #fffdf8;
+      --navy: #172b55;
+      --navy-2: #223b70;
+      --gold: #d9b83a;
+      --green: #287a39;
+      --steel: #6e7480;
+      --line: rgba(23, 43, 85, 0.16);
+      --soft: rgba(23, 43, 85, 0.08);
+      --ease: cubic-bezier(0.32, 0.72, 0, 1);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Aptos", "Segoe UI Variable", "SF Pro Display", system-ui, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      background:
+        linear-gradient(120deg, rgba(255,255,255,0.8), transparent 38%),
+        linear-gradient(180deg, rgba(217,184,58,0.11), transparent 34%),
+        var(--paper);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.035;
+      z-index: 3;
+      background-image:
+        linear-gradient(90deg, #172b55 1px, transparent 1px),
+        linear-gradient(#172b55 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, #000, transparent 72%);
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(1480px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+      position: relative;
+      z-index: 4;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--navy);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .mark::before {
+      content: "";
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, var(--navy) 0 50%, var(--gold) 50% 100%);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.55);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      border: 0;
+      border-radius: 999px;
+      padding: 9px 13px;
+      background: rgba(255,255,255,0.72);
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      box-shadow: inset 0 0 0 1px rgba(23,43,85,0.12);
+      transition: transform 520ms var(--ease), background 520ms var(--ease);
+    }
+
+    .pill:hover { transform: translateY(-1px); background: #fff; }
+
+    .hero-shell,
+    .section-shell {
+      padding: 8px;
+      border-radius: 34px;
+      background: rgba(255,255,255,0.42);
+      box-shadow: inset 0 0 0 1px rgba(23,43,85,0.09);
+    }
+
+    .hero,
+    .section {
+      border-radius: 26px;
+      background: var(--panel);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.86),
+        0 28px 70px rgba(23,43,85,0.09);
+      overflow: hidden;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+      min-height: 520px;
+    }
+
+    .hero-copy {
+      padding: 44px 48px 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: max-content;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 7px 11px;
+      background: rgba(23,43,85,0.07);
+      color: var(--navy);
+      font-size: 10px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 900;
+    }
+
+    h1 {
+      margin: 18px 0 0;
+      max-width: 830px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 5.375rem, 86px);
+      line-height: 0.93;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(17px, 1.375rem, 22px);
+      line-height: 1.5;
+      margin: 22px 0 0;
+    }
+
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .metric {
+      padding: 18px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(23,43,85,0.05), rgba(23,43,85,0.02));
+      box-shadow: inset 0 0 0 1px rgba(23,43,85,0.08);
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 900;
+    }
+
+    .metric strong {
+      display: block;
+      margin-top: 8px;
+      color: var(--navy);
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .scenario-rail {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.66);
+      box-shadow: inset 0 0 0 1px rgba(23,43,85,0.1);
+    }
+
+    .scenario-rail h3 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 13px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .scenario-card {
+      min-height: 122px;
+      padding: 13px;
+      border-radius: 17px;
+      background: #fff;
+      box-shadow: inset 0 0 0 1px rgba(23,43,85,0.1);
+    }
+
+    .scenario-card strong {
+      display: block;
+      color: var(--navy);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .scenario-card span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .scenario-card small {
+      display: inline-flex;
+      margin-top: 10px;
+      border-radius: 999px;
+      padding: 5px 8px;
+      background: rgba(40,122,57,0.1);
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .hero-side {
+      padding: 26px;
+      background:
+        linear-gradient(145deg, rgba(23,43,85,0.96), rgba(16,28,55,0.98));
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-side::after {
+      content: "";
+      position: absolute;
+      inset: -40px -70px auto auto;
+      width: 340px;
+      height: 420px;
+      background:
+        repeating-linear-gradient(115deg, rgba(217,184,58,0.18) 0 2px, transparent 2px 16px);
+      opacity: 0.72;
+      transform: rotate(-6deg);
+    }
+
+    .decision-card {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.07);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14);
+    }
+
+    .decision-card h2 {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .decision-card p {
+      color: rgba(255,255,255,0.74);
+      line-height: 1.55;
+      margin: 14px 0 0;
+    }
+
+    .ask-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .ask {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      align-items: start;
+      font-size: 14px;
+      color: rgba(255,255,255,0.86);
+    }
+
+    .ask b {
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      color: var(--navy);
+      background: var(--gold);
+      font-size: 12px;
+    }
+
+    .evidence-stack {
+      display: grid;
+      gap: 10px;
+    }
+
+    .evidence-chip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding: 11px 12px;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.09);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.78);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .evidence-chip b {
+      color: #fff;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .section-shell { margin-top: 18px; }
+    .section { padding: 30px; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .section h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(26px, 2.625rem, 42px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .section-note {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .spine {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(220px, 1fr));
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    .stage {
+      min-height: 340px;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: inset 0 0 0 1px var(--line);
+      padding: 16px;
+      position: relative;
+    }
+
+    .stage::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 74px;
+      height: 3px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--navy), var(--gold));
+      opacity: 0.65;
+    }
+
+    .stage-kicker {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 900;
+    }
+
+    .stage-title {
+      min-height: 46px;
+      margin-top: 8px;
+      color: var(--navy);
+      font-size: 15px;
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .node-list {
+      display: grid;
+      gap: 9px;
+      margin-top: 30px;
+    }
+
+    .node {
+      padding: 11px 12px;
+      border-radius: 15px;
+      background: rgba(23,43,85,0.045);
+      box-shadow: inset 0 0 0 1px rgba(23,43,85,0.08);
+      color: var(--navy);
+      font-size: 12px;
+      line-height: 1.22;
+      font-weight: 800;
+    }
+
+    .node small {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .node.budget { border-left: 4px solid var(--green); }
+    .node.offbudget { border-left: 4px solid var(--navy); }
+    .node.okn { border-left: 4px solid var(--steel); }
+    .node.other { border-left: 4px solid var(--gold); }
+
+    .insight-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 16px;
+    }
+
+    .story-card,
+    .lane-card {
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: inset 0 0 0 1px var(--line);
+      padding: 22px;
+    }
+
+    .story-card h3,
+    .lane-card h3 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 19px;
+      letter-spacing: 0;
+    }
+
+    .story-card p,
+    .lane-card p,
+    .lane-card li {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .story-card ul,
+    .lane-card ul { margin: 12px 0 0; padding-left: 18px; }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .evidence-card {
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: inset 0 0 0 1px var(--line);
+      padding: 22px;
+    }
+
+    .evidence-card h3 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 19px;
+      letter-spacing: 0;
+    }
+
+    .evidence-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .evidence-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .evidence-metric {
+      min-height: 98px;
+      padding: 14px;
+      border-radius: 17px;
+      background: rgba(23,43,85,0.045);
+      box-shadow: inset 0 0 0 1px rgba(23,43,85,0.08);
+    }
+
+    .evidence-metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 900;
+    }
+
+    .evidence-metric b {
+      display: block;
+      margin-top: 9px;
+      color: var(--navy);
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .heatmap {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .heat-row {
+      display: grid;
+      grid-template-columns: 82px 1fr 68px;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .heat-track {
+      height: 28px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(23,43,85,0.08);
+      display: flex;
+    }
+
+    .heat-active {
+      height: 100%;
+      background: var(--navy);
+    }
+
+    .heat-excluded {
+      height: 100%;
+      background: rgba(110,116,128,0.45);
+    }
+
+    .funnel {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .funnel-row {
+      display: grid;
+      grid-template-columns: 1fr 72px;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(217,184,58,0.09);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .funnel-row b {
+      text-align: right;
+      font-size: 16px;
+    }
+
+    .bar {
+      display: grid;
+      grid-template-columns: 90px 1fr 70px;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .bar-track {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(23,43,85,0.08);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--navy), var(--gold));
+      transform-origin: left center;
+      animation: fill 900ms var(--ease) both;
+    }
+
+    @keyframes fill {
+      from { transform: scaleX(0.08); opacity: 0.45; }
+      to { transform: scaleX(1); opacity: 1; }
+    }
+
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .agent {
+      border-radius: 20px;
+      background: rgba(23,43,85,0.045);
+      box-shadow: inset 0 0 0 1px rgba(23,43,85,0.08);
+      padding: 16px;
+      min-height: 155px;
+    }
+
+    .agent b {
+      display: block;
+      color: var(--navy);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+
+    .agent span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .page { width: min(100% - 24px, 1480px); padding-top: 16px; }
+      .topbar, .section-head { align-items: start; flex-direction: column; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { padding: 30px 24px; }
+      .metric-strip, .scenario-grid, .insight-grid, .evidence-grid, .agent-grid { grid-template-columns: 1fr; }
+      .section { padding: 22px; }
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 42px; line-height: 1.02; }
+      .lead { font-size: 17px; }
+      .section h2 { font-size: 30px; line-height: 1.08; }
+      .hero-copy { padding: 26px 18px; }
+      .hero-side { padding: 14px; }
+      .decision-card { padding: 18px; }
+      .decision-card h2 { font-size: 22px; }
+      .spine {
+        grid-template-columns: 1fr;
+        overflow-x: visible;
+      }
+      .stage { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="topbar" aria-label="Навигация режима рассмотрения">
+      <div class="mark">Схема ИСЦ · review mode</div>
+      <div class="actions">
+        <a class="pill" href="/">Детальная схема</a>
+        <a class="pill" href="/cockpit.html">Cockpit</a>
+        <a class="pill" href="https://github.com/agisota/schema-isc">Source</a>
+      </div>
+    </nav>
+
+    <section class="hero-shell">
+      <div class="hero">
+        <div class="hero-copy">
+          <div>
+            <span class="eyebrow">Для первичного рассмотрения</span>
+            <h1>Сократить ИСЦ с 1250 до 1000 дней без потери контрольных точек.</h1>
+            <p class="lead">
+              Этот слой переводит полную процессную карту в управленческий обзор:
+              где цикл теряет время, какие этапы несут основную нагрузку, и какие
+              решения нужны для проверки целевой модели 2030.
+            </p>
+            <div class="metric-strip" aria-label="Ключевые метрики">
+              <div class="metric"><span>Текущий цикл</span><strong>1250</strong></div>
+              <div class="metric"><span>Цель 2030</span><strong>1000</strong></div>
+              <div class="metric"><span>Разрыв</span><strong>-250</strong></div>
+            </div>
+            <div class="scenario-rail" aria-label="Сценарии достижения срока">
+              <h3>Сценарии модели</h3>
+              <div class="scenario-grid" id="scenarioGrid"></div>
+            </div>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <div class="decision-card">
+            <div>
+              <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff;">Decision brief</span>
+              <h2>Фокус встречи: согласовать не картинку, а управляемую модель сокращения сроков.</h2>
+              <p>
+                Детальная схема остаётся рабочим слоем. Для внешнего обсуждения
+                нужен сначала обзор, затем drilldown по этапам и НПА.
+              </p>
+            </div>
+            <div class="ask-list">
+              <div class="ask"><b>1</b><span>Подтвердить пять этапов как общую рамку ИСЦ.</span></div>
+              <div class="ask"><b>2</b><span>Выделить процессы, где реально возможна экономия дней.</span></div>
+              <div class="ask"><b>3</b><span>Развести бюджетный, внебюджетный и ОКН-треки по режимам просмотра.</span></div>
+            </div>
+            <div class="evidence-stack" aria-label="Статус доверия к модели">
+              <div class="evidence-chip"><span>Данные схемы</span><b>версия 2026-05-07</b></div>
+              <div class="evidence-chip"><span>Публичный review layer</span><b>/review.html</b></div>
+              <div class="evidence-chip"><span>Детальный drilldown</span><b>полная карта</b></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Executive process spine</span>
+            <h2>Пять этапов и ключевые узлы</h2>
+          </div>
+          <p class="section-note">
+            Ниже показан не весь граф, а первый слой для чтения: по 3-4 крупных
+            узла на этап. Детальная карта остаётся доступна по ссылке сверху.
+          </p>
+        </div>
+        <div class="spine" id="stageSpine" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Evidence layer</span>
+            <h2>Доверие к данным и НПА</h2>
+          </div>
+          <p class="section-note">
+            Для ведомственного обсуждения важно разделять связанность справочников
+            и citation-grade доказательность. Сейчас ссылки внутри модели связаны,
+            но внешние URL и статьи НПА ещё требуют доведения.
+          </p>
+        </div>
+        <div class="evidence-grid">
+          <article class="evidence-card">
+            <h3>Статус доказательной базы</h3>
+            <p>
+              Документы связаны с НПА без битых ссылок, но каталог пока не
+              содержит публичных URL и конкретных статей. Это надо показывать как
+              evidence debt, а не скрывать за зелёным статусом.
+            </p>
+            <div class="evidence-metrics" id="evidenceMetrics"></div>
+          </article>
+          <article class="evidence-card">
+            <h3>Нагрузка документов по этапам</h3>
+            <p>Активные и исключённые документы разведены, чтобы headline не смешивал рабочую нагрузку и исторический хвост.</p>
+            <div class="heatmap" id="docHeatmap"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Data story</span>
+            <h2>Где сейчас главный управленческий смысл</h2>
+          </div>
+          <p class="section-note">Narrative arc из data-storytelling: baseline → conflict → decision.</p>
+        </div>
+        <div class="insight-grid">
+          <article class="story-card">
+            <h3>Baseline: цикл собран, но перегружен деталями</h3>
+            <p>
+              Текущая схема хорошо подходит для рабочей экспертизы, но первый экран
+              не объясняет, какие решения должен принять внешний участник.
+            </p>
+            <ul>
+              <li>Нужен режим обзора вместо полной плотности на первом экране.</li>
+              <li>Нужны прямые labels для треков, а не только легенда.</li>
+              <li>Нужно показать evidence/NPA статус как слой доверия.</li>
+            </ul>
+          </article>
+          <article class="story-card">
+            <h3>Conflict: 250 дней нельзя “нарисовать”</h3>
+            <div class="timeline" id="durationBars"></div>
+            <p>
+              Сокращение должно быть привязано к конкретным этапам, переходам и
+              нормативным развилкам. Иначе схема выглядит как визуальная декларация.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Agentic swarm plan</span>
+            <h2>Как быстро довести до уровня внешней демонстрации</h2>
+          </div>
+          <p class="section-note">
+            Непересекающиеся дорожки для параллельных агентов: дизайн, данные,
+            стрелки, НПА, экспорт и проверка.
+          </p>
+        </div>
+        <div class="agent-grid">
+          <div class="agent"><b>Designer</b><span>Review-mode композиция, кегли, hierarchy, stage focus, режимы без перекрывающих overlays.</span></div>
+          <div class="agent"><b>Data editor</b><span>Выбор 20-30 executive nodes, маркировка узких мест и candidate savings по этапам.</span></div>
+          <div class="agent"><b>Flow executor</b><span>Primary/secondary arrows, muted back-edges, routing без пересечений через labels.</span></div>
+          <div class="agent"><b>Verifier</b><span>Playwright screenshots, asset 200 checks, PNG/PDF export proof, desktop/mobile acceptance gates.</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const stageMeta = [
+      { id: 1, short: "Права на ОКН / ЗУ", days: 292, docs: "53 док · 3 мат · 1 свед", theme: "offbudget" },
+      { id: 2, short: "Документы для ИИ / АСП", days: 108, docs: "148 док · 4 мат · 23 свед · 7 согл", theme: "offbudget" },
+      { id: 3, short: "Изыскания и проектирование", days: 365, docs: "56 док · 16 мат · 2 свед · 13 согл", theme: "budget" },
+      { id: 4, short: "Строительство и ввод", days: 469, docs: "199 док · 12 мат · 3 свед · 1 согл", theme: "offbudget" },
+      { id: 5, short: "Кадастр и регистрация", days: 16, docs: "9 док", theme: "other" }
+    ];
+
+    const priorityIds = {
+      1: ["s1-grad", "s1-cond-formed", "s1-pmt-ref", "s1-contract"],
+      2: ["s2-gpzu", "s2-zouit-project", "s2-ird-constraints", "s2-ird-tu-nets"],
+      3: ["s3-budget-docs", "s3-contract", "s3-ii-conduct", "s3-conclusion"],
+      4: ["s4-rs", "s4-start", "s4-end", "s4-rv"],
+      5: ["s5-electro-tu", "s5-electro-confirm", "s5-heat-tu", "s5-water-tu"]
+    };
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function normalizeTrack(node) {
+      if (!node || !node.track) return "other";
+      if (node.track === "budget") return "budget";
+      if (node.track === "okn") return "okn";
+      if (node.track === "offbudget") return "offbudget";
+      return "other";
+    }
+
+    function selectNodes(stage) {
+      const wanted = priorityIds[stage.id] || [];
+      const byId = new Map((stage.nodes || []).map((node) => [node.id, node]));
+      const picked = wanted.map((id) => byId.get(id)).filter(Boolean);
+      if (picked.length >= 3) return picked.slice(0, 4);
+      const fallback = (stage.nodes || [])
+        .filter((node) => ["process", "result", "document"].includes(node.type))
+        .slice(0, 4);
+      return [...picked, ...fallback].filter((node, index, all) =>
+        all.findIndex((other) => other.id === node.id) === index
+      ).slice(0, 4);
+    }
+
+    function renderBars() {
+      const max = Math.max(...stageMeta.map((stage) => stage.days));
+      const target = document.getElementById("durationBars");
+      target.innerHTML = stageMeta.map((stage) => `
+        <div class="bar">
+          <span>Этап ${escapeHtml(stage.id)}</span>
+          <div class="bar-track"><div class="bar-fill" style="width:${Math.max(6, stage.days / max * 100)}%"></div></div>
+          <span>${escapeHtml(stage.days)} дн.</span>
+        </div>
+      `).join("");
+    }
+
+    async function renderStages() {
+      const target = document.getElementById("stageSpine");
+      const stages = await Promise.all(stageMeta.map(async (meta) => {
+        const response = await fetch(`/data/stage${meta.id}.json`);
+        return { meta, data: await response.json() };
+      }));
+
+      target.innerHTML = stages.map(({ meta, data }) => {
+        const nodes = selectNodes(data);
+        return `
+          <article class="stage">
+            <div class="stage-kicker"><span>Этап ${escapeHtml(meta.id)}</span><span>${escapeHtml(meta.days)} дн.</span></div>
+            <div class="stage-title">${escapeHtml(meta.short)}</div>
+            <div class="node-list">
+              ${nodes.map((node) => `
+                <div class="node ${normalizeTrack(node)}">
+                  ${escapeHtml(node.label || "Контрольная точка")}
+                  <small>${escapeHtml(node.data?.duration || node.process || meta.docs)}</small>
+                </div>
+              `).join("")}
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    renderBars();
+    async function renderScenarios() {
+      const target = document.getElementById("scenarioGrid");
+      const response = await fetch("/cockpit/data/scenarios.json");
+      const data = await response.json();
+      target.innerHTML = data.scenarios.map((scenario) => {
+        const mkd = scenario.results?.["MKD-2"];
+        const delta = scenario.delta_days?.["MKD-2"] ?? 0;
+        const label = delta === 0 ? "baseline" : `${delta} дн.`;
+        return `
+          <article class="scenario-card">
+            <strong>${escapeHtml(mkd?.days_typ ?? "—")} дн.</strong>
+            <span>${escapeHtml(scenario.short.replace("Сц.", "Сценарий "))}</span>
+            <small>conf ${escapeHtml(scenario.confidence)} · ${escapeHtml(label)}</small>
+          </article>
+        `;
+      }).join("");
+    }
+
+    async function renderEvidence() {
+      const [documentsResponse, npaResponse] = await Promise.all([
+        fetch("/data/documents-catalog.json"),
+        fetch("/data/npa-catalog.json")
+      ]);
+      const documentsData = await documentsResponse.json();
+      const npaData = await npaResponse.json();
+      const docs = documentsData.documents || [];
+      const npa = npaData.npa || [];
+      const npaIds = new Set(npa.map((item) => item.id));
+      const refs = docs.flatMap((doc) => doc.regulatory_basis || []);
+      const brokenRefs = refs.filter((ref) => !npaIds.has(ref.npa_id)).length;
+      const activeDocs = docs.filter((doc) => doc.status === "active").length;
+      const excludedDocs = docs.filter((doc) => doc.status === "excluded").length;
+      const npaWithUrl = npa.filter((item) => Boolean(item.url)).length;
+      const npaWithArticles = npa.filter((item) => (item.key_articles || []).length > 0).length;
+
+      document.getElementById("evidenceMetrics").innerHTML = [
+        ["Документов active", activeDocs],
+        ["Документов excluded", excludedDocs],
+        ["Doc→NPA ссылок", refs.length],
+        ["Битых NPA ссылок", brokenRefs],
+        ["NPA с URL", `${npaWithUrl}/${npa.length}`],
+        ["NPA со статьями", `${npaWithArticles}/${npa.length}`]
+      ].map(([label, value]) => `
+        <div class="evidence-metric"><span>${escapeHtml(label)}</span><b>${escapeHtml(value)}</b></div>
+      `).join("");
+
+      const byStage = new Map([1, 2, 3, 4, 5].map((stage) => [stage, { active: 0, excluded: 0, added: 0 }]));
+      docs.forEach((doc) => (doc.stages || []).forEach((stage) => {
+        const bucket = byStage.get(stage);
+        if (bucket) bucket[doc.status] = (bucket[doc.status] || 0) + 1;
+      }));
+      const max = Math.max(...[...byStage.values()].map((bucket) =>
+        bucket.active + bucket.excluded + bucket.added
+      ));
+      document.getElementById("docHeatmap").innerHTML = [...byStage.entries()].map(([stage, bucket]) => {
+        const total = bucket.active + bucket.excluded + bucket.added;
+        const activeWidth = total ? bucket.active / max * 100 : 0;
+        const excludedWidth = total ? bucket.excluded / max * 100 : 0;
+        return `
+          <div class="heat-row">
+            <span>Этап ${escapeHtml(stage)}</span>
+            <div class="heat-track" title="active ${escapeHtml(bucket.active)}, excluded ${escapeHtml(bucket.excluded)}">
+              <div class="heat-active" style="width:${activeWidth}%"></div>
+              <div class="heat-excluded" style="width:${excludedWidth}%"></div>
+            </div>
+            <span>${escapeHtml(total)}</span>
+          </div>
+        `;
+      }).join("");
+    }
+
+    renderStages().catch((error) => {
+      document.getElementById("stageSpine").innerHTML =
+        `<p class="section-note">Не удалось загрузить данные схемы: ${escapeHtml(error.message)}</p>`;
+    });
+    renderScenarios().catch((error) => {
+      document.getElementById("scenarioGrid").innerHTML =
+        `<p class="section-note">Не удалось загрузить сценарии: ${escapeHtml(error.message)}</p>`;
+    });
+    renderEvidence().catch((error) => {
+      document.getElementById("evidenceMetrics").innerHTML =
+        `<p class="section-note">Не удалось загрузить evidence layer: ${escapeHtml(error.message)}</p>`;
+    });
+  </script>
+</body>
+</html>
