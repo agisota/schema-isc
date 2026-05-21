@@ -1,0 +1,99 @@
+{
+  "$schema": "isc2030/scenarios/v1",
+  "generated": "2026-05-15",
+  "scenarios": [
+    {
+      "id": "sc1",
+      "name": "Сценарий 1 — Базовый",
+      "short": "Сц.1: Базовый",
+      "description": "Статус-кво: только нормативные изменения без реализации функциональных мер",
+      "active_measures": {},
+      "results": {
+        "MKD-2": { "days_typ": 1250, "days_min": 1100, "days_max": 1400 },
+        "soc-6A": { "days_typ": 1250, "days_min": 1000, "days_max": 1500 },
+        "budget-1": { "days_typ": 1400, "days_min": 1200, "days_max": 1600 }
+      },
+      "conditions": "Поправки ГрК приняты, цифровизация идёт текущими темпами",
+      "confidence": "H",
+      "delta_days": { "MKD-2": 0, "soc-6A": 0, "budget-1": 0 }
+    },
+    {
+      "id": "sc2",
+      "name": "Сценарий 2 — Базовый+",
+      "short": "Сц.2: Базовый+",
+      "description": "Нормативка + часть инструментов уровня 1 (ИМ ОКС + ТОР УС 1 очередь)",
+      "active_measures": {
+        "FN-112": true,
+        "FN-104": true,
+        "FN-106": 0.5
+      },
+      "results": {
+        "MKD-2": { "days_typ": 980, "days_min": 900, "days_max": 1100 },
+        "soc-6A": { "days_typ": 1000, "days_min": 900, "days_max": 1100 },
+        "budget-1": { "days_typ": 1050, "days_min": 950, "days_max": 1200 }
+      },
+      "conditions": "ИМ ОКС принят к 07.2026; ТОР УС 1 очередь к 04.2027",
+      "confidence": "M",
+      "delta_days": { "MKD-2": -270, "soc-6A": -250, "budget-1": -350 }
+    },
+    {
+      "id": "sc3",
+      "name": "Сценарий 3 — Оптимистичный",
+      "short": "Сц.3: Оптимист",
+      "description": "Разблокировка L0 к июлю 2026 + реализация Топ-10 мер до 2028",
+      "active_measures": {
+        "FN-112": true,
+        "FN-012": true,
+        "FN-104": true,
+        "FN-107": true,
+        "FN-105": true,
+        "FN-106": 1.0,
+        "FN-091": true,
+        "FN-030": 0.25,
+        "FN-038": true,
+        "FN-073": true
+      },
+      "results": {
+        "MKD-2": { "days_typ": 780, "days_min": 700, "days_max": 870 },
+        "soc-6A": { "days_typ": 800, "days_min": 720, "days_max": 900 },
+        "budget-1": { "days_typ": 640, "days_min": 580, "days_max": 720 }
+      },
+      "conditions": "L0 разблокирован 01.07.2026; ТОР УС 1 очередь к 04.2027; prefab 20-25%",
+      "confidence": "M",
+      "delta_days": { "MKD-2": -470, "soc-6A": -450, "budget-1": -760 }
+    },
+    {
+      "id": "sc4",
+      "name": "Сценарий 4 — Максимальный",
+      "short": "Сц.4: Макс.",
+      "description": "Теоретический потолок: все 84 меры реализованы к 2030",
+      "active_measures": {
+        "FN-112": true,
+        "FN-107": true,
+        "FN-012": true,
+        "FN-104": true,
+        "FN-105": true,
+        "FN-106": 1.0,
+        "FN-030": 0.3,
+        "FN-031": true,
+        "FN-032": true,
+        "FN-033": true,
+        "FN-038": true,
+        "FN-039": true,
+        "FN-043": true,
+        "FN-073": true,
+        "FN-074": true,
+        "FN-091": true,
+        "FN-010": true
+      },
+      "results": {
+        "MKD-2": { "days_typ": 700, "days_min": 620, "days_max": 800 },
+        "soc-6A": { "days_typ": 720, "days_min": 650, "days_max": 820 },
+        "budget-1": { "days_typ": 450, "days_min": 380, "days_max": 550 }
+      },
+      "conditions": "Все реформы приняты включая 44-ФЗ, IPD, ECI; prefab 30%+; полная машинопонимаемость",
+      "confidence": "L",
+      "delta_days": { "MKD-2": -550, "soc-6A": -530, "budget-1": -950 }
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+:HL["/_next/static/chunks/0yly.eajg.9mb.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"cockpit","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"ss4l3saJhBmkcZJA53If0"}

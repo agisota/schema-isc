@@ -1,0 +1,257 @@
+{
+  "$schema": "isc2030/types-lifecycle/v1",
+  "generated": "2026-05-15",
+  "object_types": [
+    {
+      "id": "MKD-2",
+      "name": "МКД массовый (класс 2)",
+      "short": "МКД-2",
+      "base_days_typ": 1250,
+      "base_days_min": 700,
+      "base_days_max": 1400,
+      "target_days_scenario3": 780,
+      "target_days_scenario4": 700,
+      "track_color": "#2563EB",
+      "stages": [
+        {
+          "id": 1,
+          "name": "Концепция + ТЭО",
+          "days_typ": 45,
+          "days_best": 20,
+          "days_worst": 90,
+          "bottleneck": "Согласование с инвестором, изменения ВРИ",
+          "applicable_measures": ["FN-085"]
+        },
+        {
+          "id": 2,
+          "name": "Изыскания",
+          "days_typ": 68,
+          "days_best": 30,
+          "days_worst": 120,
+          "bottleneck": "Сезонность + повторы",
+          "applicable_measures": ["FN-013"]
+        },
+        {
+          "id": 3,
+          "name": "Архитектура (АР)",
+          "days_typ": 45,
+          "days_best": 20,
+          "days_worst": 90,
+          "bottleneck": "Итерации с заказчиком",
+          "applicable_measures": ["FN-082"]
+        },
+        {
+          "id": 4,
+          "name": "КР + инженерия (КР+ИОС)",
+          "days_typ": 90,
+          "days_best": 45,
+          "days_worst": 180,
+          "bottleneck": "Коллизии + повторный ввод данных",
+          "applicable_measures": ["FN-021","FN-091","FN-016"]
+        },
+        {
+          "id": 5,
+          "name": "Заказ ключевых материалов",
+          "days_typ": 135,
+          "days_best": 60,
+          "days_worst": 240,
+          "bottleneck": "Лифты импорт 34%, сезонность цемента",
+          "applicable_measures": ["FN-035"]
+        },
+        {
+          "id": 6,
+          "name": "Экспертиза ПД",
+          "days_typ": 120,
+          "days_best": 30,
+          "days_worst": 240,
+          "bottleneck": "Переделки 30-50%",
+          "applicable_measures": ["FN-020","FN-021","FN-023","FN-084","FN-105"]
+        },
+        {
+          "id": 7,
+          "name": "РНС (разрешение на строительство)",
+          "days_typ": 18,
+          "days_best": 5,
+          "days_worst": 60,
+          "bottleneck": "Бумажный канал",
+          "applicable_measures": ["FN-075"]
+        },
+        {
+          "id": 8,
+          "name": "Подготовка площадки",
+          "days_typ": 23,
+          "days_best": 7,
+          "days_worst": 60,
+          "bottleneck": "Параллелится с этапом 9",
+          "applicable_measures": []
+        },
+        {
+          "id": 9,
+          "name": "Земляные работы (котлован, шпунт)",
+          "days_typ": 60,
+          "days_best": 20,
+          "days_worst": 150,
+          "bottleneck": "Геология + сезон",
+          "applicable_measures": []
+        },
+        {
+          "id": 10,
+          "name": "Фундамент",
+          "days_typ": 45,
+          "days_best": 20,
+          "days_worst": 90,
+          "bottleneck": "Бетон + погода",
+          "applicable_measures": ["FN-035"]
+        },
+        {
+          "id": 11,
+          "name": "Подземная часть (стилобат, паркинг)",
+          "days_typ": 90,
+          "days_best": 45,
+          "days_worst": 180,
+          "bottleneck": "Гидроизоляция",
+          "applicable_measures": []
+        },
+        {
+          "id": 12,
+          "name": "Каркас (монолит по этажам)",
+          "days_typ": 135,
+          "days_best": 60,
+          "days_worst": 300,
+          "bottleneck": "Темп монолита — главное узкое место",
+          "applicable_measures": ["FN-030"]
+        },
+        {
+          "id": 13,
+          "name": "Внешние стены + фасад",
+          "days_typ": 90,
+          "days_best": 45,
+          "days_worst": 180,
+          "bottleneck": "Импорт фасадных систем",
+          "applicable_measures": ["FN-082","FN-083"]
+        },
+        {
+          "id": 14,
+          "name": "Кровля",
+          "days_typ": 23,
+          "days_best": 10,
+          "days_worst": 60,
+          "bottleneck": "Сезон",
+          "applicable_measures": []
+        },
+        {
+          "id": 15,
+          "name": "Инженерные системы внутренние",
+          "days_typ": 90,
+          "days_best": 45,
+          "days_worst": 180,
+          "bottleneck": "Координация субподрядчиков",
+          "applicable_measures": ["FN-032","FN-037"]
+        },
+        {
+          "id": 16,
+          "name": "Чистовая отделка",
+          "days_typ": 120,
+          "days_best": 60,
+          "days_worst": 240,
+          "bottleneck": "Долгий этап + переделки",
+          "applicable_measures": ["FN-038","FN-082"]
+        },
+        {
+          "id": 17,
+          "name": "Лифты + пуско-наладка",
+          "days_typ": 45,
+          "days_best": 20,
+          "days_worst": 120,
+          "bottleneck": "Лифты импорт 34%",
+          "applicable_measures": ["FN-083"]
+        },
+        {
+          "id": 18,
+          "name": "Благоустройство",
+          "days_typ": 45,
+          "days_best": 20,
+          "days_worst": 90,
+          "bottleneck": "Сезон",
+          "applicable_measures": []
+        },
+        {
+          "id": 19,
+          "name": "Передача дольщикам (ИКЭ + регистрация)",
+          "days_typ": 80,
+          "days_best": 30,
+          "days_worst": 180,
+          "bottleneck": "Замечания приёмки",
+          "applicable_measures": ["FN-050","FN-053"]
+        },
+        {
+          "id": 20,
+          "name": "Эксплуатация (PIM→AIM передача)",
+          "days_typ": 0,
+          "days_best": 0,
+          "days_worst": 0,
+          "bottleneck": "PIM→AIM разрыв 3-6 мес",
+          "applicable_measures": ["FN-052","FN-060","FN-061","FN-062"]
+        }
+      ]
+    },
+    {
+      "id": "soc-6A",
+      "name": "Соцобъект (школа / детсад / ФАП, класс 6А/6Б)",
+      "short": "Соц-6А",
+      "base_days_typ": 1250,
+      "base_days_min": 800,
+      "base_days_max": 1500,
+      "target_days_scenario3": 800,
+      "target_days_scenario4": 720,
+      "track_color": "#16A34A",
+      "stages": [
+        { "id": 1, "name": "Концепция (типовой vs индивидуальный)", "days_typ": 45, "days_best": 20, "days_worst": 90, "bottleneck": "Решение о типовом или индивидуальном", "applicable_measures": ["FN-010"] },
+        { "id": 2, "name": "Изыскания", "days_typ": 68, "days_best": 30, "days_worst": 120, "bottleneck": "Сезонность", "applicable_measures": ["FN-013"] },
+        { "id": 3, "name": "Адаптация типового проекта (привязка)", "days_typ": 60, "days_best": 20, "days_worst": 120, "bottleneck": "Если индивидуальный — 120-240 дн", "applicable_measures": ["FN-010"] },
+        { "id": 4, "name": "Бюджетное обоснование", "days_typ": 120, "days_best": 60, "days_worst": 180, "bottleneck": "Бюджетный трек 5.2-ФЗ", "applicable_measures": ["FN-098"] },
+        { "id": 5, "name": "Экспертиза ПД", "days_typ": 60, "days_best": 30, "days_worst": 180, "bottleneck": "Сокращена для типовых", "applicable_measures": ["FN-020","FN-084"] },
+        { "id": 6, "name": "Заказ материалов + оборудования", "days_typ": 105, "days_best": 30, "days_worst": 150, "bottleneck": "Лицензированное мед/учебное оборудование", "applicable_measures": ["FN-035"] },
+        { "id": 7, "name": "РНС", "days_typ": 18, "days_best": 5, "days_worst": 30, "bottleneck": "Бумажный канал", "applicable_measures": ["FN-075"] },
+        { "id": 8, "name": "Подготовка площадки", "days_typ": 23, "days_best": 10, "days_worst": 30, "bottleneck": null, "applicable_measures": [] },
+        { "id": 9, "name": "Земляные работы + фундамент", "days_typ": 68, "days_best": 30, "days_worst": 90, "bottleneck": null, "applicable_measures": [] },
+        { "id": 10, "name": "Каркас (часто сборный)", "days_typ": 90, "days_best": 45, "days_worst": 120, "bottleneck": "Меньше этажности", "applicable_measures": ["FN-030"] },
+        { "id": 11, "name": "Внешние стены + фасад", "days_typ": 45, "days_best": 20, "days_worst": 60, "bottleneck": null, "applicable_measures": ["FN-082"] },
+        { "id": 12, "name": "Кровля", "days_typ": 23, "days_best": 10, "days_worst": 30, "bottleneck": "Сезон", "applicable_measures": [] },
+        { "id": 13, "name": "Инженерные системы (специфика)", "days_typ": 105, "days_best": 60, "days_worst": 150, "bottleneck": "Мед.газы / кухонная вентиляция / учебная электрика", "applicable_measures": ["FN-032"] },
+        { "id": 14, "name": "Чистовая отделка", "days_typ": 90, "days_best": 60, "days_worst": 120, "bottleneck": null, "applicable_measures": ["FN-038"] },
+        { "id": 15, "name": "Оснащение мебелью и оборудованием", "days_typ": 120, "days_best": 60, "days_worst": 180, "bottleneck": "Закупается отдельным контрактом — главное узкое место", "applicable_measures": [] },
+        { "id": 16, "name": "Лицензирование", "days_typ": 45, "days_best": 30, "days_worst": 60, "bottleneck": "Госуслуги / Роспотребнадзор / ОНК", "applicable_measures": [] },
+        { "id": 17, "name": "Передача в эксплуатацию", "days_typ": 45, "days_best": 30, "days_worst": 60, "bottleneck": null, "applicable_measures": ["FN-050"] },
+        { "id": 18, "name": "Эксплуатация", "days_typ": 0, "days_best": 0, "days_worst": 0, "bottleneck": null, "applicable_measures": ["FN-052"] }
+      ]
+    },
+    {
+      "id": "budget-1",
+      "name": "Бюджетный объект (класс 1)",
+      "short": "Бюджет-1",
+      "base_days_typ": 1400,
+      "base_days_min": 1000,
+      "base_days_max": 1600,
+      "target_days_scenario3": 640,
+      "target_days_scenario4": 450,
+      "track_color": "#D97706",
+      "stages": [
+        { "id": 1, "name": "Прогнозный план + утверждение бюджета", "days_typ": 135, "days_best": 90, "days_worst": 180, "bottleneck": "Годовой бюджетный цикл", "applicable_measures": [] },
+        { "id": 2, "name": "Конкурс ПИР (44-ФЗ)", "days_typ": 60, "days_best": 30, "days_worst": 150, "bottleneck": "Д-004 закупочный цикл", "applicable_measures": ["FN-098"] },
+        { "id": 3, "name": "Изыскания", "days_typ": 68, "days_best": 30, "days_worst": 120, "bottleneck": "Сезонность", "applicable_measures": ["FN-013"] },
+        { "id": 4, "name": "Проектирование ПД", "days_typ": 90, "days_best": 45, "days_worst": 180, "bottleneck": "Коллизии", "applicable_measures": ["FN-021","FN-016"] },
+        { "id": 5, "name": "Экспертиза ПД", "days_typ": 120, "days_best": 30, "days_worst": 240, "bottleneck": "Переделки 30-50%", "applicable_measures": ["FN-020","FN-084"] },
+        { "id": 6, "name": "РНС", "days_typ": 18, "days_best": 5, "days_worst": 60, "bottleneck": "Бумажный канал", "applicable_measures": ["FN-075"] },
+        { "id": 7, "name": "Конкурс СМР (44-ФЗ)", "days_typ": 90, "days_best": 60, "days_worst": 150, "bottleneck": "Д-008 строительный режим 44-ФЗ", "applicable_measures": ["FN-101"] },
+        { "id": 8, "name": "Подготовка площадки + земляные работы", "days_typ": 45, "days_best": 20, "days_worst": 90, "bottleneck": null, "applicable_measures": [] },
+        { "id": 9, "name": "Фундамент + конструктив", "days_typ": 90, "days_best": 60, "days_worst": 180, "bottleneck": null, "applicable_measures": [] },
+        { "id": 10, "name": "Инженерные системы", "days_typ": 90, "days_best": 60, "days_worst": 150, "bottleneck": "Координация субподрядчиков", "applicable_measures": ["FN-032"] },
+        { "id": 11, "name": "Чистовая отделка", "days_typ": 90, "days_best": 60, "days_worst": 150, "bottleneck": "Переделки", "applicable_measures": ["FN-038"] },
+        { "id": 12, "name": "Казначейский контроль + финансовый аудит", "days_typ": 60, "days_best": 30, "days_worst": 90, "bottleneck": "Дублирование с экспертизой", "applicable_measures": [] },
+        { "id": 13, "name": "ИКЭ + сдача", "days_typ": 60, "days_best": 30, "days_worst": 120, "bottleneck": "Замечания приёмки", "applicable_measures": ["FN-050","FN-053"] },
+        { "id": 14, "name": "Ежегодное перезаключение контракта (при переходе в следующий год)", "days_typ": 30, "days_best": 0, "days_worst": 90, "bottleneck": "Д-008 нет многолетних контрактов", "applicable_measures": ["FN-101"] }
+      ]
+    }
+  ]
+}
