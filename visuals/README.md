@@ -1,17 +1,26 @@
-# SHMH / ISC visual concepts
+# SHMH / ISC visual concepts v2
 
-Editable SVG concept pack for the ISC navigator visual system.
+Editable visual-system pack for the ISC navigator.
 
-Contents:
-- 10 SVG concepts in `svg/`
-- `index.html` gallery
-- ZIP bundle for review handoff
+## Public links
+- Gallery: `/visuals/`
+- ZIP: `/visuals/shmh_visual_concepts_10_svg_gallery.zip`
 
-Status: draft for expert review. Dependency/evidence map, not legal opinion.
+## Contents
+- `svg/` — 10 editable SVG concepts.
+- `index.html` — public review gallery.
+- `manifest.json` — concept metadata and view grammar.
+- `graph_model.schema.json` — canonical graph contract draft.
+- `visual_grammar.md` — visual semantics for nodes, edges, statuses, density.
+- `agent_swarm_plan.md` — six-lane execution plan for graph/dashboard/deck/evidence work.
 
-Visual rules:
-- one concept = one management question
-- every SVG carries caveat/status language
-- color is duplicated by text/status labels
-- confidence means evidence completeness, not legal truth
-- dense graph views should use highlighted paths and derived filters
+## Status
+Draft for expert review. Dependency/evidence map, not legal opinion.
+
+## Design rules
+- One concept = one management question.
+- Every SVG carries caveat/status language.
+- Color is duplicated by text/status labels.
+- Confidence means evidence completeness, not legal truth.
+- Dense graph views use highlighted paths and derived filters.
+- Control Tower uses heatmap + action queue first; graph is drilldown.

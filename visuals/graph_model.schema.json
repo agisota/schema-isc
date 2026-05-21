@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://go.buildworth.org/visuals/graph_model.schema.json",
+  "title": "ISC Navigator Canonical Graph Model",
+  "type": "object",
+  "required": [
+    "sources",
+    "entities",
+    "edges",
+    "views"
+  ],
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entity"
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/edge"
+      }
+    },
+    "views": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/view"
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "title",
+        "source_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "official_url",
+            "official_text",
+            "expert_note",
+            "model_inference",
+            "dataset",
+            "gap"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "retrieved_at": {
+          "type": "string"
+        },
+        "last_verified_at": {
+          "type": "string"
+        },
+        "source_status": {
+          "enum": [
+            "official_anchor",
+            "needs_edition_confirmation",
+            "candidate",
+            "blocked",
+            "gap"
+          ]
+        }
+      }
+    },
+    "entity": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "label",
+        "status",
+        "confidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "Step",
+            "Act",
+            "DocumentType",
+            "Authority",
+            "Trigger",
+            "Risk",
+            "Deadline",
+            "Source",
+            "View"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "official_anchor",
+            "clause_verified",
+            "current_edition_verified",
+            "procedure_confirmed",
+            "candidate",
+            "conflict_or_collision",
+            "superseded_or_replaced",
+            "gap"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "blocked"
+          ]
+        },
+        "review_state": {
+          "enum": [
+            "not_started",
+            "source_found",
+            "clause_extracted",
+            "legal_review",
+            "qa_review",
+            "approved_l3",
+            "published_snapshot",
+            "needs_rework",
+            "blocked_collision",
+            "blocked_edition",
+            "retired"
+          ]
+        }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "required": [
+        "id",
+        "source_entity_id",
+        "target_entity_id",
+        "rel_type",
+        "basis",
+        "confidence",
+        "review_state"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "source_entity_id": {
+          "type": "string"
+        },
+        "target_entity_id": {
+          "type": "string"
+        },
+        "rel_type": {
+          "enum": [
+            "PRECEDES",
+            "REGULATED_BY",
+            "REQUIRES",
+            "PRODUCES",
+            "ISSUED_BY",
+            "ADMINISTERED_BY",
+            "OWNED_BY",
+            "STARTS",
+            "AFFECTS",
+            "EVIDENCED_BY",
+            "IMPLEMENTS",
+            "AMENDS",
+            "REPEALS",
+            "DEPENDS_ON"
+          ]
+        },
+        "basis": {
+          "enum": [
+            "factual",
+            "normative",
+            "expert_estimate",
+            "scenario_parameter",
+            "model_inference",
+            "gap"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "blocked"
+          ]
+        },
+        "review_state": {
+          "type": "string"
+        },
+        "gap_note": {
+          "type": "string"
+        }
+      }
+    },
+    "view": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "projection",
+        "audience"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "projection": {
+          "type": "string"
+        },
+        "audience": {
+          "enum": [
+            "executive",
+            "legal",
+            "product",
+            "data",
+            "pilot"
+          ]
+        },
+        "source_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

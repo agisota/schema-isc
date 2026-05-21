@@ -1,0 +1,162 @@
+{
+  "name": "SHMH / ISC visual concepts v2",
+  "status": "draft_for_expert_review",
+  "generated_at": "2026-05-21",
+  "corpus": {
+    "steps": 23,
+    "npa": 53,
+    "step_act_links": 109
+  },
+  "red_line": "dependency/evidence map, not legal opinion",
+  "concepts": [
+    {
+      "id": "01",
+      "slug": "lifecycle-atlas",
+      "title": "Lifecycle Atlas",
+      "best_for": [
+        "executive deck",
+        "shared lifecycle language"
+      ],
+      "priority": "high",
+      "implementation": "deck + D2",
+      "risk": "stage/step grain mismatch",
+      "next_step": "Turn into 2-slide executive opening with 23-step appendix.",
+      "svg": "svg/01-lifecycle-atlas.svg"
+    },
+    {
+      "id": "02",
+      "slug": "knowledge-graph-hub",
+      "title": "Knowledge Graph Hub",
+      "best_for": [
+        "graph model",
+        "G6/D3 viewer"
+      ],
+      "priority": "high",
+      "implementation": "AntV G6 or D3 force",
+      "risk": "overdense network if all 109 links are shown",
+      "next_step": "Build typed Entity/Edge JSON projection with highlighted path mode.",
+      "svg": "svg/02-knowledge-graph-hub.svg"
+    },
+    {
+      "id": "03",
+      "slug": "sankey-loss-ledger",
+      "title": "Sankey Loss Ledger",
+      "best_for": [
+        "friction narrative",
+        "measure discussion"
+      ],
+      "priority": "medium",
+      "implementation": "D3 Sankey",
+      "risk": "days may be read as proven additive effect",
+      "next_step": "Separate factual/normative/scenario basis before quantifying flows.",
+      "svg": "svg/03-sankey-loss-ledger.svg"
+    },
+    {
+      "id": "04",
+      "slug": "evidence-heatmap-matrix",
+      "title": "Evidence Heatmap Matrix",
+      "best_for": [
+        "legal evidence",
+        "source confidence"
+      ],
+      "priority": "high",
+      "implementation": "derived sparse evidence ledger",
+      "risk": "color-only confidence can overstate readiness",
+      "next_step": "Create evidence_matrix.csv with claim/source/status/confidence/review_state.",
+      "svg": "svg/04-evidence-heatmap-matrix.svg"
+    },
+    {
+      "id": "05",
+      "slug": "control-tower-view",
+      "title": "Control Tower View",
+      "best_for": [
+        "product MVP",
+        "action queue"
+      ],
+      "priority": "highest",
+      "implementation": "React dashboard + heatmap",
+      "risk": "may imply production monitoring before validation",
+      "next_step": "Define MVP screen/data/action contract.",
+      "svg": "svg/05-control-tower-view.svg"
+    },
+    {
+      "id": "06",
+      "slug": "gate-first-bpmn",
+      "title": "Gate-first BPMN",
+      "best_for": [
+        "pilot process",
+        "validation gates"
+      ],
+      "priority": "medium",
+      "implementation": "D2/Mermaid + workflow state machine",
+      "risk": "BPMN symbols can distract from evidence requirements",
+      "next_step": "Rewrite as Gate -> Evidence -> Owner -> Blocker diagram-as-code.",
+      "svg": "svg/06-gate-first-bpmn.svg"
+    },
+    {
+      "id": "07",
+      "slug": "os-metamodel-stack",
+      "title": "OS Metamodel Stack",
+      "best_for": [
+        "architecture story",
+        "engineering handoff"
+      ],
+      "priority": "high",
+      "implementation": "deck + architecture diagram",
+      "risk": "too abstract unless tied to concrete data fields",
+      "next_step": "Pair with graph_model.schema.json and source lineage rules.",
+      "svg": "svg/07-os-metamodel-stack.svg"
+    },
+    {
+      "id": "08",
+      "slug": "npa-lattice",
+      "title": "NPA Lattice",
+      "best_for": [
+        "legal graph",
+        "NPA categories"
+      ],
+      "priority": "high",
+      "implementation": "Graphviz/DOT or G6 clusters",
+      "risk": "53 acts become unreadable without clustering",
+      "next_step": "Cluster by act_type/authority/edition_status and show source gaps.",
+      "svg": "svg/08-npa-lattice.svg"
+    },
+    {
+      "id": "09",
+      "slug": "digital-vertical-map",
+      "title": "Digital Vertical Map",
+      "best_for": [
+        "systems integration",
+        "authority ownership"
+      ],
+      "priority": "medium",
+      "implementation": "architecture map + data contracts",
+      "risk": "can look like generic org-chart if owners are missing",
+      "next_step": "Add system_id/owner/source_status/timestamp contracts.",
+      "svg": "svg/09-digital-vertical-map.svg"
+    },
+    {
+      "id": "10",
+      "slug": "visual-product-system",
+      "title": "Visual Product System",
+      "best_for": [
+        "design governance",
+        "view library"
+      ],
+      "priority": "high",
+      "implementation": "visual grammar + tokens",
+      "risk": "too meta unless tied to real generation rules",
+      "next_step": "Write visual_grammar.md and view_config.json.",
+      "svg": "svg/10-visual-product-system.svg"
+    }
+  ],
+  "view_grammar": {
+    "node_shape": "entity kind",
+    "edge_style": "relationship type",
+    "fill": "claim status",
+    "border": "review state",
+    "dot": "confidence",
+    "hatch": "candidate/gap/blocked",
+    "badge": "claim count"
+  }
+}
