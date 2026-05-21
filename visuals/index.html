@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Визуальные модели ИСЦ — 10 SVG концептов</title>
+  <meta name="description" content="10 редактируемых SVG-концептов для ШМХ / ИСЦ: graph, dashboard, evidence matrix, executive deck и visual analytics." />
+  <link rel="icon" href="data:," />
+  <style>
+    :root { --paper:#f7f3ea; --panel:#fffdf8; --ink:#111827; --muted:#5f6675; --navy:#172b55; --gold:#d9b83a; --line:#d8deea; --green:#2f7d44; --amber:#d97706; --red:#b42318; --blue:#2563eb; }
+    * { box-sizing:border-box; }
+    html { background:var(--paper); color:var(--ink); font-family:Aptos, 'Segoe UI Variable', 'Helvetica Neue', system-ui, sans-serif; }
+    body { margin:0; min-height:100dvh; overflow-x:hidden; background:linear-gradient(120deg, rgba(255,255,255,.84), transparent 42%), linear-gradient(180deg, rgba(217,184,58,.11), transparent 34%), var(--paper); }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; background-image:linear-gradient(90deg, #172b55 1px, transparent 1px), linear-gradient(#172b55 1px, transparent 1px); background-size:44px 44px; opacity:.035; }
+    a { color:inherit; }
+    .page { width:min(1480px, calc(100% - 44px)); margin:0 auto; padding:28px 0 64px; position:relative; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:22px; }
+    .mark { color:var(--navy); font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:900; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    .pill, .download { border-radius:999px; padding:10px 14px; background:rgba(255,255,255,.78); box-shadow:inset 0 0 0 1px rgba(23,43,85,.13); color:var(--navy); text-decoration:none; font-size:12px; font-weight:900; letter-spacing:.05em; text-transform:uppercase; }
+    .download { background:var(--navy); color:white; }
+    .hero, .band, .concept-card { background:var(--panel); border:1px solid rgba(23,43,85,.12); box-shadow:0 24px 70px rgba(23,43,85,.08); }
+    .hero { border-radius:28px; padding:44px 48px; display:grid; grid-template-columns:minmax(0,1.1fr) 420px; gap:42px; align-items:end; }
+    .eyebrow { display:inline-block; max-width:100%; padding:7px 11px; border-radius:999px; background:rgba(23,43,85,.08); color:var(--navy); font-size:10px; font-weight:900; line-height:1.25; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { margin:20px 0 0; color:var(--navy); font-size:clamp(42px, 6vw, 82px); line-height:.96; letter-spacing:0; max-width:880px; }
+    .lead { color:var(--muted); font-size:21px; line-height:1.5; max-width:850px; margin:24px 0 0; }
+    .metrics { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+    .metric { padding:18px; border-radius:18px; background:white; border:1px solid var(--line); }
+    .metric span { display:block; color:var(--muted); font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.06em; }
+    .metric strong { display:block; color:var(--navy); font-size:34px; font-family:'JetBrains Mono','SFMono-Regular',Consolas,monospace; margin-top:8px; }
+    .band { border-radius:24px; padding:28px 32px; margin-top:22px; }
+    .band h2, .concept-copy h2 { margin:0; color:var(--navy); }
+    .architecture { margin-top:18px; padding:22px; border:1px solid var(--line); border-radius:18px; background:white; font-family:'JetBrains Mono','SFMono-Regular',Consolas,monospace; color:#23314a; overflow:auto; white-space:pre; font-size:14px; line-height:1.45; }
+    .top3 { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:14px; margin-top:18px; }
+    .top3 div { background:white; border:1px solid var(--line); border-radius:18px; padding:18px; }
+    .top3 b { color:var(--navy); }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:20px; margin-top:24px; }
+    .concept-card { border-radius:24px; overflow:hidden; display:grid; grid-template-rows:auto 1fr; }
+    .preview { background:#f1f4f7; border-bottom:1px solid var(--line); aspect-ratio:16/10; overflow:hidden; }
+    .preview object { display:block; width:100%; height:100%; border:0; }
+    .concept-copy { padding:22px 24px 24px; }
+    .concept-number { margin:0 0 8px; color:var(--gold); font-family:'JetBrains Mono','SFMono-Regular',Consolas,monospace; font-weight:900; }
+    .concept-copy p { color:var(--muted); line-height:1.45; margin:12px 0 0; }
+    .concept-copy .question { color:var(--ink); font-weight:760; }
+    .card-actions { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:18px; }
+    .card-actions a { color:white; background:var(--navy); border-radius:999px; padding:9px 12px; text-decoration:none; font-size:12px; font-weight:900; }
+    .card-actions span { color:var(--muted); font-size:12px; font-family:'JetBrains Mono','SFMono-Regular',Consolas,monospace; }
+    table { width:100%; border-collapse:collapse; margin-top:16px; font-size:14px; }
+    th,td { text-align:left; padding:13px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { color:var(--navy); font-size:11px; text-transform:uppercase; letter-spacing:.08em; }
+    .caveat { border-left:5px solid var(--amber); background:#fff8e6; }
+    .sources a { color:var(--navy); font-weight:800; }
+    @media (max-width: 980px) { .page { width:min(100% - 28px, 900px); } .hero { grid-template-columns:1fr; padding:30px 24px; } .grid, .top3 { grid-template-columns:1fr; } h1 { font-size:42px; } .lead { font-size:18px; } .metrics { grid-template-columns:repeat(2, minmax(0,1fr)); } }
+    @media (max-width: 520px) { .metrics { grid-template-columns:1fr; } .topbar { align-items:flex-start; flex-direction:column; } .card-actions { align-items:flex-start; flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="topbar" aria-label="Навигация">
+      <div class="mark">SHMH / ISC Navigator</div>
+      <div class="actions">
+        <a class="pill" href="/review.html">Режим рассмотрения</a>
+        <a class="pill" href="/">Детальная схема</a>
+        <a class="download" href="shmh_visual_concepts_10_svg_gallery.zip">Скачать ZIP</a>
+      </div>
+    </nav>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">10 editable SVG concepts · draft for expert review</span>
+        <h1>Визуальные модели ИСЦ</h1>
+        <p class="lead">Пакет не пытается сделать одну “главную схему”. Он раскладывает ШМХ / ИСЦ-навигатор на 10 разных визуальных моделей: executive narrative, legal evidence, graph-core, dashboard, data contracts и pilot gates.</p>
+      </div>
+      <div class="metrics" aria-label="Статистика корпуса">
+        <div class="metric"><span>Lifecycle</span><strong>23</strong><span>steps</span></div>
+        <div class="metric"><span>NPA corpus</span><strong>53</strong><span>acts</span></div>
+        <div class="metric"><span>Step-act links</span><strong>109</strong><span>edges</span></div>
+        <div class="metric"><span>Concepts</span><strong>10</strong><span>SVG</span></div>
+      </div>
+    </section>
+
+    <section class="band caveat">
+      <h2>Red line</h2>
+      <p>Все SVG помечены как <b>DRAFT / EXPERT REVIEW</b> и <b>NOT LEGAL OPINION</b>. Это dependency/evidence map: связи, статусы и confidence требуют юридической и ведомственной валидации до внешних утверждений.</p>
+    </section>
+
+    <section class="band">
+      <h2>Рекомендуемая архитектура views</h2>
+      <div class="architecture">CSV / JSON Schema
+      │
+      ▼
+Canonical Graph Model
+Step ── Act ── Document ── Authority
+ │       │          │           │
+Risk   Source    Deadline    Owner
+      │
+      ├── Executive View     -> Lifecycle / Sankey / OS Stack
+      ├── Legal View         -> NPA Lattice / Evidence Matrix
+      ├── Product View       -> Control Tower / Cards / Filters
+      ├── Engineering View   -> GraphML / D2 / DOT / JSON Schema
+      └── Pilot View         -> Gate-first BPMN / validation queue</div>
+    </section>
+
+    <section class="band">
+      <h2>Что брать в работу первым</h2>
+      <div class="top3">
+        <div><b>1. Control Tower View</b><p>Превращает схему в продукт: KPI, gates, action queue, evidence drawer.</p></div>
+        <div><b>2. Knowledge Graph Hub + NPA Lattice</b><p>Фиксирует ядро данных, без которого dashboard будет декоративным.</p></div>
+        <div><b>3. Lifecycle Atlas + Sankey</b><p>Дает executive narrative: где цикл, где friction, где осторожно обсуждать эффект.</p></div>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="10 SVG концептов">
+      
+      <article class="concept-card">
+        <div class="preview"><object data="svg/01-lifecycle-atlas.svg" type="image/svg+xml" aria-label="Lifecycle Atlas preview"></object></div>
+        <div class="concept-copy">
+          <p class="concept-number">01</p>
+          <h2>Lifecycle Atlas</h2>
+          <p class="question">Как показать 23 шага ИСК как управляемый жизненный цикл, а не стрелочную кашу?</p>
+          <p>Executive-схема для общего языка Минстроя: этапы, gates, сроки, caveats.</p>
+          <div class="card-actions"><a href="svg/01-lifecycle-atlas.svg">Открыть SVG</a><span>lifecycle-atlas</span></div>
+        </div>
+      </article>
+      <article class="concept-card">
+        <div class="preview"><object data="svg/02-knowledge-graph-hub.svg" type="image/svg+xml" aria-label="Knowledge Graph Hub preview"></object></div>
+        <div class="concept-copy">
+          <p class="concept-number">02</p>
+          <h2>Knowledge Graph Hub</h2>
+          <p class="question">Какая минимальная graph-core модель связывает Step, НПА, документы, органы, риски и сроки?</p>
+          <p>Graph-core концепт для D3/G6/GraphML: центр Step, вокруг доказательные сущности.</p>
+          <div class="card-actions"><a href="svg/02-knowledge-graph-hub.svg">Открыть SVG</a><span>knowledge-graph-hub</span></div>
+        </div>
+      </article>
+      <article class="concept-card">
+        <div class="preview"><object data="svg/03-sankey-loss-ledger.svg" type="image/svg+xml" aria-label="Sankey Loss Ledger preview"></object></div>
+        <div class="concept-copy">
+          <p class="concept-number">03</p>
+          <h2>Sankey Loss Ledger</h2>
+          <p class="question">Где теряются дни и какие меры можно обсуждать без фальшивой суммы эффектов?</p>
+          <p>Executive flow для friction hypotheses: отделяет factual, normative и scenario basis.</p>
+          <div class="card-actions"><a href="svg/03-sankey-loss-ledger.svg">Открыть SVG</a><span>sankey-loss-ledger</span></div>
+        </div>
+      </article>
+      <article class="concept-card">
+        <div class="preview"><object data="svg/04-evidence-heatmap-matrix.svg" type="image/svg+xml" aria-label="Evidence Heatmap Matrix preview"></object></div>
+        <div class="concept-copy">
+          <p class="concept-number">04</p>
+          <h2>Evidence Heatmap Matrix</h2>
+          <p class="question">Какие зоны подтверждены источниками, а какие являются gaps / blocked claims?</p>
+          <p>Legal/product matrix: cell contract, confidence, review_state, source caveat.</p>
+          <div class="card-actions"><a href="svg/04-evidence-heatmap-matrix.svg">Открыть SVG</a><span>evidence-heatmap-matrix</span></div>
+        </div>
+      </article>
+      <article class="concept-card">
+        <div class="preview"><object data="svg/05-control-tower-view.svg" type="image/svg+xml" aria-label="Control Tower View preview"></object></div>
+        <div class="concept-copy">
+          <p class="concept-number">05</p>
+          <h2>Control Tower View</h2>
+          <p class="question">Как превратить схему в рабочий обзор: KPI, gates, action queue, source drawer?</p>
+          <p>Dashboard contract для продукта: фильтры, очередь действий, evidence-led UX.</p>
+          <div class="card-actions"><a href="svg/05-control-tower-view.svg">Открыть SVG</a><span>control-tower-view</span></div>
+        </div>
+      </article>
+      <article class="concept-card">
+        <div class="preview"><object data="svg/06-gate-first-bpmn.svg" type="image/svg+xml" aria-label="Gate-first BPMN preview"></object></div>
+        <div class="concept-copy">
+          <p class="concept-number">06</p>
+          <h2>Gate-first BPMN</h2>
+          <p class="question">Какие readiness gates меняют статус процесса и какие доказательства нужны на каждом gate?</p>
+          <p>Процессная схема через gates, owners и blockers вместо декоративной BPMN-нотации.</p>
+          <div class="card-actions"><a href="svg/06-gate-first-bpmn.svg">Открыть SVG</a><span>gate-first-bpmn</span></div>
+        </div>
+      </article>
+      <article class="concept-card">
+        <div class="preview"><object data="svg/07-os-metamodel-stack.svg" type="image/svg+xml" aria-label="OS Metamodel Stack preview"></object></div>
+        <div class="concept-copy">
+          <p class="concept-number">07</p>
+          <h2>OS Metamodel Stack</h2>
+          <p class="question">Как объяснить ИСЦ-2030 OS слоями: данные, доказательства, gates, меры, KPI?</p>
+          <p>Architecture visual для deck и engineering handoff.</p>
+          <div class="card-actions"><a href="svg/07-os-metamodel-stack.svg">Открыть SVG</a><span>os-metamodel-stack</span></div>
+        </div>
+      </article>
+      <article class="concept-card">
+        <div class="preview"><object data="svg/08-npa-lattice.svg" type="image/svg+xml" aria-label="NPA Lattice preview"></object></div>
+        <div class="concept-copy">
+          <p class="concept-number">08</p>
+          <h2>NPA Lattice</h2>
+          <p class="question">Как показать НПА-граф через категории, плотность связей и source gaps без нечитаемой сети?</p>
+          <p>Legal lattice для НПА, clusters, density, gap/status view.</p>
+          <div class="card-actions"><a href="svg/08-npa-lattice.svg">Открыть SVG</a><span>npa-lattice</span></div>
+        </div>
+      </article>
+      <article class="concept-card">
+        <div class="preview"><object data="svg/09-digital-vertical-map.svg" type="image/svg+xml" aria-label="Digital Vertical Map preview"></object></div>
+        <div class="concept-copy">
+          <p class="concept-number">09</p>
+          <h2>Digital Vertical Map</h2>
+          <p class="question">Как связать ЕИС, ГИСОГД, ИСУП, PIM/BIM, KG и Control Tower через data contracts?</p>
+          <p>Сквозная цифровая вертикаль: systems, authority, ownership, timestamps.</p>
+          <div class="card-actions"><a href="svg/09-digital-vertical-map.svg">Открыть SVG</a><span>digital-vertical-map</span></div>
+        </div>
+      </article>
+      <article class="concept-card">
+        <div class="preview"><object data="svg/10-visual-product-system.svg" type="image/svg+xml" aria-label="Visual Product System preview"></object></div>
+        <div class="concept-copy">
+          <p class="concept-number">10</p>
+          <h2>Visual Product System</h2>
+          <p class="question">Как сделать не одну главную схему, а библиотеку views с единым visual grammar?</p>
+          <p>Система представлений: executive, legal, product, data, pilot.</p>
+          <div class="card-actions"><a href="svg/10-visual-product-system.svg">Открыть SVG</a><span>visual-product-system</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="band">
+      <h2>Файлы</h2>
+      <table>
+        <thead><tr><th>#</th><th>Концепт</th><th>Для чего</th><th>Файл</th></tr></thead>
+        <tbody><tr><td>01</td><td>Lifecycle Atlas</td><td>Executive-схема для общего языка Минстроя: этапы, gates, сроки, caveats.</td><td><a href="svg/01-lifecycle-atlas.svg">SVG</a></td></tr>
+<tr><td>02</td><td>Knowledge Graph Hub</td><td>Graph-core концепт для D3/G6/GraphML: центр Step, вокруг доказательные сущности.</td><td><a href="svg/02-knowledge-graph-hub.svg">SVG</a></td></tr>
+<tr><td>03</td><td>Sankey Loss Ledger</td><td>Executive flow для friction hypotheses: отделяет factual, normative и scenario basis.</td><td><a href="svg/03-sankey-loss-ledger.svg">SVG</a></td></tr>
+<tr><td>04</td><td>Evidence Heatmap Matrix</td><td>Legal/product matrix: cell contract, confidence, review_state, source caveat.</td><td><a href="svg/04-evidence-heatmap-matrix.svg">SVG</a></td></tr>
+<tr><td>05</td><td>Control Tower View</td><td>Dashboard contract для продукта: фильтры, очередь действий, evidence-led UX.</td><td><a href="svg/05-control-tower-view.svg">SVG</a></td></tr>
+<tr><td>06</td><td>Gate-first BPMN</td><td>Процессная схема через gates, owners и blockers вместо декоративной BPMN-нотации.</td><td><a href="svg/06-gate-first-bpmn.svg">SVG</a></td></tr>
+<tr><td>07</td><td>OS Metamodel Stack</td><td>Architecture visual для deck и engineering handoff.</td><td><a href="svg/07-os-metamodel-stack.svg">SVG</a></td></tr>
+<tr><td>08</td><td>NPA Lattice</td><td>Legal lattice для НПА, clusters, density, gap/status view.</td><td><a href="svg/08-npa-lattice.svg">SVG</a></td></tr>
+<tr><td>09</td><td>Digital Vertical Map</td><td>Сквозная цифровая вертикаль: systems, authority, ownership, timestamps.</td><td><a href="svg/09-digital-vertical-map.svg">SVG</a></td></tr>
+<tr><td>10</td><td>Visual Product System</td><td>Система представлений: executive, legal, product, data, pilot.</td><td><a href="svg/10-visual-product-system.svg">SVG</a></td></tr></tbody>
+      </table>
+    </section>
+
+    <section class="band sources">
+      <h2>Инструментальные рамки</h2>
+      <p>D3 force — для network/hierarchy, d3-sankey — для directed flow, AntV G6 — для production graph visual analytics, D2/Mermaid/Graphviz — для diagram-as-code, ELK/elkjs — для directed auto-layout и ports.</p>
+      <p><a href="https://d3js.org/d3-force">D3 force</a> · <a href="https://github.com/d3/d3-sankey">d3-sankey</a> · <a href="https://g6.antv.antgroup.com/en/manual/introduction/">AntV G6</a> · <a href="https://d2lang.com/tour/layouts/">D2 layouts</a> · <a href="https://mermaid.ai/open-source/intro/index.html">Mermaid</a> · <a href="https://graphviz.org/doc/info/lang.html">Graphviz DOT</a> · <a href="https://eclipse.dev/elk/">ELK</a></p>
+    </section>
+  </main>
+</body>
+</html>
