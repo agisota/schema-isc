@@ -1,0 +1,29 @@
+{
+  "version": "v3",
+  "status": "draft_for_expert_review",
+  "canonical": "d2",
+  "mirrors": "mermaid",
+  "diagrams": [
+    {
+      "id": "02-knowledge-graph-hub",
+      "d2": "02-knowledge-graph-hub.d2",
+      "mermaid": "02-knowledge-graph-hub.mmd",
+      "scope": "typed graph projection",
+      "acceptance": "Shows Source -> Entity -> Edge -> View and includes caveat."
+    },
+    {
+      "id": "06-gate-first-bpmn",
+      "d2": "06-gate-first-bpmn.d2",
+      "mermaid": "06-gate-first-bpmn.mmd",
+      "scope": "gate workflow",
+      "acceptance": "Shows G1-G8 gate path, blocker loop, and action queue."
+    },
+    {
+      "id": "07-os-metamodel-stack",
+      "d2": "07-os-metamodel-stack.d2",
+      "mermaid": "07-os-metamodel-stack.mmd",
+      "scope": "architecture stack",
+      "acceptance": "Shows source lineage through graph, evidence, gates, views, KPI, and decision cadence."
+    }
+  ]
+}

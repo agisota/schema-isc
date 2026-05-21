@@ -1,0 +1,49 @@
+{
+  "version": "v3",
+  "status": "draft_for_expert_review",
+  "caveat": "Dependency/evidence map, not legal opinion.",
+  "default_view": "control_tower",
+  "views": [
+    {
+      "id": "executive_lifecycle",
+      "title": "Executive Lifecycle",
+      "primary_concepts": ["01-lifecycle-atlas", "03-sankey-loss-ledger", "07-os-metamodel-stack"],
+      "question": "Where is the cycle, where are the losses, and what system governs improvement?",
+      "density": "aggregate_first"
+    },
+    {
+      "id": "legal_evidence",
+      "title": "Legal Evidence",
+      "primary_concepts": ["04-evidence-heatmap-matrix", "08-npa-lattice"],
+      "question": "Which claims are source-backed, current-edition checked, and reviewed?",
+      "density": "sparse_matrix"
+    },
+    {
+      "id": "control_tower",
+      "title": "Control Tower",
+      "primary_concepts": ["05-control-tower-view", "02-knowledge-graph-hub"],
+      "question": "Which step needs which action, by whom, and with what evidence?",
+      "density": "heatmap_plus_queue"
+    },
+    {
+      "id": "pilot_gates",
+      "title": "Pilot Gates",
+      "primary_concepts": ["06-gate-first-bpmn", "09-digital-vertical-map"],
+      "question": "Which gate is blocked by missing evidence, owner, system, or deadline?",
+      "density": "gate_sequence"
+    }
+  ],
+  "status_tokens": {
+    "draft": {"color": "#6e7480", "pattern": "dotted"},
+    "needs_review": {"color": "#d97706", "pattern": "solid"},
+    "approved_l1": {"color": "#2563eb", "pattern": "solid"},
+    "approved_l2": {"color": "#2f7d44", "pattern": "solid"},
+    "approved_l3": {"color": "#172b55", "pattern": "solid"}
+  },
+  "hard_rules": [
+    "No current/latest legal wording unless approved_l3 and current_edition_verified=true.",
+    "No additive day-saving claims without overlap/dependency review.",
+    "Every red/amber dashboard state must link to an evidence row.",
+    "Default graph views must hide unrelated edges."
+  ]
+}

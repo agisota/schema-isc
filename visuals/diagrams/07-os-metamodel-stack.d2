@@ -1,0 +1,21 @@
+direction: down
+
+sources: "Sources\nofficial publications, datasets, expert notes"
+graph: "Canonical graph\nsources + entities + edges + views"
+evidence: "Evidence ledger\nclaim, source, status, confidence, review_state"
+gates: "Readiness gates\nG1-G8 blockers and approvals"
+views: "Views\nLifecycle | Evidence | Control Tower | NPA Lattice"
+kpi: "KPI layer\ncoverage, gaps, actions, deadlines"
+decision: "Decision cadence\npilot -> scale -> 2030 operating standard"
+caveat: "DRAFT / EXPERT REVIEW\nNot legal opinion" {
+  shape: note
+}
+
+sources -> graph: "normalize IDs"
+graph -> evidence: "derive claims"
+evidence -> gates: "validate readiness"
+gates -> views: "select management question"
+views -> kpi: "aggregate only reviewed signals"
+kpi -> decision: "quarterly decision loop"
+evidence -> caveat: "governs wording"
+decision -> caveat: "keeps scope bounded"

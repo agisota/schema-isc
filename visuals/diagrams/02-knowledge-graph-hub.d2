@@ -1,0 +1,53 @@
+direction: right
+
+vars: {
+  caveat: "DRAFT / EXPERT REVIEW / dependency evidence map, not legal opinion"
+}
+
+source: "Source\nid,type,status,verified_at" {
+  shape: cylinder
+}
+
+entity: "Entity\nStep | Act | Authority | Risk | Deadline | Source" {
+  shape: rectangle
+}
+
+edge: "Edge\nrel_type,basis,confidence,review_state" {
+  shape: diamond
+}
+
+view: "View\nprojection,audience,source_fields[]" {
+  shape: page
+}
+
+source -> entity: "EVIDENCED_BY"
+entity -> edge: "source_entity_id"
+edge -> entity: "target_entity_id"
+view -> entity: "selects subgraph"
+view -> edge: "filters relation vocabulary"
+
+step: "Step\n23 lifecycle units" {
+  shape: rectangle
+}
+act: "Act\n53 NPAs" {
+  shape: document
+}
+authority: "Authority\nowner/admin" {
+  shape: hexagon
+}
+risk: "Risk\nblocked/gap/collision" {
+  shape: diamond
+}
+deadline: "Deadline\nterm/SLA" {
+  shape: parallelogram
+}
+
+step -> act: "REGULATED_BY"
+act -> authority: "ISSUED_BY / ADMINISTERED_BY"
+risk -> step: "AFFECTS"
+deadline -> step: "CONSTRAINS"
+source -> act: "official/candidate/gap"
+
+caveat: ${caveat}
+caveat.shape: note
+view -> caveat: "all exports include"

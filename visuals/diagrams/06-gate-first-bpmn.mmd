@@ -1,0 +1,26 @@
+%% Mirror of 06-gate-first-bpmn.d2; D2 owns layout/styling, Mermaid owns reviewability.
+stateDiagram-v2
+  [*] --> G1_ClaimDictionary
+  G1_ClaimDictionary --> G2_SourceCoverage: claim typed
+  G2_SourceCoverage --> G3_EditionCheck: source card attached
+  G3_EditionCheck --> G4_LegalL3: current edition checked
+  G4_LegalL3 --> G5_CollisionReview: legal wording allowed
+  G5_CollisionReview --> G6_FactualDuration: no unresolved collision
+  G6_FactualDuration --> G7_ScenarioSignoff: duration basis separated
+  G7_ScenarioSignoff --> G8_ExternalRefreshQA: non-additive scenario signed
+  G8_ExternalRefreshQA --> ReadyForMinistryReview: snapshot regenerated
+
+  G2_SourceCoverage --> Blocked: missing source
+  G3_EditionCheck --> Blocked: edition pending
+  G5_CollisionReview --> Blocked: collision
+  Blocked --> ActionQueue: owner + next_action + due_date
+  ActionQueue --> G2_SourceCoverage: source task
+  ActionQueue --> G3_EditionCheck: edition task
+  ActionQueue --> G5_CollisionReview: collision task
+
+  ReadyForMinistryReview --> Caveat: export footer
+  note right of Caveat
+    DRAFT / EXPERT REVIEW
+    Dependency/evidence map, not legal opinion
+    No current/latest wording before approved_l3 + current_edition_verified
+  end note

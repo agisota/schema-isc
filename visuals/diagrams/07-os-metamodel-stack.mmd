@@ -1,0 +1,28 @@
+%% Mirror of 07-os-metamodel-stack.d2; D2 owns layout/styling, Mermaid owns reviewability.
+flowchart TB
+  Sources["Sources<br/>official publications, datasets, expert notes"]:::source
+  Graph["Canonical graph<br/>sources + entities + edges + views"]:::graph
+  Evidence["Evidence ledger<br/>claim, source, status, confidence, review_state"]:::evidence
+  Gates["Readiness gates<br/>G1-G8 blockers and approvals"]:::gate
+  Views["Views<br/>Lifecycle | Evidence | Control Tower | NPA Lattice"]:::view
+  KPI["KPI layer<br/>coverage, gaps, actions, deadlines"]:::kpi
+  Decision["Decision cadence<br/>pilot -> scale -> 2030 operating standard"]:::decision
+  Caveat["DRAFT / EXPERT REVIEW<br/>Not legal opinion"]:::caveat
+
+  Sources -->|normalize IDs| Graph
+  Graph -->|derive claims| Evidence
+  Evidence -->|validate readiness| Gates
+  Gates -->|select management question| Views
+  Views -->|aggregate only reviewed signals| KPI
+  KPI -->|quarterly decision loop| Decision
+  Evidence -->|governs wording| Caveat
+  Decision -->|keeps scope bounded| Caveat
+
+  classDef source fill:#f4f7fb,stroke:#6e7480,color:#111827;
+  classDef graph fill:#eaf2ff,stroke:#2563eb,color:#172b55;
+  classDef evidence fill:#fff8e6,stroke:#d97706,color:#111827;
+  classDef gate fill:#eefaf1,stroke:#2f7d44,color:#111827;
+  classDef view fill:#ecfeff,stroke:#0891b2,color:#111827;
+  classDef kpi fill:#ffffff,stroke:#d8deea,color:#111827;
+  classDef decision fill:#f3f0ff,stroke:#7c3aed,color:#111827;
+  classDef caveat fill:#fff1f0,stroke:#b42318,color:#111827;

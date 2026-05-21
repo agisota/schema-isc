@@ -1,0 +1,37 @@
+direction: right
+
+g1: "G1\nClaim dictionary"
+g2: "G2\nSource coverage"
+g3: "G3\nEdition check"
+g4: "G4\nLegal L3"
+g5: "G5\nCollision review"
+g6: "G6\nFactual duration"
+g7: "G7\nScenario sign-off"
+g8: "G8\nExternal refresh QA"
+ready: "Ready for ministry review" {
+  shape: rectangle
+}
+blocked: "Blocked\nmissing source / stale edition / owner gap" {
+  shape: diamond
+}
+queue: "Action queue\nowner,next_action,due_date,evidence_required" {
+  shape: queue
+}
+caveat: "No current/latest wording before approved_l3 + current_edition_verified" {
+  shape: note
+}
+
+g1 -> g2: "claim typed"
+g2 -> g3: "source card attached"
+g3 -> g4: "current edition checked"
+g4 -> g5: "legal wording allowed"
+g5 -> g6: "no unresolved collision"
+g6 -> g7: "duration basis separated"
+g7 -> g8: "non-additive scenario signed"
+g8 -> ready: "snapshot regenerated"
+
+blocked -> g2: "missing source"
+blocked -> g3: "edition pending"
+blocked -> g5: "collision"
+blocked -> queue: "creates action"
+ready -> caveat: "footer/export rule"

@@ -1,5 +1,5 @@
 {
-  "name": "SHMH / ISC visual concepts v2",
+  "name": "SHMH / ISC visual concepts v3",
   "status": "draft_for_expert_review",
   "generated_at": "2026-05-21",
   "corpus": {
@@ -8,6 +8,11 @@
     "step_act_links": 109
   },
   "red_line": "dependency/evidence map, not legal opinion",
+  "routes": {
+    "gallery": "index.html",
+    "decision_kit": "review_v3.html",
+    "zip": "shmh_visual_concepts_10_svg_gallery.zip"
+  },
   "concepts": [
     {
       "id": "01",
@@ -158,5 +163,52 @@
     "dot": "confidence",
     "hatch": "candidate/gap/blocked",
     "badge": "claim count"
-  }
+  },
+  "handoff_artifacts": [
+    {
+      "path": "review_v3.html",
+      "role": "single ministry decision route",
+      "status": "draft_for_expert_review"
+    },
+    {
+      "path": "sample_graph.json",
+      "role": "schema-valid graph fixture",
+      "status": "sample_not_complete_corpus"
+    },
+    {
+      "path": "evidence_matrix.csv",
+      "role": "starter evidence ledger template",
+      "status": "template_8_rows_not_109_complete_rows"
+    },
+    {
+      "path": "control_tower_mvp.md",
+      "role": "product screen/data/action/gate contract",
+      "status": "ready_for_frontend_spec"
+    },
+    {
+      "path": "graph_viewer_spec.md",
+      "role": "future interactive viewer specification",
+      "status": "ready_for_planning"
+    },
+    {
+      "path": "executive_deck_outline.md",
+      "role": "8-slide ISC-2030 OS outline",
+      "status": "ready_for_deck_work"
+    },
+    {
+      "path": "view_config.json",
+      "role": "view presets and hard legal/visual rules",
+      "status": "draft_contract"
+    },
+    {
+      "path": "diagrams/diagram_manifest.json",
+      "role": "D2/Mermaid diagram-as-code manifest",
+      "status": "draft_contract"
+    },
+    {
+      "path": "qa_report.md",
+      "role": "QA and trust-surface register",
+      "status": "pre_deploy_report"
+    }
+  ]
 }

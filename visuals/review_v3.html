@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ИСЦ v3 — ministry decision kit</title>
+  <meta name="description" content="Static ministry decision kit for SHMH / ISC visual system: evidence matrix, Control Tower MVP, graph schema, diagram-as-code and executive deck outline." />
+  <link rel="icon" href="data:," />
+  <style>
+    :root { --paper:#f7f3ea; --panel:#fffdf8; --ink:#111827; --muted:#5f6675; --navy:#172b55; --line:#d8deea; --gold:#d9b83a; --green:#2f7d44; --amber:#d97706; --red:#b42318; --blue:#2563eb; --cyan:#0891b2; }
+    * { box-sizing:border-box; }
+    html { background:var(--paper); color:var(--ink); font-family:Aptos, 'Segoe UI Variable', 'Helvetica Neue', system-ui, sans-serif; }
+    body { margin:0; min-height:100dvh; overflow-x:hidden; background:linear-gradient(120deg, rgba(255,255,255,.88), transparent 44%), var(--paper); }
+    a { color:inherit; }
+    .page { width:min(1440px, calc(100% - 44px)); margin:0 auto; padding:26px 0 60px; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:18px; }
+    .mark { color:var(--navy); font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:900; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .pill { border-radius:999px; padding:10px 14px; background:white; box-shadow:inset 0 0 0 1px rgba(23,43,85,.13); color:var(--navy); text-decoration:none; font-size:12px; font-weight:900; text-transform:uppercase; }
+    .primary { background:var(--navy); color:white; }
+    .hero,.band,.card { background:var(--panel); border:1px solid rgba(23,43,85,.12); box-shadow:0 24px 70px rgba(23,43,85,.08); border-radius:24px; }
+    .hero { display:grid; grid-template-columns:minmax(0,1.15fr) 430px; gap:36px; padding:42px; align-items:stretch; }
+    .eyebrow { display:inline-flex; max-width:100%; padding:7px 11px; border-radius:999px; background:rgba(23,43,85,.08); color:var(--navy); font-size:10px; font-weight:900; line-height:1.25; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { margin:18px 0 0; color:var(--navy); font-size:clamp(38px, 5vw, 72px); line-height:.98; letter-spacing:0; }
+    h2 { margin:0; color:var(--navy); }
+    h3 { margin:0; color:var(--navy); font-size:18px; }
+    p { color:var(--muted); line-height:1.5; }
+    .lead { font-size:20px; max-width:780px; }
+    .metrics { display:grid; gap:12px; }
+    .metric { padding:18px; border-radius:18px; border:1px solid var(--line); background:white; }
+    .metric span { display:block; color:var(--muted); font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.06em; }
+    .metric strong { display:block; color:var(--navy); font-size:32px; font-family:'JetBrains Mono','SFMono-Regular',Consolas,monospace; margin-top:8px; }
+    .metric:first-child { background:#fff8e6; border-color:#e6c568; }
+    .band { padding:26px 30px; margin-top:20px; }
+    .grid3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .grid2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:18px; }
+    .card { padding:20px; box-shadow:none; background:white; }
+    .card b { color:var(--navy); }
+    .route { display:grid; grid-template-columns:36px 1fr; gap:12px; align-items:start; }
+    .num { width:32px; height:32px; border-radius:50%; background:var(--navy); color:white; display:grid; place-items:center; font-weight:900; font-family:'JetBrains Mono','SFMono-Regular',Consolas,monospace; }
+    .file-links { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+    .file-links a { border-radius:999px; padding:10px 12px; background:white; border:1px solid var(--line); color:var(--navy); text-decoration:none; font-weight:900; font-size:12px; }
+    .preview-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:18px; }
+    .preview { overflow:hidden; border:1px solid var(--line); border-radius:18px; background:white; }
+    .preview object { display:block; width:100%; aspect-ratio:16/10; border:0; background:#f4f7fb; }
+    .preview div { padding:14px 16px; border-top:1px solid var(--line); }
+    table { width:100%; border-collapse:collapse; margin-top:16px; font-size:14px; }
+    th,td { text-align:left; padding:12px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { color:var(--navy); font-size:11px; text-transform:uppercase; letter-spacing:.08em; }
+    .caveat { border-left:5px solid var(--amber); background:#fff8e6; }
+    .bad { color:var(--red); font-weight:900; }
+    .good { color:var(--green); font-weight:900; }
+    .mono { font-family:'JetBrains Mono','SFMono-Regular',Consolas,monospace; font-size:13px; color:#23314a; }
+    @media (max-width: 960px) { .hero,.grid2,.grid3,.preview-grid { grid-template-columns:1fr; } }
+    @media (max-width: 560px) { .page { width:min(100% - 28px, 900px); } .hero,.band { padding:22px 16px; } h1 { font-size:38px; } .topbar { align-items:flex-start; flex-direction:column; } table { display:block; overflow-x:auto; font-size:12px; } table thead, table tbody { display:table; min-width:640px; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="topbar" aria-label="Навигация">
+      <div class="mark">SHMH / ISC Navigator</div>
+      <div class="actions">
+        <a class="pill primary" href="review_v3.html">Decision kit v3</a>
+        <a class="pill" href="index.html">10 SVG concepts</a>
+        <a class="pill" href="shmh_visual_concepts_10_svg_gallery.zip">ZIP</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <span class="eyebrow">v3 ministry decision kit · static first · evidence-first</span>
+        <h1>ИСЦ: маршрут рассмотрения</h1>
+        <p class="lead">Эта страница — не галерея. Это один маршрут для обсуждения: что решаем, на каких данных держится схема, где evidence gaps, какой Control Tower MVP можно строить дальше.</p>
+      </div>
+      <div class="metrics">
+        <div class="metric"><span>Status</span><strong>DRAFT</strong><span>expert review, not legal opinion</span></div>
+        <div class="metric"><span>Corpus baseline</span><strong>23 / 53 / 109</strong><span>steps / NPA / step-act links</span></div>
+        <div class="metric"><span>Decision</span><strong>3 lanes</strong><span>executive, legal evidence, product pilot</span></div>
+      </div>
+    </section>
+
+    <section class="band caveat">
+      <h2>Red line</h2>
+      <p>Пакет является dependency/evidence map. Это <b>не юридическое заключение</b>. Любое внешнее утверждение про “current/latest” допустимо только при `approved_l3` и `current_edition_verified=true`.</p>
+    </section>
+
+    <section class="band">
+      <h2>Маршрут рассмотрения</h2>
+      <div class="grid3">
+        <div class="card route"><div class="num">1</div><div><h3>Executive</h3><p>Lifecycle Atlas, Sankey, OS Stack. Вопрос: где цикл, где потери, какой operating model нужен.</p></div></div>
+        <div class="card route"><div class="num">2</div><div><h3>Legal evidence</h3><p>Evidence matrix, NPA lattice, graph schema. Вопрос: какие claims source-backed, candidate, gap или blocked.</p></div></div>
+        <div class="card route"><div class="num">3</div><div><h3>Product pilot</h3><p>Control Tower MVP: heatmap, action queue, evidence drawer, gate board. Вопрос: как закрывать blockers.</p></div></div>
+      </div>
+    </section>
+
+    <section class="band">
+      <h2>Priority views</h2>
+      <div class="preview-grid">
+        <article class="preview"><object data="svg/01-lifecycle-atlas.svg" type="image/svg+xml" aria-label="Lifecycle Atlas"></object><div><b>Lifecycle Atlas</b><p>Executive map over 23 steps; appendix must hold exact step IDs.</p></div></article>
+        <article class="preview"><object data="svg/04-evidence-heatmap-matrix.svg" type="image/svg+xml" aria-label="Evidence Heatmap"></object><div><b>Evidence Matrix</b><p>Promoted from concept to source-confidence workflow.</p></div></article>
+        <article class="preview"><object data="svg/05-control-tower-view.svg" type="image/svg+xml" aria-label="Control Tower"></object><div><b>Control Tower MVP</b><p>Heatmap + action queue + evidence drawer, not production monitoring.</p></div></article>
+        <article class="preview"><object data="svg/08-npa-lattice.svg" type="image/svg+xml" aria-label="NPA Lattice"></object><div><b>NPA Lattice</b><p>Cluster by act type, authority, edition status, and source status before dense graph display.</p></div></article>
+      </div>
+    </section>
+
+    <section class="band">
+      <h2>Handoff files</h2>
+      <div class="file-links">
+        <a href="graph_model.schema.json">graph_model.schema.json</a>
+        <a href="sample_graph.json">sample_graph.json</a>
+        <a href="evidence_matrix.csv">evidence_matrix.csv</a>
+        <a href="control_tower_mvp.md">control_tower_mvp.md</a>
+        <a href="graph_viewer_spec.md">graph_viewer_spec.md</a>
+        <a href="executive_deck_outline.md">executive_deck_outline.md</a>
+        <a href="diagrams/README.md">diagrams/</a>
+        <a href="qa_report.md">qa_report.md</a>
+      </div>
+      <table>
+        <thead><tr><th>Artifact</th><th>Role</th><th>Acceptance</th></tr></thead>
+        <tbody>
+          <tr><td><b>sample_graph.json</b></td><td>Schema fixture</td><td>Validates against graph schema; edge endpoints resolve.</td></tr>
+          <tr><td><b>evidence_matrix.csv</b></td><td>Legal/source ledger starter</td><td>Uses ministry-safe status, confidence, reviewer, and disclaimer fields.</td></tr>
+          <tr><td><b>control_tower_mvp.md</b></td><td>Product handoff</td><td>Screen/data/action/gate contract without production-monitoring claims.</td></tr>
+          <tr><td><b>diagrams/*</b></td><td>Diagram-as-code</td><td>D2 source + Mermaid mirror for concepts 02, 06, 07.</td></tr>
+          <tr><td><b>qa_report.md</b></td><td>Proof log</td><td>Tracks TLS, link, schema, SVG, ZIP, browser and wording gates.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="band">
+      <h2>Current risk register</h2>
+      <table>
+        <thead><tr><th>Risk</th><th>Status</th><th>Mitigation</th></tr></thead>
+        <tbody>
+          <tr><td>Native GitHub Pages certificate missing</td><td><span class="bad">blocked</span></td><td>Cloudflare proxied DNS enabled; verify HTTPS after DNS propagation.</td></tr>
+          <tr><td>Full 109-row evidence ledger not yet populated</td><td><span class="bad">open</span></td><td>Starter ledger defines columns and review workflow; canonical IDs still needed.</td></tr>
+          <tr><td>Dense graph overclaims readiness</td><td><span class="good">mitigated</span></td><td>Graph viewer spec defaults to filtered ego/path views and requires caveats.</td></tr>
+          <tr><td>Scenario/day savings read as audited fact</td><td><span class="good">mitigated</span></td><td>Deck and Control Tower specs require duration_basis and non-additive scenario sign-off.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="band">
+      <h2>Next build path</h2>
+      <div class="grid3">
+        <div class="card"><b>Sprint 1</b><p>Load canonical 23/53/109 IDs, expand `evidence_matrix.csv`, validate `sample_graph.json`.</p></div>
+        <div class="card"><b>Sprint 2</b><p>Build static Control Tower mock from the ledger: heatmap, action queue, drawer.</p></div>
+        <div class="card"><b>Sprint 3</b><p>Upgrade to G6/D3 viewer only after schema, evidence and QA gates are stable.</p></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

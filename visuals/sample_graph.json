@@ -1,0 +1,178 @@
+{
+  "qa": {
+    "schema_version": "v3",
+    "generated_at": "2026-05-21",
+    "baseline_counts": {
+      "steps": 23,
+      "npa": 53,
+      "step_act_links": 109
+    },
+    "scope_note": "Small review fixture, not the complete 109-link graph.",
+    "red_line": "Dependency/evidence map, not legal opinion."
+  },
+  "sources": [
+    {
+      "id": "SRC-SCHEMA-001",
+      "type": "dataset",
+      "title": "graph_model.schema.json",
+      "url": "graph_model.schema.json",
+      "retrieved_at": "2026-05-21",
+      "last_verified_at": "2026-05-21",
+      "source_status": "official_anchor"
+    },
+    {
+      "id": "SRC-EVIDENCE-001",
+      "type": "dataset",
+      "title": "evidence_matrix.csv starter ledger",
+      "url": "evidence_matrix.csv",
+      "retrieved_at": "2026-05-21",
+      "last_verified_at": "2026-05-21",
+      "source_status": "candidate"
+    },
+    {
+      "id": "SRC-OFFICIAL-TBD",
+      "type": "gap",
+      "title": "Official NPA source pending",
+      "source_status": "gap"
+    }
+  ],
+  "entities": [
+    {
+      "id": "STEP-TBD-001",
+      "kind": "Step",
+      "label": "Lifecycle step pending canonical ID",
+      "status": "candidate",
+      "confidence": "low",
+      "review_state": "not_started"
+    },
+    {
+      "id": "ACT-TBD-001",
+      "kind": "Act",
+      "label": "NPA pending official source and locator",
+      "status": "candidate",
+      "confidence": "low",
+      "review_state": "source_found"
+    },
+    {
+      "id": "AUTH-TBD-001",
+      "kind": "Authority",
+      "label": "Issuing/administering authority pending normalization",
+      "status": "candidate",
+      "confidence": "low",
+      "review_state": "not_started"
+    },
+    {
+      "id": "RISK-EDITION-PENDING",
+      "kind": "Risk",
+      "label": "Current edition not verified",
+      "status": "gap",
+      "confidence": "blocked",
+      "review_state": "blocked_edition"
+    },
+    {
+      "id": "DEADLINE-TBD-001",
+      "kind": "Deadline",
+      "label": "Deadline/duration basis pending separation",
+      "status": "candidate",
+      "confidence": "low",
+      "review_state": "needs_rework"
+    },
+    {
+      "id": "SOURCE-OFFICIAL-TBD",
+      "kind": "Source",
+      "label": "Official source URL pending",
+      "status": "gap",
+      "confidence": "blocked",
+      "review_state": "needs_rework"
+    },
+    {
+      "id": "VIEW-CONTROL-TOWER",
+      "kind": "View",
+      "label": "Control Tower review surface",
+      "status": "procedure_confirmed",
+      "confidence": "medium",
+      "review_state": "qa_review"
+    }
+  ],
+  "edges": [
+    {
+      "id": "EDGE-001",
+      "source_entity_id": "STEP-TBD-001",
+      "target_entity_id": "ACT-TBD-001",
+      "rel_type": "REGULATED_BY",
+      "basis": "normative",
+      "confidence": "low",
+      "review_state": "source_found",
+      "gap_note": "Official source URL and article locator pending."
+    },
+    {
+      "id": "EDGE-002",
+      "source_entity_id": "ACT-TBD-001",
+      "target_entity_id": "AUTH-TBD-001",
+      "rel_type": "ISSUED_BY",
+      "basis": "normative",
+      "confidence": "low",
+      "review_state": "not_started",
+      "gap_note": "Authority normalization pending."
+    },
+    {
+      "id": "EDGE-003",
+      "source_entity_id": "RISK-EDITION-PENDING",
+      "target_entity_id": "ACT-TBD-001",
+      "rel_type": "AFFECTS",
+      "basis": "gap",
+      "confidence": "blocked",
+      "review_state": "blocked_edition",
+      "gap_note": "No current/latest wording allowed."
+    },
+    {
+      "id": "EDGE-004",
+      "source_entity_id": "DEADLINE-TBD-001",
+      "target_entity_id": "STEP-TBD-001",
+      "rel_type": "AFFECTS",
+      "basis": "scenario_parameter",
+      "confidence": "low",
+      "review_state": "needs_rework",
+      "gap_note": "Separate statutory term, observed delay, and scenario estimate."
+    },
+    {
+      "id": "EDGE-005",
+      "source_entity_id": "SOURCE-OFFICIAL-TBD",
+      "target_entity_id": "ACT-TBD-001",
+      "rel_type": "EVIDENCED_BY",
+      "basis": "gap",
+      "confidence": "blocked",
+      "review_state": "needs_rework",
+      "gap_note": "Replace with official source before external legal wording."
+    }
+  ],
+  "views": [
+    {
+      "id": "VIEW-CONTROL-TOWER",
+      "title": "Control Tower",
+      "projection": "heatmap_plus_action_queue",
+      "audience": "product",
+      "source_fields": [
+        "entity.status",
+        "entity.confidence",
+        "edge.review_state",
+        "source.source_status",
+        "evidence_matrix.confidence_score"
+      ]
+    },
+    {
+      "id": "VIEW-LEGAL-EVIDENCE",
+      "title": "Legal Evidence Matrix",
+      "projection": "step_act_source_confidence",
+      "audience": "legal",
+      "source_fields": [
+        "step_id",
+        "npa_id",
+        "source_uri",
+        "source_locator",
+        "evidence_status",
+        "review_decision"
+      ]
+    }
+  ]
+}

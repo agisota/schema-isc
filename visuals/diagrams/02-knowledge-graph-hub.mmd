@@ -1,0 +1,37 @@
+%% Mirror of 02-knowledge-graph-hub.d2; D2 owns layout/styling, Mermaid owns reviewability.
+flowchart LR
+  Source["Source<br/>id,type,status,verified_at"]:::source
+  Entity["Entity<br/>Step | Act | Authority | Risk | Deadline | Source"]:::entity
+  Edge{"Edge<br/>rel_type,basis,confidence,review_state"}:::edge
+  View["View<br/>projection,audience,source_fields[]"]:::view
+  Caveat["DRAFT / EXPERT REVIEW<br/>dependency evidence map, not legal opinion"]:::caveat
+
+  Source -->|EVIDENCED_BY| Entity
+  Entity -->|source_entity_id| Edge
+  Edge -->|target_entity_id| Entity
+  View -->|selects subgraph| Entity
+  View -->|filters relation vocabulary| Edge
+  View -->|all exports include| Caveat
+
+  Step["Step<br/>23 lifecycle units"]:::step
+  Act["Act<br/>53 NPAs"]:::act
+  Authority["Authority<br/>owner/admin"]:::authority
+  Risk{"Risk<br/>blocked/gap/collision"}:::risk
+  Deadline["Deadline<br/>term/SLA"]:::deadline
+
+  Step -->|REGULATED_BY| Act
+  Act -->|ISSUED_BY / ADMINISTERED_BY| Authority
+  Risk -->|AFFECTS| Step
+  Deadline -->|CONSTRAINS| Step
+  Source -->|official/candidate/gap| Act
+
+  classDef source fill:#f4f7fb,stroke:#6e7480,color:#111827;
+  classDef entity fill:#eaf2ff,stroke:#2563eb,color:#172b55;
+  classDef edge fill:#fff8e6,stroke:#d97706,color:#111827;
+  classDef view fill:#ecfeff,stroke:#0891b2,color:#111827;
+  classDef step fill:#eaf2ff,stroke:#2563eb,color:#172b55;
+  classDef act fill:#fff8e6,stroke:#d97706,color:#111827;
+  classDef authority fill:#eefaf1,stroke:#2f7d44,color:#111827;
+  classDef risk fill:#fff1f0,stroke:#b42318,color:#111827;
+  classDef deadline fill:#ecfeff,stroke:#0891b2,color:#111827;
+  classDef caveat fill:#ffffff,stroke:#6e7480,color:#111827;

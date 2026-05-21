@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Визуальные модели ИСЦ — review pack v2</title>
+  <title>Визуальные модели ИСЦ — review pack v3</title>
   <meta name="description" content="10 редактируемых SVG-концептов и handoff-пакет для ШМХ / ИСЦ: graph, dashboard, evidence matrix, executive deck и visual analytics." />
   <link rel="icon" href="data:," />
   <style>
@@ -76,6 +76,7 @@
       <div class="mark">SHMH / ISC Navigator</div>
       <div class="actions">
         <a class="pill" href="/review.html">Режим рассмотрения</a>
+        <a class="pill" href="review_v3.html">Decision kit v3</a>
         <a class="pill" href="/">Детальная схема</a>
         <a class="download" href="shmh_visual_concepts_10_svg_gallery.zip">Скачать ZIP</a>
       </div>
@@ -83,7 +84,7 @@
 
     <section class="hero">
       <div>
-        <span class="eyebrow">v2 review pack · 10 editable SVG · graph/dashboard/evidence handoff</span>
+        <span class="eyebrow">v3 review pack · 10 editable SVG · ministry decision kit</span>
         <h1>Визуальная система ИСЦ</h1>
         <p class="lead">Это уже не просто галерея вариантов. Пакет задаёт decision surface: какие views брать в deck, какие вести в dashboard, какая canonical graph model должна держать НПА, источники, риски, сроки и legal confidence.</p>
       </div>
@@ -91,13 +92,19 @@
         <div class="metric"><span>Status</span><strong>DRAFT</strong><span>expert review, not legal opinion</span></div>
         <div class="metric"><span>Corpus</span><strong>23 / 53</strong><span>steps / NPA</span></div>
         <div class="metric"><span>Edges</span><strong>109</strong><span>step-act links</span></div>
-        <div class="metric"><span>Package</span><strong>10 + 4</strong><span>SVG + handoff docs</span></div>
+        <div class="metric"><span>Package</span><strong>10 + 15</strong><span>SVG + handoff docs/data/diagrams</span></div>
       </div>
     </section>
 
     <section class="band caveat">
       <h2>Red line</h2>
       <p>Все схемы остаются <b>DRAFT / EXPERT REVIEW</b> и <b>NOT LEGAL OPINION</b>. Confidence означает полноту доказательной цепочки, а не “юридическую истинность”. Любая формулировка “current/latest НПА” требует `approved_l3` + `current_edition_verified`.</p>
+    </section>
+
+    <section class="band">
+      <h2>v3 ministry decision kit</h2>
+      <p>Subagent review сошёлся на одном: для Минстроя нужен не ещё один альбом концептов, а один маршрут рассмотрения. v3 добавляет `review_v3.html`, schema-valid sample graph, starter evidence ledger, Control Tower MVP spec, graph viewer spec, executive deck outline, D2/Mermaid diagrams и QA trust-surface report.</p>
+      <div class="file-links"><a href="review_v3.html">review_v3.html</a><a href="sample_graph.json">sample_graph.json</a><a href="evidence_matrix.csv">evidence_matrix.csv</a><a href="control_tower_mvp.md">control_tower_mvp.md</a><a href="graph_viewer_spec.md">graph_viewer_spec.md</a><a href="executive_deck_outline.md">executive_deck_outline.md</a><a href="diagrams/README.md">diagrams/</a><a href="qa_report.md">qa_report.md</a></div>
     </section>
 
     <section class="band">
@@ -146,11 +153,11 @@ Claim EVIDENCED_BY Source</div>
       <div class="deliverables">
         <div class="deliverable"><b>D1 visual_grammar.md</b><small>Новый узел/edge рисуется без спора.</small></div>
         <div class="deliverable"><b>D2 graph_model.schema.json</b><small>Единая JSON Schema для graph bundle.</small></div>
-        <div class="deliverable"><b>D3 D2/Mermaid</b><small>02/06/07 рендерятся в SVG.</small></div>
+        <div class="deliverable"><b>D3 diagrams/</b><small>D2 source + Mermaid mirrors for 02/06/07.</small></div>
         <div class="deliverable"><b>D4 graph_viewer_spec.md</b><small>Можно отдать frontend dev.</small></div>
-        <div class="deliverable"><b>D5 executive deck</b><small>8 slides, one claim per slide.</small></div>
-        <div class="deliverable"><b>D6 evidence_matrix.csv</b><small>Каждый claim имеет source/status/confidence.</small></div>
-        <div class="deliverable"><b>D7 control_tower_mvp.md</b><small>Screen/data/action contract.</small></div>
+        <div class="deliverable"><b>D5 executive_deck_outline.md</b><small>8 slides, one claim per slide.</small></div>
+        <div class="deliverable"><b>D6 evidence_matrix.csv</b><small>Starter ledger with source/status/confidence workflow.</small></div>
+        <div class="deliverable"><b>D7 control_tower_mvp.md</b><small>Screen/data/action/gate contract.</small></div>
       </div>
     </section>
 
