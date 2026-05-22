@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>ИСЦ-2030 — операционная карта инвестиционно-строительного цикла</title>
+<meta name="description" content="Decision kit для Минстроя: 23 шага жизненного цикла, 53 НПА, 109 связей. Черновик экспертной оценки.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://go.buildworth.org/new/">
+<meta property="og:title" content="ИСЦ-2030 — операционная карта">
+<meta property="og:description" content="23 шага · 53 НПА · 109 связей · 1250 → 1000 дней. Черновик экспертной оценки, не юридическое заключение.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://go.buildworth.org/new/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Hallmark · macrostructure: 02-long-document · theme: linen-civic · pre-emit critique: P5 H5 E4 S5 R5 V4 */
+
+:root {
+  --ink:          #14171c;
+  --ink-2:        #2c3340;
+  --ink-3:        #5b6473;
+  --rule:         #d8d2c2;
+  --rule-soft:    #ece6d4;
+  --paper:        #f6f1e3;
+  --paper-2:      #ede5cf;
+  --accent:       #1b2e58;
+  --accent-2:     #2c4690;
+  --caveat:       #7a5410;
+  --caveat-bg:    #f7e8b8;
+  --target:       #5b3a8c;
+
+  --font-display: "PT Serif", "Source Serif Pro", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-body:    "PT Serif", "Source Serif Pro", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-mark:    "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
+
+  --measure: 38rem;
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-7: 6.5rem;
+}
+
+* { box-sizing: border-box; }
+
+html, body { overflow-x: clip; }
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern", "liga", "calt";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .22em;
+  transition: color .12s linear, text-decoration-color .12s linear;
+}
+
+a:hover, a:focus-visible {
+  color: var(--accent-2);
+  text-decoration-color: var(--accent-2);
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+::selection {
+  background: var(--paper-2);
+  color: var(--ink);
+}
+
+.page {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* — masthead — */
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.masthead-inner {
+  max-width: calc(var(--measure) + 4rem);
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.masthead-mark {
+  font-family: var(--font-mark);
+  font-size: .68rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 600;
+}
+
+.masthead-mark strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.masthead-date {
+  font-family: var(--font-mark);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+/* — main article — */
+.prose {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) var(--space-7);
+  min-width: 0;
+}
+
+.dateline {
+  font-family: var(--font-mark);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 var(--space-3);
+  font-weight: 500;
+}
+
+.dateline em {
+  font-style: normal;
+  color: var(--caveat);
+  background: var(--caveat-bg);
+  padding: .12em .42em;
+  margin-left: .35rem;
+  border-radius: 1px;
+}
+
+h1.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 5.4vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -.012em;
+  margin: 0 0 var(--space-3);
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.standfirst {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.12rem, 2.2vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin: 0 0 var(--space-5);
+  text-wrap: pretty;
+}
+
+.lede::first-letter {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3.6em;
+  line-height: .88;
+  float: left;
+  padding: .04em .12em 0 0;
+  color: var(--accent);
+}
+
+p {
+  margin: 0 0 var(--space-4);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+h2.inline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.18rem;
+  letter-spacing: 0;
+  line-height: 1.35;
+  margin: var(--space-5) 0 var(--space-2);
+  color: var(--ink);
+  font-feature-settings: "smcp", "c2sc";
+  text-transform: lowercase;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+h2.inline::before {
+  content: "§ ";
+  color: var(--accent);
+  font-feature-settings: normal;
+  text-transform: none;
+  margin-right: .1em;
+}
+
+/* — ornament — */
+.ornament {
+  text-align: center;
+  font-family: var(--font-display);
+  color: var(--ink-3);
+  margin: var(--space-5) auto;
+  font-size: 1.1rem;
+  letter-spacing: 1.2em;
+  padding-left: 1.2em;
+  user-select: none;
+}
+
+/* — sidenote (caveat) — */
+.note {
+  font-family: var(--font-mark);
+  font-size: .82rem;
+  line-height: 1.55;
+  color: var(--caveat);
+  background: var(--caveat-bg);
+  border-left: 2px solid var(--caveat);
+  padding: var(--space-2) var(--space-3);
+  margin: var(--space-3) 0 var(--space-4);
+}
+
+.note strong {
+  font-weight: 600;
+  display: block;
+  font-size: .68rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: .25rem;
+}
+
+/* — figures table (real numbers, gate 56) — */
+.figures {
+  margin: var(--space-4) 0 var(--space-5);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: var(--space-3) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2);
+}
+
+@media (min-width: 540px) {
+  .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-5); }
+}
+
+@media (min-width: 820px) {
+  .figures {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: var(--space-3);
+  }
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  padding: .3rem 0;
+  min-width: 0;
+}
+
+.figure dt {
+  font-family: var(--font-mark);
+  font-size: .62rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 500;
+  order: 2;
+}
+
+.figure dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.8vw, 2.1rem);
+  line-height: 1;
+  font-weight: 700;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  order: 1;
+}
+
+.figure dd small {
+  font-size: .54em;
+  font-weight: 400;
+  color: var(--ink-3);
+  margin-left: .12em;
+}
+
+.figure.target dd { color: var(--target); }
+.figure.delta dd  { color: var(--accent); }
+
+/* — table of contents (8-slide narrative) — */
+.toc {
+  margin: var(--space-3) 0 var(--space-5);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.toc-mark {
+  font-family: var(--font-mark);
+  font-size: .62rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 var(--space-2);
+  font-weight: 600;
+}
+
+.toc ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: slide;
+}
+
+.toc li {
+  counter-increment: slide;
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  align-items: baseline;
+  padding: .35rem 0;
+  border-bottom: 1px dotted var(--rule-soft);
+  font-size: 1rem;
+  line-height: 1.45;
+  min-width: 0;
+}
+
+.toc li:last-child { border-bottom: 0; }
+
+.toc li::before {
+  content: counter(slide, decimal-leading-zero);
+  font-family: var(--font-mark);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.toc li b {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.toc li em {
+  font-style: italic;
+  color: var(--ink-3);
+  font-size: .92rem;
+}
+
+/* — artifact links — */
+.artifacts {
+  margin: var(--space-4) 0 var(--space-5);
+}
+
+.artifacts h2.inline {
+  margin-top: 0;
+}
+
+.artifacts dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .artifacts dl {
+    grid-template-columns: 8rem 1fr;
+    column-gap: var(--space-4);
+    row-gap: .85rem;
+    align-items: baseline;
+  }
+}
+
+.artifacts dt {
+  font-family: var(--font-mark);
+  font-size: .68rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 600;
+  padding-top: .15em;
+}
+
+.artifacts dd {
+  margin: 0 0 .25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  min-width: 0;
+}
+
+.artifacts dd a {
+  font-weight: 600;
+}
+
+.artifacts dd small {
+  display: block;
+  font-family: var(--font-mark);
+  font-size: .82rem;
+  color: var(--ink-3);
+  font-weight: 400;
+  font-style: normal;
+  margin-top: .15rem;
+}
+
+/* — pull quote — */
+blockquote.pull {
+  margin: var(--space-5) 0;
+  padding: 0 var(--space-3);
+  border-left: 2px solid var(--accent);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.18rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+blockquote.pull cite {
+  display: block;
+  margin-top: var(--space-2);
+  font-family: var(--font-mark);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* — decision request (the closing CTA, but typographic, no buttons) — */
+.decision {
+  margin: var(--space-6) 0 var(--space-5);
+  padding: var(--space-4);
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+}
+
+.decision-mark {
+  font-family: var(--font-mark);
+  font-size: .62rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--space-2);
+  font-weight: 700;
+}
+
+.decision h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.25;
+  margin: 0 0 var(--space-3);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.decision ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.decision li {
+  margin: 0 0 var(--space-2);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* — colophon — */
+.colophon {
+  border-top: 1px solid var(--rule);
+  padding: var(--space-4) 0;
+  background: var(--paper);
+}
+
+.colophon-inner {
+  max-width: calc(var(--measure) + 4rem);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+  font-family: var(--font-mark);
+  font-size: .76rem;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+
+@media (min-width: 640px) {
+  .colophon-inner {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+}
+
+.colophon a { color: var(--ink-3); text-decoration-color: var(--rule); }
+.colophon a:hover { color: var(--ink); text-decoration-color: var(--accent); }
+
+.colophon-meta { font-variant-numeric: tabular-nums; letter-spacing: .08em; text-transform: uppercase; text-align: left; }
+@media (min-width: 640px) { .colophon-meta { text-align: right; } }
+
+/* — print — */
+@media print {
+  html, body { background: #fff; color: #000; }
+  .masthead, .colophon { display: none; }
+  .prose { padding: 0; max-width: none; }
+  a { color: #000; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <p class="masthead-mark"><strong>ИСЦ-2030</strong> · операционная карта</p>
+      <p class="masthead-date">Версия 2026·05 · черновик</p>
+    </div>
+  </header>
+
+  <article class="prose">
+
+    <p class="dateline">
+      Меморандум · подготовлено для Минстроя <em>не юридическое заключение</em>
+    </p>
+
+    <h1 class="title">Цикл — это система, а не картинка</h1>
+
+    <p class="standfirst">
+      Инвестиционно-строительный цикл сегодня описывают схемой на 23 шага. Эта страница объясняет, что значит относиться к ним как к данным, а не как к иллюстрации.
+    </p>
+
+    <p class="lede">
+      Двадцать три шага. Пятьдесят три нормативно-правовых акта. Сто девять связей между ними. Это не картина процесса — это адресуемая поверхность, на которой можно отвечать на управленческие вопросы. Зайти от лица заявителя, зайти от лица ответственного органа, зайти от лица юриста, проверяющего ссылку на статью, — и каждый раз получить одну и ту же согласованную карту.
+    </p>
+
+    <p>
+      Перед вами не маркетинговый сайт и не отчёт о готовом продукте. Это рабочая черновик-карта — то, что в практике называют <em>decision kit</em>: набор представлений, который позволяет принять одно из трёх решений: запустить экспертный обзор, начать пилот, или развернуть исполнительный нарратив для коллегии. У каждого представления — своя экранная форма и своя оговорка о доказательной полноте.
+    </p>
+
+    <div class="note">
+      <strong>Статус</strong>
+      Черновик для экспертной оценки. Карта зависимостей и доказательств, а не юридическое заключение. <em>«Уверенность»</em> здесь означает полноту доказательств, не правовую истину. Не утверждается, что каждый шаг юридически завершён или что каждая ссылка на НПА — действующая редакция.
+    </div>
+
+    <dl class="figures" aria-label="Опорные цифры">
+      <div class="figure"><dd>23</dd><dt>Шага жизненного цикла</dt></div>
+      <div class="figure"><dd>53</dd><dt>НПА в контуре</dt></div>
+      <div class="figure"><dd>109</dd><dt>Связей шаг → НПА</dt></div>
+      <div class="figure"><dd>1250<small>дн.</small></dd><dt>Текущая длина цикла</dt></div>
+      <div class="figure target"><dd>1000<small>дн.</small></dd><dt>Таргет 2030</dt></div>
+    </dl>
+
+    <h2 class="inline">правовая решётка как опорная конструкция</h2>
+
+    <p>
+      В обычной схеме нормативно-правовые акты прячутся под подписями стрелок. В операционной карте они — отдельная плоскость: пятьдесят три НПА, у каждого — авторитет, дата редакции, статус источника. Сто девять рёбер между шагами и актами — это и есть площадь, на которой работают коллегиальные обзоры. Карта не обещает, что закон в этой версии — последний. Она обещает, что вы знаете, какую версию проверяли и кто её проверял.
+    </p>
+
+    <p>
+      Доверие к карте удерживается на двух разных дисциплинах: дисциплине ссылок (каждое утверждение — со ссылкой на источник, у источника — состояние ревью), и дисциплине разделения оснований. Норматив, наблюдение и сценарий — это три разных способа измерить длительность одного и того же шага, и складывать их нельзя. Большинство «минус N дней» в публичных оценках цикла — это сложение нескольких оснований без разметки. На этой карте они разделены.
+    </p>
+
+    <blockquote class="pull">
+      Уверенность означает полноту доказательств, а не правовую истину.
+      <cite>— дисциплина источников ИСЦ-2030</cite>
+    </blockquote>
+
+    <h2 class="inline">восемь слайдов — один режим работы</h2>
+
+    <p>
+      У карты есть исполнительный нарратив на восемь слайдов. Это не презентация продукта, а рамка коллегиального обсуждения: на каждом слайде — одно утверждение, одна визуализация и одна оговорка. Слайды 3–6 несут юридические и источниковые caveat-формулировки прямо в подвале.
+    </p>
+
+    <nav class="toc" aria-label="Структура нарратива">
+      <p class="toc-mark">Исполнительный нарратив · 8 слайдов</p>
+      <ol>
+        <li><span><b>Зачем это.</b> ИСЦ нуждается в единой операционной карте поверх жизненного цикла, права, доказательств и исполнения.</span></li>
+        <li><span><b>Цикл — это система.</b> 23 шага следует рассматривать как процессный граф, опирающийся на данные.</span></li>
+        <li><span><b>Правовой слой — опорная конструкция.</b> 53 НПА и 109 связей определяют поверхность ревью.</span></li>
+        <li><span><b>Доказательная уверенность — сигнал готовности.</b> Не «есть ли клетка», а «подтверждено ли утверждение источником в действующей редакции».</span></li>
+        <li><span><b>Узкие места требуют разделения оснований.</b> Нормативные сроки, наблюдаемые задержки и сценарные оценки нельзя складывать.</span></li>
+        <li><span><b>Гейты превращают схему в управление.</b> На каждом переходе — доказательство, владелец, срок, блокер.</span></li>
+        <li><span><b>Control Tower — продуктовое лицо.</b> Тепловая карта плюс очередь действий плюс ящик доказательств; граф — drilldown.</span></li>
+        <li><span><b>Запрос решения.</b> Какой режим первый — исполнительная палуба, юридический проход, или пилот Control Tower? <em>не дорожная карта, а одно решение</em></span></li>
+      </ol>
+    </nav>
+
+    <h2 class="inline">артефакты, которые уже на руках</h2>
+
+    <p>
+      Карту нельзя обсуждать абстрактно — для обсуждения нужны конкретные представления. Ниже — пять рабочих артефактов в порядке, в котором их обычно открывают: от интерактивной схемы к review-пакету, от пакета — к галерее визуальных альтернатив. Все они живут на этом же домене и обновляются по одному и тому же графику.
+    </p>
+
+    <section class="artifacts" aria-label="Артефакты">
+      <dl>
+        <dt>интерактив</dt>
+        <dd>
+          <a href="/">Схема ИСЦ — интерактивный дашборд</a>
+          <small>Полный обзор пяти этапов цикла. Этап → секция → узлы документов и НПА; рёбра между этапами; фильтры по типам и зонам ответственности.</small>
+        </dd>
+
+        <dt>сводка</dt>
+        <dd>
+          <a href="/cockpit/">Cockpit — оперативная палуба</a>
+          <small>Адаптивная shell-сводка для совещаний: ключевые статусы цикла, прогресс к таргету 2030, верхняя очередь действий.</small>
+        </dd>
+
+        <dt>ревью</dt>
+        <dd>
+          <a href="/review.html">Review pack — пакет ревью v3</a>
+          <small>Три плоскости одной картой: исполнительная, юридическая, продуктовый пилот. Подготовлен для экспертного обзора перед хэндофом.</small>
+        </dd>
+
+        <dt>галерея</dt>
+        <dd>
+          <a href="/visuals/">Visuals — галерея концепций</a>
+          <small>Десять редактируемых SVG-концепций: Lifecycle Atlas, Knowledge Graph Hub, Sankey Loss Ledger, Evidence Heatmap Matrix, Control Tower View и другие.</small>
+        </dd>
+
+        <dt>ministry</dt>
+        <dd>
+          <a href="/visuals/review_v3.html">Decision route — министерский маршрут</a>
+          <small>Маршрут v3 для внешнего хэндофа: исполнительный, юридическое доказательство, продуктовый пилот. Сохраняет гейты юридического ревью.</small>
+        </dd>
+      </dl>
+    </section>
+
+    <div class="ornament">· · ·</div>
+
+    <h2 class="inline">что значит «принять решение» здесь</h2>
+
+    <p>
+      Восьмой слайд — единственный, который не объясняет, а спрашивает. Это сознательный выбор: меморандум обязан заканчиваться запросом, а не дорожной картой. Дорожная карта появится только после того, как выбран первый режим работы. Три варианта симметричны по затратам в первой итерации, но дают разные сигналы наружу: один говорит коллегии «у нас есть нарратив», второй — «мы провели юридический проход», третий — «у нас есть рабочий продукт в одном кабинете».
+    </p>
+
+    <aside class="decision">
+      <p class="decision-mark">запрос решения</p>
+      <h2>Какой режим запускаем первым?</h2>
+      <ol>
+        <li><b>Исполнительная палуба.</b> Восьмислайдовый нарратив с appendix на 23 шага. Готов к коллегиальному обзору.</li>
+        <li><b>Юридический проход.</b> Прогон 53 НПА через evidence_matrix.csv: статус источника, действующая редакция, состояние ревью.</li>
+        <li><b>Control Tower pilot.</b> Пилот в одном кабинете: тепловая карта плюс очередь действий плюс drawer доказательств.</li>
+      </ol>
+    </aside>
+
+    <p>
+      Выбор не обязан быть единственным навсегда. Он обязан быть единственным в первой итерации — чтобы у каждого слайда, каждой строки доказательной матрицы и каждой ячейки Control Tower был один ответственный, а не три. После того как первый режим прошёл одну итерацию, остальные подбираются по плану из <a href="/visuals/agent_swarm_plan.md">agent_swarm_plan.md</a> и спецификации <a href="/visuals/control_tower_mvp.md">Control Tower MVP</a>.
+    </p>
+
+    <p>
+      Карта не претендует на финальность. Она претендует на то, что у каждой строки есть автор, источник и состояние ревью. Это, по сегодняшнему опыту, единственное условие, при котором «минус 250 дней к 2030» перестаёт быть лозунгом и становится управляемой величиной.
+    </p>
+
+  </article>
+
+  <footer class="colophon">
+    <div class="colophon-inner">
+      <p>
+        <strong>ИСЦ-2030 · операционная карта.</strong> Черновик для экспертной оценки. Карта зависимостей и доказательств, не юридическое заключение. Источники и методология — в <a href="/visuals/qa_report.md">QA-реестре</a> и <a href="/visuals/visual_grammar.md">визуальной грамматике</a>.
+      </p>
+      <p class="colophon-meta">Опубликовано · 2026·05 · <a href="/">главная</a></p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
