@@ -1,482 +1,150 @@
 {
   "id": "stage5",
-  "name": "Государственный кадастровый учёт + регистрация прав",
+  "name": "Государственный кадастровый учёт, регистрация прав, начало эксплуатации",
   "sections": [
     {
-      "id": "nets",
-      "label": "Электроснабжение / Тепло / Вода / Газ / Водоотведение / Связь",
-      "color": "rgba(27,46,88,0.04)"
+      "id": "cadastre",
+      "label": "Кадастровый учёт, регистрация прав, начало эксплуатации"
     }
   ],
   "nodes": [
     {
-      "id": "s5-electro-label",
-      "type": "condition",
-      "label": "ЭЛЕКТРОСНАБЖЕНИЕ",
+      "id": "s5-techplan",
+      "type": "result",
+      "label": "Технический план",
       "process": "5.1",
       "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
+      "data": {
+        "description": "Технический план",
+        "duration": "14 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "cadastre",
       "row": 0,
       "col": 0
     },
     {
-      "id": "s5-heat-label",
-      "type": "condition",
-      "label": "ТЕПЛО",
+      "id": "s5-kadastr",
+      "type": "process",
+      "label": "Кадастровый учёт",
       "process": "5.1",
       "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
+      "data": {
+        "description": "Постановка на кадастровый учёт",
+        "duration": "7 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "cadastre",
       "row": 0,
       "col": 1
     },
     {
-      "id": "s5-water-label",
-      "type": "condition",
-      "label": "ВОДА",
+      "id": "s5-register",
+      "type": "result",
+      "label": "Регистрация прав",
       "process": "5.1",
       "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
+      "data": {
+        "description": "Регистрация прав на объект",
+        "duration": "9 дн. (без приостановок)"
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "cadastre",
       "row": 0,
       "col": 2
     },
     {
-      "id": "s5-gas-label",
-      "type": "condition",
-      "label": "ГАЗ",
+      "id": "s5-vypiska",
+      "type": "result",
+      "label": "Выписка из ЕГРН",
       "process": "5.1",
       "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
+      "data": {
+        "description": "Выписка из ЕГРН, подтверждающая регистрацию права"
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "cadastre",
       "row": 0,
       "col": 3
     },
     {
-      "id": "s5-sewer-label",
-      "type": "condition",
-      "label": "ВОДООТВЕДЕНИЕ",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 0,
-      "col": 4
-    },
-    {
-      "id": "s5-telecom-label",
-      "type": "condition",
-      "label": "СВЯЗЬ",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 0,
-      "col": 5
-    },
-
-    {
-      "id": "s5-electro-tu",
+      "id": "s5-created",
       "type": "result",
-      "label": "ТУ на подключение",
+      "label": "Объект создан",
       "process": "5.1",
       "track": "offbudget",
-      "data": { "duration": "30 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
+      "data": {
+        "description": "Объект создан",
+        "duration": "180 дней",
+        "wide": true
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "cadastre",
       "row": 1,
       "col": 0
     },
     {
-      "id": "s5-electro-contract",
-      "type": "process",
-      "label": "Договор с ТУ",
+      "id": "s5-exploit",
+      "type": "result",
+      "label": "Начало эксплуатации",
       "process": "5.1",
       "track": "offbudget",
-      "data": { "duration": "30 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
+      "data": {
+        "description": "Ввод объекта в эксплуатацию",
+        "wide": true
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "cadastre",
       "row": 2,
       "col": 0
-    },
-    {
-      "id": "s5-electro-temp",
-      "type": "auxiliary",
-      "label": "Договор на временное подключение к сетям (кроме газа)",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": { "duration": "30 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 3,
-      "col": 0
-    },
-    {
-      "id": "s5-electro-confirm",
-      "type": "result",
-      "label": "Подтверждение выполнения ТУ (Акт о подключении)",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": { "duration": "7 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 4,
-      "col": 0
-    },
-    {
-      "id": "s5-electro-perm",
-      "type": "process",
-      "label": "Договор на постоянное подключение",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 5,
-      "col": 0
-    },
-
-    {
-      "id": "s5-heat-tu",
-      "type": "process",
-      "label": "ТУ на перенос",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 1,
-      "col": 1
-    },
-    {
-      "id": "s5-heat-vynos",
-      "type": "result",
-      "label": "Договор на вынос",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 2,
-      "col": 1
-    },
-    {
-      "id": "s5-heat-perenos",
-      "type": "process",
-      "label": "Перенос сетей",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": { "duration": "40 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 3,
-      "col": 1
-    },
-    {
-      "id": "s5-heat-connect",
-      "type": "result",
-      "label": "Подключение",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": { "duration": "60 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 4,
-      "col": 1
-    },
-    {
-      "id": "s5-heat-confirm",
-      "type": "process",
-      "label": "Подтверждение выполнения ТУ (Акт о подключении)",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 5,
-      "col": 1
-    },
-
-    {
-      "id": "s5-water-tu",
-      "type": "process",
-      "label": "ТУ на перенос",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 1,
-      "col": 2
-    },
-    {
-      "id": "s5-water-vynos",
-      "type": "result",
-      "label": "Договор на вынос",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 2,
-      "col": 2
-    },
-    {
-      "id": "s5-water-perenos",
-      "type": "process",
-      "label": "Перенос сетей",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": { "duration": "40 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 3,
-      "col": 2
-    },
-    {
-      "id": "s5-water-connect",
-      "type": "result",
-      "label": "Подключение",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": { "duration": "60 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 4,
-      "col": 2
-    },
-    {
-      "id": "s5-water-confirm",
-      "type": "process",
-      "label": "Подтверждение выполнения ТУ (Акт о подключении)",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 5,
-      "col": 2
-    },
-
-    {
-      "id": "s5-gas-tu",
-      "type": "process",
-      "label": "ТУ на перенос",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 1,
-      "col": 3
-    },
-    {
-      "id": "s5-gas-vynos",
-      "type": "result",
-      "label": "Договор на вынос",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 2,
-      "col": 3
-    },
-    {
-      "id": "s5-gas-perenos",
-      "type": "process",
-      "label": "Перенос сетей",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": { "duration": "40 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 3,
-      "col": 3
-    },
-    {
-      "id": "s5-gas-connect",
-      "type": "result",
-      "label": "Подключение",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": { "duration": "60 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 4,
-      "col": 3
-    },
-    {
-      "id": "s5-gas-confirm",
-      "type": "process",
-      "label": "Подтверждение выполнения ТУ (Акт о подключении)",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 5,
-      "col": 3
-    },
-
-    {
-      "id": "s5-sewer-tu",
-      "type": "process",
-      "label": "ТУ на перенос",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 1,
-      "col": 4
-    },
-    {
-      "id": "s5-sewer-vynos",
-      "type": "result",
-      "label": "Договор на вынос",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 2,
-      "col": 4
-    },
-    {
-      "id": "s5-sewer-perenos",
-      "type": "process",
-      "label": "Перенос сетей",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": { "duration": "40 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 3,
-      "col": 4
-    },
-    {
-      "id": "s5-sewer-connect",
-      "type": "result",
-      "label": "Подключение",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": { "duration": "60 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 4,
-      "col": 4
-    },
-    {
-      "id": "s5-sewer-confirm",
-      "type": "process",
-      "label": "Подтверждение выполнения ТУ (Акт о подключении)",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 5,
-      "col": 4
-    },
-
-    {
-      "id": "s5-telecom-tu",
-      "type": "process",
-      "label": "ТУ на перенос",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 1,
-      "col": 5
-    },
-    {
-      "id": "s5-telecom-vynos",
-      "type": "result",
-      "label": "Договор на вынос",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 2,
-      "col": 5
-    },
-    {
-      "id": "s5-telecom-perenos",
-      "type": "process",
-      "label": "Перенос сетей",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": { "duration": "40 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 3,
-      "col": 5
-    },
-    {
-      "id": "s5-telecom-connect",
-      "type": "result",
-      "label": "Подключение",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": { "duration": "60 дн." },
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 4,
-      "col": 5
-    },
-    {
-      "id": "s5-telecom-confirm",
-      "type": "process",
-      "label": "Подтверждение выполнения ТУ (Акт о подключении)",
-      "process": "5.1",
-      "track": "offbudget",
-      "data": {},
-      "layers": { "coverage": "full" },
-      "section": "nets",
-      "row": 5,
-      "col": 5
     }
   ],
   "edges": [
-    { "id": "s5-electro-e1", "source": "s5-electro-tu", "target": "s5-electro-contract", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-electro-e2", "source": "s5-electro-contract", "target": "s5-electro-temp", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-electro-e3", "source": "s5-electro-temp", "target": "s5-electro-confirm", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-electro-e4", "source": "s5-electro-confirm", "target": "s5-electro-perm", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-
-    { "id": "s5-heat-e1", "source": "s5-heat-tu", "target": "s5-heat-vynos", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-heat-e2", "source": "s5-heat-vynos", "target": "s5-heat-perenos", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-heat-e3", "source": "s5-heat-perenos", "target": "s5-heat-connect", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-heat-e4", "source": "s5-heat-connect", "target": "s5-heat-confirm", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-
-    { "id": "s5-water-e1", "source": "s5-water-tu", "target": "s5-water-vynos", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-water-e2", "source": "s5-water-vynos", "target": "s5-water-perenos", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-water-e3", "source": "s5-water-perenos", "target": "s5-water-connect", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-water-e4", "source": "s5-water-connect", "target": "s5-water-confirm", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-
-    { "id": "s5-gas-e1", "source": "s5-gas-tu", "target": "s5-gas-vynos", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-gas-e2", "source": "s5-gas-vynos", "target": "s5-gas-perenos", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-gas-e3", "source": "s5-gas-perenos", "target": "s5-gas-connect", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-gas-e4", "source": "s5-gas-connect", "target": "s5-gas-confirm", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-
-    { "id": "s5-sewer-e1", "source": "s5-sewer-tu", "target": "s5-sewer-vynos", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-sewer-e2", "source": "s5-sewer-vynos", "target": "s5-sewer-perenos", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-sewer-e3", "source": "s5-sewer-perenos", "target": "s5-sewer-connect", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-sewer-e4", "source": "s5-sewer-connect", "target": "s5-sewer-confirm", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-
-    { "id": "s5-telecom-e1", "source": "s5-telecom-tu", "target": "s5-telecom-vynos", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-telecom-e2", "source": "s5-telecom-vynos", "target": "s5-telecom-perenos", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-telecom-e3", "source": "s5-telecom-perenos", "target": "s5-telecom-connect", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s5-telecom-e4", "source": "s5-telecom-connect", "target": "s5-telecom-confirm", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" }
+    {
+      "id": "s5-c1",
+      "source": "s5-techplan",
+      "target": "s5-kadastr",
+      "type": "default"
+    },
+    {
+      "id": "s5-c2",
+      "source": "s5-kadastr",
+      "target": "s5-register",
+      "type": "default"
+    },
+    {
+      "id": "s5-c3",
+      "source": "s5-register",
+      "target": "s5-vypiska",
+      "type": "default"
+    },
+    {
+      "id": "s5-c4",
+      "source": "s5-vypiska",
+      "target": "s5-created",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s5-c5",
+      "source": "s5-created",
+      "target": "s5-exploit",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    }
   ]
 }

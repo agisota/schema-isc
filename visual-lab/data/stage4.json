@@ -2,8 +2,19 @@
   "id": "stage4",
   "name": "Строительство, реконструкция объекта капитального строительства, ввод в эксплуатацию",
   "sections": [
-    { "id": "proc", "label": "Включение закупки на СМР" },
-    { "id": "build", "label": "Строительство и ввод в эксплуатацию" }
+    {
+      "id": "proc",
+      "label": "Включение закупки на СМР"
+    },
+    {
+      "id": "build",
+      "label": "Строительство и ввод в эксплуатацию"
+    },
+    {
+      "id": "nets",
+      "label": "Инженерные сети и подключение к РСО",
+      "color": "rgba(27,46,88,0.04)"
+    }
   ],
   "nodes": [
     {
@@ -12,8 +23,13 @@
       "label": "Включение закупки на СМР в план-график",
       "process": "4.procure",
       "track": "budget",
-      "data": { "description": "Включение закупки СМР в план-график", "wide": true },
-      "layers": { "coverage": "full" },
+      "data": {
+        "description": "Включение закупки СМР в план-график",
+        "wide": true
+      },
+      "layers": {
+        "coverage": "full"
+      },
       "section": "proc",
       "row": 0,
       "col": 0
@@ -24,8 +40,12 @@
       "label": "Размещение извещения",
       "process": "4.procure",
       "track": "budget",
-      "data": { "description": "Размещение извещения о закупке" },
-      "layers": { "coverage": "full" },
+      "data": {
+        "description": "Размещение извещения о закупке"
+      },
+      "layers": {
+        "coverage": "full"
+      },
       "section": "proc",
       "row": 0,
       "col": 1
@@ -36,8 +56,13 @@
       "label": "Проведение конкурентных процедур",
       "process": "4.procure",
       "track": "budget",
-      "data": { "description": "Конкурентные процедуры по 44-ФЗ", "wide": true },
-      "layers": { "coverage": "full" },
+      "data": {
+        "description": "Конкурентные процедуры по 44-ФЗ",
+        "wide": true
+      },
+      "layers": {
+        "coverage": "full"
+      },
       "section": "proc",
       "row": 0,
       "col": 2
@@ -48,21 +73,29 @@
       "label": "Подписание контракта и внесение в реестр контрактов",
       "process": "4.procure",
       "track": "budget",
-      "data": { "description": "Подписание контракта и внесение в реестр контрактов", "wide": true },
-      "layers": { "coverage": "full" },
+      "data": {
+        "description": "Подписание контракта и внесение в реестр контрактов",
+        "wide": true
+      },
+      "layers": {
+        "coverage": "full"
+      },
       "section": "proc",
       "row": 0,
       "col": 3
     },
-
     {
       "id": "s4-rs",
       "type": "result",
       "label": "Выдача РС",
       "process": "4.1",
       "track": "offbudget",
-      "data": { "description": "Разрешение на строительство" },
-      "layers": { "coverage": "full" },
+      "data": {
+        "description": "Разрешение на строительство"
+      },
+      "layers": {
+        "coverage": "full"
+      },
       "section": "build",
       "row": 0,
       "col": 0
@@ -73,8 +106,13 @@
       "label": "Начало СМР",
       "process": "4.1",
       "track": "offbudget",
-      "data": { "description": "Извещение органа стройнадзора: 9 дн.", "duration": "9 дн." },
-      "layers": { "coverage": "full" },
+      "data": {
+        "description": "Извещение органа стройнадзора: 9 дн.",
+        "duration": "9 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
       "section": "build",
       "row": 0,
       "col": 1
@@ -85,8 +123,13 @@
       "label": "Завершение СМР",
       "process": "4.1",
       "track": "offbudget",
-      "data": { "description": "Завершение строительно-монтажных работ", "duration": "180 дн." },
-      "layers": { "coverage": "full" },
+      "data": {
+        "description": "Завершение строительно-монтажных работ",
+        "duration": "180 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
       "section": "build",
       "row": 0,
       "col": 2
@@ -97,8 +140,12 @@
       "label": "РВ",
       "process": "4.1",
       "track": "offbudget",
-      "data": { "description": "Разрешение на ввод в эксплуатацию" },
-      "layers": { "coverage": "full" },
+      "data": {
+        "description": "Разрешение на ввод в эксплуатацию"
+      },
+      "layers": {
+        "coverage": "full"
+      },
       "section": "build",
       "row": 1,
       "col": 0
@@ -109,8 +156,13 @@
       "label": "Проверка стройнадзора",
       "process": "4.1",
       "track": "offbudget",
-      "data": { "description": "Проверка ГСН", "duration": "30 дн." },
-      "layers": { "coverage": "full" },
+      "data": {
+        "description": "Проверка ГСН",
+        "duration": "30 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
       "section": "build",
       "row": 1,
       "col": 1
@@ -121,8 +173,13 @@
       "label": "ЗОС",
       "process": "4.1",
       "track": "offbudget",
-      "data": { "description": "Заключение о соответствии", "duration": "14 дн." },
-      "layers": { "coverage": "full" },
+      "data": {
+        "description": "Заключение о соответствии",
+        "duration": "14 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
       "section": "build",
       "row": 1,
       "col": 2
@@ -133,89 +190,808 @@
       "label": "Разрешение на допуск в эксплуатацию объектов электросетевого хозяйства",
       "process": "4.1",
       "track": "offbudget",
-      "data": { "description": "Разрешение на допуск в эксплуатацию объектов электросетевого хозяйства", "wide": true },
-      "layers": { "coverage": "full" },
+      "data": {
+        "description": "Разрешение на допуск в эксплуатацию объектов электросетевого хозяйства",
+        "wide": true
+      },
+      "layers": {
+        "coverage": "full"
+      },
       "section": "build",
       "row": 2,
       "col": 0
     },
     {
-      "id": "s4-exploit",
-      "type": "result",
-      "label": "Начало эксплуатации",
-      "process": "4.1",
+      "id": "s4-net-electro-label",
+      "type": "condition",
+      "label": "ЭЛЕКТРОСНАБЖЕНИЕ",
+      "process": "4.nets",
       "track": "offbudget",
-      "data": { "description": "Ввод объекта в эксплуатацию", "wide": true },
-      "layers": { "coverage": "full" },
-      "section": "build",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "id": "s4-net-heat-label",
+      "type": "condition",
+      "label": "ТЕПЛО",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "id": "s4-net-water-label",
+      "type": "condition",
+      "label": "ВОДА",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "id": "s4-net-gas-label",
+      "type": "condition",
+      "label": "ГАЗ",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "id": "s4-net-sewer-label",
+      "type": "condition",
+      "label": "ВОДООТВЕДЕНИЕ",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "id": "s4-net-telecom-label",
+      "type": "condition",
+      "label": "СВЯЗЬ",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 0,
+      "col": 5
+    },
+    {
+      "id": "s4-net-electro-tu",
+      "type": "result",
+      "label": "ТУ на подключение",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {
+        "duration": "30 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "id": "s4-net-electro-contract",
+      "type": "process",
+      "label": "Договор с ТУ",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {
+        "duration": "30 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "id": "s4-net-electro-temp",
+      "type": "auxiliary",
+      "label": "Договор на временное подключение к сетям (кроме газа)",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {
+        "duration": "30 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
       "row": 3,
       "col": 0
     },
     {
-      "id": "s4-techplan",
+      "id": "s4-net-electro-confirm",
       "type": "result",
-      "label": "Технический план",
-      "process": "4.1",
+      "label": "Подтверждение выполнения ТУ (Акт о подключении)",
+      "process": "4.nets",
       "track": "offbudget",
-      "data": { "description": "Технический план", "duration": "14 дн." },
-      "layers": { "coverage": "full" },
-      "section": "build",
+      "data": {
+        "duration": "7 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
       "row": 4,
       "col": 0
     },
     {
-      "id": "s4-kadastr",
+      "id": "s4-net-electro-perm",
       "type": "process",
-      "label": "Кадастровый учёт",
-      "process": "4.1",
+      "label": "Договор на постоянное подключение",
+      "process": "4.nets",
       "track": "offbudget",
-      "data": { "description": "Постановка на кадастровый учёт", "duration": "7 дн." },
-      "layers": { "coverage": "full" },
-      "section": "build",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 5,
+      "col": 0
+    },
+    {
+      "id": "s4-net-heat-tu",
+      "type": "process",
+      "label": "ТУ на перенос",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "id": "s4-net-heat-vynos",
+      "type": "result",
+      "label": "Договор на вынос",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "id": "s4-net-heat-perenos",
+      "type": "process",
+      "label": "Перенос сетей",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {
+        "duration": "40 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "id": "s4-net-heat-connect",
+      "type": "result",
+      "label": "Подключение",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {
+        "duration": "60 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
       "row": 4,
       "col": 1
     },
     {
-      "id": "s4-register",
-      "type": "result",
-      "label": "Регистрация прав",
-      "process": "4.1",
+      "id": "s4-net-heat-confirm",
+      "type": "process",
+      "label": "Подтверждение выполнения ТУ (Акт о подключении)",
+      "process": "4.nets",
       "track": "offbudget",
-      "data": { "description": "Регистрация прав на объект", "duration": "9 дн. (без приостановок)" },
-      "layers": { "coverage": "full" },
-      "section": "build",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 5,
+      "col": 1
+    },
+    {
+      "id": "s4-net-water-tu",
+      "type": "process",
+      "label": "ТУ на перенос",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "id": "s4-net-water-vynos",
+      "type": "result",
+      "label": "Договор на вынос",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "id": "s4-net-water-perenos",
+      "type": "process",
+      "label": "Перенос сетей",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {
+        "duration": "40 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "id": "s4-net-water-connect",
+      "type": "result",
+      "label": "Подключение",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {
+        "duration": "60 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
       "row": 4,
       "col": 2
     },
     {
-      "id": "s4-created",
-      "type": "result",
-      "label": "Объект создан",
-      "process": "4.1",
+      "id": "s4-net-water-confirm",
+      "type": "process",
+      "label": "Подтверждение выполнения ТУ (Акт о подключении)",
+      "process": "4.nets",
       "track": "offbudget",
-      "data": { "description": "Объект создан", "duration": "180 дней", "wide": true },
-      "layers": { "coverage": "full" },
-      "section": "build",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
       "row": 5,
-      "col": 0
+      "col": 2
+    },
+    {
+      "id": "s4-net-gas-tu",
+      "type": "process",
+      "label": "ТУ на перенос",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "id": "s4-net-gas-vynos",
+      "type": "result",
+      "label": "Договор на вынос",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "id": "s4-net-gas-perenos",
+      "type": "process",
+      "label": "Перенос сетей",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {
+        "duration": "40 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "id": "s4-net-gas-connect",
+      "type": "result",
+      "label": "Подключение",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {
+        "duration": "60 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 4,
+      "col": 3
+    },
+    {
+      "id": "s4-net-gas-confirm",
+      "type": "process",
+      "label": "Подтверждение выполнения ТУ (Акт о подключении)",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 5,
+      "col": 3
+    },
+    {
+      "id": "s4-net-sewer-tu",
+      "type": "process",
+      "label": "ТУ на перенос",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "id": "s4-net-sewer-vynos",
+      "type": "result",
+      "label": "Договор на вынос",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "id": "s4-net-sewer-perenos",
+      "type": "process",
+      "label": "Перенос сетей",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {
+        "duration": "40 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "id": "s4-net-sewer-connect",
+      "type": "result",
+      "label": "Подключение",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {
+        "duration": "60 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 4,
+      "col": 4
+    },
+    {
+      "id": "s4-net-sewer-confirm",
+      "type": "process",
+      "label": "Подтверждение выполнения ТУ (Акт о подключении)",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 5,
+      "col": 4
+    },
+    {
+      "id": "s4-net-telecom-tu",
+      "type": "process",
+      "label": "ТУ на перенос",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 1,
+      "col": 5
+    },
+    {
+      "id": "s4-net-telecom-vynos",
+      "type": "result",
+      "label": "Договор на вынос",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 2,
+      "col": 5
+    },
+    {
+      "id": "s4-net-telecom-perenos",
+      "type": "process",
+      "label": "Перенос сетей",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {
+        "duration": "40 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 3,
+      "col": 5
+    },
+    {
+      "id": "s4-net-telecom-connect",
+      "type": "result",
+      "label": "Подключение",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {
+        "duration": "60 дн."
+      },
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 4,
+      "col": 5
+    },
+    {
+      "id": "s4-net-telecom-confirm",
+      "type": "process",
+      "label": "Подтверждение выполнения ТУ (Акт о подключении)",
+      "process": "4.nets",
+      "track": "offbudget",
+      "data": {},
+      "layers": {
+        "coverage": "full"
+      },
+      "section": "nets",
+      "row": 5,
+      "col": 5
     }
   ],
   "edges": [
-    { "id": "s4-p1", "source": "s4-procure-plan", "target": "s4-procure-notice", "type": "default" },
-    { "id": "s4-p2", "source": "s4-procure-notice", "target": "s4-procure-compete", "type": "default" },
-    { "id": "s4-p3", "source": "s4-procure-compete", "target": "s4-procure-contract", "type": "default" },
-
-    { "id": "s4-b1", "source": "s4-rs", "target": "s4-start", "type": "default" },
-    { "id": "s4-b2", "source": "s4-start", "target": "s4-end", "type": "default" },
-    { "id": "s4-b3", "source": "s4-rs", "target": "s4-rv", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s4-b4", "source": "s4-rv", "target": "s4-gsn", "type": "default" },
-    { "id": "s4-b5", "source": "s4-gsn", "target": "s4-zos", "type": "default" },
-    { "id": "s4-b6", "source": "s4-end", "target": "s4-zos", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s4-b7", "source": "s4-zos", "target": "s4-dopusk", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s4-b8", "source": "s4-dopusk", "target": "s4-exploit", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s4-b9", "source": "s4-exploit", "target": "s4-techplan", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
-    { "id": "s4-b10", "source": "s4-techplan", "target": "s4-kadastr", "type": "default" },
-    { "id": "s4-b11", "source": "s4-kadastr", "target": "s4-register", "type": "default" },
-    { "id": "s4-b12", "source": "s4-register", "target": "s4-created", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" }
+    {
+      "id": "s4-p1",
+      "source": "s4-procure-plan",
+      "target": "s4-procure-notice",
+      "type": "default"
+    },
+    {
+      "id": "s4-p2",
+      "source": "s4-procure-notice",
+      "target": "s4-procure-compete",
+      "type": "default"
+    },
+    {
+      "id": "s4-p3",
+      "source": "s4-procure-compete",
+      "target": "s4-procure-contract",
+      "type": "default"
+    },
+    {
+      "id": "s4-b1",
+      "source": "s4-rs",
+      "target": "s4-start",
+      "type": "default"
+    },
+    {
+      "id": "s4-b2",
+      "source": "s4-start",
+      "target": "s4-end",
+      "type": "default"
+    },
+    {
+      "id": "s4-b3",
+      "source": "s4-rs",
+      "target": "s4-rv",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-b4",
+      "source": "s4-rv",
+      "target": "s4-gsn",
+      "type": "default"
+    },
+    {
+      "id": "s4-b5",
+      "source": "s4-gsn",
+      "target": "s4-zos",
+      "type": "default"
+    },
+    {
+      "id": "s4-b6",
+      "source": "s4-end",
+      "target": "s4-zos",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-b7",
+      "source": "s4-zos",
+      "target": "s4-dopusk",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-electro-e1",
+      "source": "s4-net-electro-tu",
+      "target": "s4-net-electro-contract",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-electro-e2",
+      "source": "s4-net-electro-contract",
+      "target": "s4-net-electro-temp",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-electro-e3",
+      "source": "s4-net-electro-temp",
+      "target": "s4-net-electro-confirm",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-electro-e4",
+      "source": "s4-net-electro-confirm",
+      "target": "s4-net-electro-perm",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-heat-e1",
+      "source": "s4-net-heat-tu",
+      "target": "s4-net-heat-vynos",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-heat-e2",
+      "source": "s4-net-heat-vynos",
+      "target": "s4-net-heat-perenos",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-heat-e3",
+      "source": "s4-net-heat-perenos",
+      "target": "s4-net-heat-connect",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-heat-e4",
+      "source": "s4-net-heat-connect",
+      "target": "s4-net-heat-confirm",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-water-e1",
+      "source": "s4-net-water-tu",
+      "target": "s4-net-water-vynos",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-water-e2",
+      "source": "s4-net-water-vynos",
+      "target": "s4-net-water-perenos",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-water-e3",
+      "source": "s4-net-water-perenos",
+      "target": "s4-net-water-connect",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-water-e4",
+      "source": "s4-net-water-connect",
+      "target": "s4-net-water-confirm",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-gas-e1",
+      "source": "s4-net-gas-tu",
+      "target": "s4-net-gas-vynos",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-gas-e2",
+      "source": "s4-net-gas-vynos",
+      "target": "s4-net-gas-perenos",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-gas-e3",
+      "source": "s4-net-gas-perenos",
+      "target": "s4-net-gas-connect",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-gas-e4",
+      "source": "s4-net-gas-connect",
+      "target": "s4-net-gas-confirm",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-sewer-e1",
+      "source": "s4-net-sewer-tu",
+      "target": "s4-net-sewer-vynos",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-sewer-e2",
+      "source": "s4-net-sewer-vynos",
+      "target": "s4-net-sewer-perenos",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-sewer-e3",
+      "source": "s4-net-sewer-perenos",
+      "target": "s4-net-sewer-connect",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-sewer-e4",
+      "source": "s4-net-sewer-connect",
+      "target": "s4-net-sewer-confirm",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-telecom-e1",
+      "source": "s4-net-telecom-tu",
+      "target": "s4-net-telecom-vynos",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-telecom-e2",
+      "source": "s4-net-telecom-vynos",
+      "target": "s4-net-telecom-perenos",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-telecom-e3",
+      "source": "s4-net-telecom-perenos",
+      "target": "s4-net-telecom-connect",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s4-net-telecom-e4",
+      "source": "s4-net-telecom-connect",
+      "target": "s4-net-telecom-confirm",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    }
   ]
 }
