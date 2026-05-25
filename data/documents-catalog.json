@@ -3451,7 +3451,7 @@
       ],
       "regulatory_basis": [
         {
-          "npa_id": "npa-зк-р",
+          "npa_id": "npa-зк-рф",
           "section": null,
           "raw_text": "ЗК Р"
         }
@@ -3480,7 +3480,7 @@
       ],
       "regulatory_basis": [
         {
-          "npa_id": "npa-зк-р",
+          "npa_id": "npa-зк-рф",
           "section": null,
           "raw_text": "ЗК Р"
         }
@@ -12416,7 +12416,7 @@
       ],
       "regulatory_basis": [
         {
-          "npa_id": "npa-водный-кодекс-рф",
+          "npa_id": "npa-вк-рф",
           "section": null,
           "raw_text": "Водный кодекс РФ"
         }

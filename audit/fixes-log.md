@@ -40,10 +40,26 @@ construction phase (Этап 4).
 
 **Audit docs:** `original-map.md`, `content-parity.md`, `visual-parity.md` created.
 
+## Increment 2 — NPA catalog cleanup
+
+**Script:** `audit/scripts/fix-npa.py` (idempotent, date-aware). Audit trail →
+`audit/npa-fixes.json` (29 entries, each `requires_legal_verification: true`).
+
+- **27 garbled numbers** fixed by grouping entries by date so siblings reveal the
+  real act number, then choosing base length 3/4 that keeps all clauses ≤2 digits
+  with maximal base sharing. Examples: `№ 11961`→`№ 1196 п.1`,
+  `№ 12213`→`№ 1221 п.3`, same-date `211520/212725/213020`→`2115/2127/2130`.
+- **2 duplicate acts merged:** `npa-водный-кодекс-рф`→`npa-вк-рф`,
+  `npa-зк-р`→`npa-зк-рф`; 3 `documents-catalog` `npa_id` refs remapped.
+- `npa-catalog.json` 153→151 entries (both `data/` and `visual-lab/data/`);
+  `documents-catalog.json` refs updated (root only).
+- `validate.py` → 0 garbled, 0 duplicate-act groups, 0 errors.
+
+> Caveat: number splits are heuristic. A real multi-digit act could be
+> mis-split — every change is flagged for legal verification against pravo.gov.ru.
+
 ## Pending (next increments)
 
-- NPA cleanup: 27 garbled numbers + 2 duplicate-act groups (ВК РФ, ЗК РФ) —
-  date-aware `fix-npa.py` + `npa-fixes.json` with `requires_legal_verification`.
 - Wire `documents-catalog.json` + `layout-overrides.json` into the loader.
 - Render hidden types (`condition`/`document`/`documentList`/`sidebar`).
 - Vite build migration; visual/edge/a11y/contrast work (Phase 3); ValidationPanel.
