@@ -29,7 +29,7 @@ function App() {
   );
   const [selected, setSelected] = useStateA(null);
   const [activeRoute, setActiveRoute] = useStateA("all");
-  const [visibleTypes, setVisibleTypes] = useStateA(new Set(["process", "result", "auxiliary", "alternative"]));
+  const [visibleTypes, setVisibleTypes] = useStateA(new Set(["process", "result", "auxiliary", "alternative", "condition", "document", "documentList", "group"]));
   const [criticalMode, setCriticalMode] = useStateA(false);
   const [usesLaterVisible, setUsesLaterVisible] = useStateA(false);
   const [activeStage, setActiveStage] = useStateA("stage1");

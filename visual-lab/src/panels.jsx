@@ -326,6 +326,9 @@ function LeftRail({
     { id: "result", label: "Результаты" },
     { id: "auxiliary", label: "Вспомог." },
     { id: "alternative", label: "Альтернативы" },
+    { id: "condition", label: "Условия / разделы" },
+    { id: "document", label: "Документы" },
+    { id: "documentList", label: "Перечни" },
   ];
 
   return (

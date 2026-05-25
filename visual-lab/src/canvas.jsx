@@ -107,7 +107,7 @@ function NodeBox({ node, pos, selected, highlighted, dimLevel, onSelect, mode })
         aria-label={node.label}
       >
         <span className="node-track" />
-        <div className="node-label">{node.label}</div>
+        <div className="node-label">{node.label || (node.type === "documentList" ? `Перечень документов (${node.rawData?.items?.length || 0})` : "")}</div>
         {(mode !== "executive" && (node.process || node.duration)) && (
           <div className="node-meta">
             {node.process && <span className="node-proc">{node.process}</span>}

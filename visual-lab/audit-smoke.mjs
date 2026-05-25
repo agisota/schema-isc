@@ -54,6 +54,8 @@ const checks = {
   mounted: root.childElementCount > 0,
   hasStageTab: /Этап\s*1/.test(html),
   stage5Cadastre: /Кадастров|Регистрация прав|Выписка/.test(html),
+  conditionNodesVisible: /ЭЛЕКТРОСНАБЖЕНИЕ|ТЕПЛО|ВОДООТВЕДЕНИЕ/.test(html),
+  documentNodesVisible: /Перечень документов|Сбор обосновывающих/.test(html),
   noFatalErrors: errors.length === 0,
 };
 console.log("\n=== SMOKE RESULTS ===");

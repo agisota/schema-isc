@@ -907,6 +907,45 @@ button { font-family: inherit; }
   color: var(--color-warn);
 }
 
+/* condition — utility/section header band (e.g. ЭЛЕКТРОСНАБЖЕНИЕ, ТЕПЛО …) */
+.node[data-type="condition"] {
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+  align-items: center;
+  justify-content: center;
+}
+.node[data-type="condition"] .node-track { display: none; }
+.node[data-type="condition"] .node-label {
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-left: 0;
+}
+
+/* document — dashed paper card */
+.node[data-type="document"] {
+  background: var(--color-panel);
+  border-style: dashed;
+  border-color: var(--color-line-hard);
+}
+.node[data-type="document"] .node-label { font-style: normal; }
+
+/* documentList — stacked-sheets card */
+.node[data-type="documentList"] {
+  background: var(--color-panel-2);
+  border-style: dashed;
+  box-shadow: 3px 3px 0 -1px var(--color-panel-2), 3px 3px 0 0 var(--color-line);
+}
+.node[data-type="documentList"] .node-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-style: normal;
+}
+
 .node-meta {
   display: flex;
   gap: 6px;

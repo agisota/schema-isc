@@ -34,6 +34,10 @@ const NODE_TYPE_LABELS = {
   result: "Результат",
   auxiliary: "Вспомогательный",
   alternative: "Альтернатива",
+  condition: "Условие / раздел",
+  document: "Документ",
+  documentList: "Перечень документов",
+  group: "Группа",
 };
 
 async function loadModel() {

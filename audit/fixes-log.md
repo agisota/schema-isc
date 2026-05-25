@@ -85,9 +85,28 @@ Replaced the Babel-standalone + CDN-React runtime with a real Vite + React build
 > Limitation: no real-browser visual check possible in this environment (browser
 > download CDN blocked). jsdom smoke covers mount + content, not pixel layout.
 
+## Increment 4 — render previously-hidden node types
+
+The type filter only knew `process/result/auxiliary/alternative`, so the 10
+`condition`/`document`/`documentList` nodes were filtered out and never drawn.
+
+- `NODE_TYPE_LABELS` (data-loader) + default `visibleTypes` (app.jsx) + the type
+  filter UI (panels.jsx) now include `condition`/`document`/`documentList`/`group`.
+- `styles.css`: `condition` renders as a navy header band (the utility headers
+  ЭЛЕКТРОСНАБЖЕНИЕ/ТЕПЛО/…); `document` as a dashed paper card; `documentList` as a
+  stacked-sheets card. `NodeBox` shows a computed label for empty `documentList`.
+- Smoke test extended: `conditionNodesVisible` + `documentNodesVisible` → PASS.
+
 ## Pending (next increments)
 
-- Wire `documents-catalog.json` + `layout-overrides.json` into the loader.
+- Render stage-1 `sidebar` blocks (`s1-grad`/`cat`/`gp`/`pzz`/`dpt`) — needs careful
+  layout (collision risk with the existing `main` grid + labelCols); deferred to a
+  visually-verified pass (`layout.jsx:101`).
+- Wire `documents-catalog.json` + `layout-overrides.json` into the loader; enrich the
+  inspector with related documents + cleaned NPA + original-reference.
+- Phase 3 visual polish: edge anchor/routing tuning, contrast→WCAG 2.2 AA, keyboard
+  a11y (`focus-visible`/`prefers-reduced-motion`/`@media print`/node `aria-label`),
+  expanded search; ValidationPanel surfacing.
 - Render hidden types (`condition`/`document`/`documentList`/`sidebar`).
 - Vite build migration; visual/edge/a11y/contrast work (Phase 3); ValidationPanel.
 
