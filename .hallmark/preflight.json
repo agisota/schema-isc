@@ -1,0 +1,63 @@
+{
+  "scan_date": "2026-05-25",
+  "project": {
+    "repo": "agisota/schema-isc",
+    "type": "static-export-plus-handbuilt",
+    "framework_detected": "Next.js (static export)",
+    "handbuilt_pages": ["review.html"],
+    "hosting": "GitHub Pages",
+    "domain": "go.buildworth.org",
+    "cdn": "Cloudflare proxy"
+  },
+  "preserved_design_system": {
+    "palette": {
+      "paper": "#f7f3ea",
+      "panel": "#fffdf8",
+      "ink": "#111827",
+      "muted": "#5f6675",
+      "navy": "#172b55",
+      "navy_2": "#223b70",
+      "gold": "#d9b83a",
+      "green": "#287a39",
+      "steel": "#6e7480",
+      "line": "rgba(23, 43, 85, 0.16)",
+      "soft": "rgba(23, 43, 85, 0.08)"
+    },
+    "type": {
+      "display": "Georgia / Times New Roman / serif",
+      "body": "Aptos / Segoe UI Variable / SF Pro Display / system-ui"
+    },
+    "motion": {
+      "ease": "cubic-bezier(0.32, 0.72, 0, 1)",
+      "duration_baseline_ms": 520
+    },
+    "language": "ru",
+    "register": "B2G ministerial"
+  },
+  "preserved_data_contract": {
+    "stages": ["data/stage1.json", "data/stage2.json", "data/stage3.json", "data/stage4.json", "data/stage5.json"],
+    "documents": "data/documents-catalog.json (774 records)",
+    "npa": "data/npa-catalog.json (153 records)",
+    "edges": "data/cross-stage-edges.json",
+    "layout": "data/layout-overrides.json"
+  },
+  "introduced_by_hallmark": [
+    "macrostructure: Stat-Led",
+    "locked-tokens discipline (tokens.css)",
+    "69-gate slop-test pass",
+    "8-state interaction discipline",
+    "mobile-perfect (320 / 375 / 414 / 768)",
+    "structural variety: differs from review.html (which was Long Document)",
+    "WCAG AA focus-visible discipline"
+  ],
+  "not_touched": [
+    "index.html",
+    "cockpit.html",
+    "review.html",
+    "_next/",
+    "data/",
+    "visuals/",
+    "CNAME",
+    ".nojekyll"
+  ]
+}
