@@ -1,0 +1,1079 @@
+{
+  "nodes": {
+    "header-stage1": {
+      "x": 9,
+      "y": -40,
+      "width": 1330,
+      "height": 98
+    },
+    "section-serv-stage1": {
+      "x": -3,
+      "y": 483,
+      "width": 1332,
+      "height": 142
+    },
+    "section-okn-stage1": {
+      "x": -3,
+      "y": 632,
+      "width": 1333,
+      "height": 344
+    },
+    "s1-grad": {
+      "x": 10,
+      "y": 71,
+      "width": 200,
+      "height": 81
+    },
+    "s1-cat": {
+      "x": 11,
+      "y": 173,
+      "width": 194,
+      "height": 36
+    },
+    "s1-gp": {
+      "x": 11,
+      "y": 246,
+      "width": 194,
+      "height": 36
+    },
+    "s1-pzz": {
+      "x": 10,
+      "y": 325,
+      "width": 194,
+      "height": 36
+    },
+    "s1-dpt": {
+      "x": 7,
+      "y": 400,
+      "width": 194,
+      "height": 36
+    },
+    "s1-cond-formed": {
+      "x": 310,
+      "y": 71,
+      "width": 146,
+      "height": 37
+    },
+    "s1-private": {
+      "x": 466,
+      "y": 71,
+      "width": 135,
+      "height": 36
+    },
+    "s1-petition": {
+      "x": 614,
+      "y": 70,
+      "width": 135,
+      "height": 36
+    },
+    "s1-decision": {
+      "x": 765,
+      "y": 70,
+      "width": 135,
+      "height": 36
+    },
+    "s1-agreement": {
+      "x": 914,
+      "y": 70,
+      "width": 135,
+      "height": 36
+    },
+    "s1-court": {
+      "x": 1060,
+      "y": 66,
+      "width": 120,
+      "height": 36
+    },
+    "s1-public-encumbered": {
+      "x": 466,
+      "y": 113,
+      "width": 437,
+      "height": 36
+    },
+    "s1-stop-rights": {
+      "x": 915,
+      "y": 115,
+      "width": 330,
+      "height": 36
+    },
+    "s1-public": {
+      "x": 465,
+      "y": 156,
+      "width": 212,
+      "height": 36
+    },
+    "s1-redistribute": {
+      "x": 688,
+      "y": 157,
+      "width": 213,
+      "height": 36
+    },
+    "s1-dpt-ref": {
+      "x": 917,
+      "y": 156,
+      "width": 158,
+      "height": 36
+    },
+    "s1-conclude-agreement": {
+      "x": 1085,
+      "y": 156,
+      "width": 170,
+      "height": 36
+    },
+    "s1-no-torgi-label": {
+      "x": 220,
+      "y": 68,
+      "width": 81,
+      "height": 298
+    },
+    "s1-pbp": {
+      "x": 306,
+      "y": 199,
+      "width": 938,
+      "height": 36
+    },
+    "s1-not-formed": {
+      "x": 308,
+      "y": 240,
+      "width": 222,
+      "height": 36
+    },
+    "s1-schema-kpt": {
+      "x": 561,
+      "y": 239,
+      "width": 450,
+      "height": 36
+    },
+    "s1-approve-schema": {
+      "x": 1041,
+      "y": 239,
+      "width": 203,
+      "height": 36
+    },
+    "s1-pmt-ref": {
+      "x": 461,
+      "y": 284,
+      "width": 784,
+      "height": 36
+    },
+    "s1-mezhevoy": {
+      "x": 309,
+      "y": 326,
+      "width": 246,
+      "height": 36
+    },
+    "s1-cadastr": {
+      "x": 562,
+      "y": 326,
+      "width": 451,
+      "height": 36
+    },
+    "s1-reg-rights": {
+      "x": 1000,
+      "y": 326,
+      "width": 180,
+      "height": 36
+    },
+    "s1-torgi-label": {
+      "x": 219,
+      "y": 376,
+      "width": 80,
+      "height": 83
+    },
+    "s1-torgi-formed": {
+      "x": 312,
+      "y": 378,
+      "width": 144,
+      "height": 80
+    },
+    "s1-auction-decision": {
+      "x": 478,
+      "y": 380,
+      "width": 150,
+      "height": 77
+    },
+    "s1-publish": {
+      "x": 647,
+      "y": 379,
+      "width": 156,
+      "height": 74
+    },
+    "s1-auction": {
+      "x": 824,
+      "y": 377,
+      "width": 190,
+      "height": 36
+    },
+    "s1-protocol": {
+      "x": 822,
+      "y": 417,
+      "width": 191,
+      "height": 36
+    },
+    "s1-contract": {
+      "x": 1043,
+      "y": 380,
+      "width": 204,
+      "height": 71
+    },
+    "s1-serv-public": {
+      "x": 6,
+      "y": 530,
+      "width": 196,
+      "height": 36
+    },
+    "s1-serv-dpt": {
+      "x": 229,
+      "y": 530,
+      "width": 239,
+      "height": 36
+    },
+    "s1-serv-decision": {
+      "x": 495,
+      "y": 530,
+      "width": 342,
+      "height": 36
+    },
+    "s1-serv-agreement": {
+      "x": 859,
+      "y": 530,
+      "width": 377,
+      "height": 36
+    },
+    "s1-serv-private": {
+      "x": 5,
+      "y": 580,
+      "width": 198,
+      "height": 36
+    },
+    "s1-serv-private-agreement": {
+      "x": 229,
+      "y": 581,
+      "width": 1010,
+      "height": 36
+    },
+    "s1-okn-update": {
+      "x": 19,
+      "y": 677,
+      "width": 1303,
+      "height": 36
+    },
+    "s1-okn-task": {
+      "x": 19,
+      "y": 726,
+      "width": 596,
+      "height": 36
+    },
+    "s1-okn-research-permit": {
+      "x": 655,
+      "y": 726,
+      "width": 665,
+      "height": 36
+    },
+    "s1-okn-research": {
+      "x": 15,
+      "y": 777,
+      "width": 1303,
+      "height": 56
+    },
+    "s1-okn-agree-pd": {
+      "x": 12,
+      "y": 857,
+      "width": 600,
+      "height": 36
+    },
+    "s1-okn-work-permit": {
+      "x": 657,
+      "y": 857,
+      "width": 661,
+      "height": 36
+    },
+    "s1-okn-control": {
+      "x": 9,
+      "y": 907,
+      "width": 1308,
+      "height": 56
+    },
+    "divider-main-okn-stage1": {
+      "x": 1260,
+      "y": 64,
+      "width": 59,
+      "height": 209
+    },
+    "divider-main-zu-stage1": {
+      "x": 1261,
+      "y": 281,
+      "width": 59,
+      "height": 188
+    },
+    "divider-serv-stage1": {
+      "x": 1263,
+      "y": 520,
+      "width": 60,
+      "height": 101
+    },
+    "divider-okn-stage1": {
+      "x": 3417,
+      "y": 385,
+      "width": 45,
+      "height": 238
+    },
+    "header-stage2": {
+      "x": 1453,
+      "y": -44,
+      "width": 545,
+      "height": 75
+    },
+    "section-zouit-stage2": {
+      "x": 1452,
+      "y": 68,
+      "width": 545,
+      "height": 90
+    },
+    "section-grad-stage2": {
+      "x": 1450,
+      "y": 164,
+      "width": 545,
+      "height": 240
+    },
+    "section-ird-stage2": {
+      "x": 1450,
+      "y": 413,
+      "width": 555,
+      "height": 285
+    },
+    "s2-zouit-approve": {
+      "x": 1462,
+      "y": 112,
+      "width": 245,
+      "height": 36
+    },
+    "s2-zouit-project": {
+      "x": 1737,
+      "y": 111,
+      "width": 245,
+      "height": 36
+    },
+    "s2-ps-oo": {
+      "x": 1461,
+      "y": 206,
+      "width": 155,
+      "height": 36
+    },
+    "s2-pzz-approve": {
+      "x": 1651,
+      "y": 206,
+      "width": 142,
+      "height": 36
+    },
+    "s2-dpt-not": {
+      "x": 1828,
+      "y": 205,
+      "width": 153,
+      "height": 36
+    },
+    "s2-dpt-decision": {
+      "x": 1461,
+      "y": 252,
+      "width": 247,
+      "height": 36
+    },
+    "s2-dpt-oo": {
+      "x": 1739,
+      "y": 253,
+      "width": 242,
+      "height": 36
+    },
+    "s2-pzz-changes": {
+      "x": 1461,
+      "y": 296,
+      "width": 154,
+      "height": 36
+    },
+    "s2-pzz-approve-decision": {
+      "x": 1650,
+      "y": 295,
+      "width": 146,
+      "height": 36
+    },
+    "s2-gpzu": {
+      "x": 1827,
+      "y": 295,
+      "width": 156,
+      "height": 36
+    },
+    "s2-deviation": {
+      "x": 1461,
+      "y": 339,
+      "width": 246,
+      "height": 49
+    },
+    "s2-vri": {
+      "x": 1742,
+      "y": 343,
+      "width": 241,
+      "height": 48
+    },
+    "s2-ird-constraints": {
+      "x": 1464,
+      "y": 456,
+      "width": 527,
+      "height": 36
+    },
+    "s2-ird-tu-nets": {
+      "x": 1465,
+      "y": 502,
+      "width": 526,
+      "height": 36
+    },
+    "s2-ird-materials": {
+      "x": 1466,
+      "y": 550,
+      "width": 527,
+      "height": 36
+    },
+    "s2-ird-ago": {
+      "x": 1469,
+      "y": 598,
+      "width": 525,
+      "height": 36
+    },
+    "s2-ird-okn-info": {
+      "x": 1470,
+      "y": 649,
+      "width": 525,
+      "height": 36
+    },
+    "s2-ird-label": {
+      "x": 3199,
+      "y": 606,
+      "width": 135,
+      "height": 36
+    },
+    "header-stage3": {
+      "x": 2177,
+      "y": -43,
+      "width": 899,
+      "height": 98
+    },
+    "section-proc-stage3": {
+      "x": 2175,
+      "y": 56,
+      "width": 902,
+      "height": 118
+    },
+    "section-budget-stage3": {
+      "x": 2177,
+      "y": 178,
+      "width": 901,
+      "height": 735
+    },
+    "section-design-stage3": {
+      "x": 2172,
+      "y": 933,
+      "width": 907,
+      "height": 294
+    },
+    "s3-procure-label": {
+      "x": 3195,
+      "y": 432,
+      "width": 135,
+      "height": 36
+    },
+    "s3-plan": {
+      "x": 2190,
+      "y": 97,
+      "width": 159,
+      "height": 36
+    },
+    "s3-notice": {
+      "x": 2372,
+      "y": 96,
+      "width": 170,
+      "height": 36
+    },
+    "s3-competition": {
+      "x": 2567,
+      "y": 96,
+      "width": 191,
+      "height": 36
+    },
+    "s3-contract": {
+      "x": 2783,
+      "y": 97,
+      "width": 262,
+      "height": 36
+    },
+    "s3-ers": {
+      "x": 3191,
+      "y": 671,
+      "width": 135,
+      "height": 36
+    },
+    "s3-ers-proposal": {
+      "x": 3194,
+      "y": 547,
+      "width": 175,
+      "height": 36
+    },
+    "s3-ers-agree": {
+      "x": 3196,
+      "y": 488,
+      "width": 135,
+      "height": 36
+    },
+    "s3-ers-gov": {
+      "x": 3193,
+      "y": 379,
+      "width": 135,
+      "height": 36
+    },
+    "s3-budget-docs": {
+      "x": 2572,
+      "y": 219,
+      "width": 474,
+      "height": 36
+    },
+    "s3-budget-docs-list": {
+      "x": 2572,
+      "y": 261,
+      "width": 477,
+      "height": 130
+    },
+    "s3-budget-proposals": {
+      "x": 2192,
+      "y": 218,
+      "width": 353,
+      "height": 36
+    },
+    "s3-budget-review": {
+      "x": 2191,
+      "y": 277,
+      "width": 355,
+      "height": 36
+    },
+    "s3-budget-giis": {
+      "x": 2191,
+      "y": 337,
+      "width": 356,
+      "height": 36
+    },
+    "s3-budget-project": {
+      "x": 2573,
+      "y": 402,
+      "width": 477,
+      "height": 36
+    },
+    "s3-budget-load": {
+      "x": 2191,
+      "y": 392,
+      "width": 355,
+      "height": 36
+    },
+    "s3-budget-minfin2": {
+      "x": 2573,
+      "y": 450,
+      "width": 225,
+      "height": 36
+    },
+    "s3-budget-executor": {
+      "x": 2191,
+      "y": 447,
+      "width": 356,
+      "height": 36
+    },
+    "s3-budget-minek2": {
+      "x": 2824,
+      "y": 448,
+      "width": 225,
+      "height": 36
+    },
+    "s3-budget-minek-fas": {
+      "x": 2191,
+      "y": 500,
+      "width": 358,
+      "height": 36
+    },
+    "s3-budget-agree-project": {
+      "x": 2575,
+      "y": 499,
+      "width": 476,
+      "height": 36
+    },
+    "s3-budget-rg": {
+      "x": 2192,
+      "y": 552,
+      "width": 356,
+      "height": 36
+    },
+    "s3-budget-gov-approve": {
+      "x": 2576,
+      "y": 551,
+      "width": 478,
+      "height": 36
+    },
+    "s3-budget-ball": {
+      "x": 2191,
+      "y": 604,
+      "width": 358,
+      "height": 36
+    },
+    "s3-budget-minstroy-tech": {
+      "x": 2576,
+      "y": 602,
+      "width": 478,
+      "height": 36
+    },
+    "s3-budget-shtab": {
+      "x": 2189,
+      "y": 657,
+      "width": 359,
+      "height": 36
+    },
+    "s3-budget-executor-proposal": {
+      "x": 2577,
+      "y": 656,
+      "width": 478,
+      "height": 36
+    },
+    "s3-budget-minfin": {
+      "x": 2187,
+      "y": 707,
+      "width": 359,
+      "height": 36
+    },
+    "s3-budget-commission": {
+      "x": 2187,
+      "y": 757,
+      "width": 360,
+      "height": 36
+    },
+    "s3-budget-minstroy-rocs": {
+      "x": 2187,
+      "y": 809,
+      "width": 360,
+      "height": 36
+    },
+    "s3-budget-federal": {
+      "x": 2188,
+      "y": 860,
+      "width": 360,
+      "height": 36
+    },
+    "s3-ii-program": {
+      "x": 2191,
+      "y": 978,
+      "width": 161,
+      "height": 36
+    },
+    "s3-ii-conduct": {
+      "x": 2375,
+      "y": 977,
+      "width": 175,
+      "height": 36
+    },
+    "s3-ii-tz": {
+      "x": 2571,
+      "y": 978,
+      "width": 143,
+      "height": 36
+    },
+    "s3-ii-tz-approve": {
+      "x": 2740,
+      "y": 977,
+      "width": 143,
+      "height": 36
+    },
+    "s3-ii-design": {
+      "x": 2908,
+      "y": 977,
+      "width": 128,
+      "height": 36
+    },
+    "s3-expertise": {
+      "x": 2189,
+      "y": 1032,
+      "width": 363,
+      "height": 36
+    },
+    "s3-exp-nonstate": {
+      "x": 2189,
+      "y": 1084,
+      "width": 364,
+      "height": 36
+    },
+    "s3-gee": {
+      "x": 2572,
+      "y": 1083,
+      "width": 469,
+      "height": 36
+    },
+    "s3-gike": {
+      "x": 2571,
+      "y": 1032,
+      "width": 467,
+      "height": 36
+    },
+    "s3-gike-agree": {
+      "x": 2572,
+      "y": 1129,
+      "width": 471,
+      "height": 36
+    },
+    "s3-teo": {
+      "x": 2573,
+      "y": 1178,
+      "width": 473,
+      "height": 36
+    },
+    "s3-conclusion": {
+      "x": 2190,
+      "y": 1132,
+      "width": 362,
+      "height": 36
+    },
+    "header-stage4": {
+      "x": 3652,
+      "y": -20,
+      "width": 1047,
+      "height": 98
+    },
+    "section-proc-stage4": {
+      "x": 3649,
+      "y": 75,
+      "width": 1047,
+      "height": 110
+    },
+    "section-build-stage4": {
+      "x": 3649,
+      "y": 200,
+      "width": 1047,
+      "height": 480
+    },
+    "s4-procure-plan": {
+      "x": 3744,
+      "y": 115,
+      "width": 180,
+      "height": 56
+    },
+    "s4-procure-notice": {
+      "x": 3939,
+      "y": 115,
+      "width": 180,
+      "height": 56
+    },
+    "s4-procure-compete": {
+      "x": 4134,
+      "y": 115,
+      "width": 180,
+      "height": 56
+    },
+    "s4-procure-contract": {
+      "x": 4329,
+      "y": 115,
+      "width": 270,
+      "height": 56
+    },
+    "s4-rs": {
+      "x": 3734,
+      "y": 230,
+      "width": 240,
+      "height": 56
+    },
+    "s4-start": {
+      "x": 3989,
+      "y": 230,
+      "width": 300,
+      "height": 56
+    },
+    "s4-end": {
+      "x": 4304,
+      "y": 230,
+      "width": 300,
+      "height": 56
+    },
+    "s4-rv": {
+      "x": 3734,
+      "y": 306,
+      "width": 100,
+      "height": 56
+    },
+    "s4-gsn": {
+      "x": 3989,
+      "y": 306,
+      "width": 300,
+      "height": 56
+    },
+    "s4-zos": {
+      "x": 4304,
+      "y": 306,
+      "width": 300,
+      "height": 56
+    },
+    "s4-dopusk": {
+      "x": 3734,
+      "y": 382,
+      "width": 870,
+      "height": 56
+    },
+    "s4-exploit": {
+      "x": 3734,
+      "y": 458,
+      "width": 870,
+      "height": 56
+    },
+    "s4-techplan": {
+      "x": 3734,
+      "y": 534,
+      "width": 240,
+      "height": 56
+    },
+    "s4-kadastr": {
+      "x": 3989,
+      "y": 534,
+      "width": 300,
+      "height": 56
+    },
+    "s4-register": {
+      "x": 4304,
+      "y": 534,
+      "width": 300,
+      "height": 56
+    },
+    "s4-created": {
+      "x": 3734,
+      "y": 610,
+      "width": 870,
+      "height": 56
+    },
+    "header-stage5": {
+      "x": 4726,
+      "y": -24,
+      "width": 1613,
+      "height": 98
+    },
+    "section-nets-stage5": {
+      "x": 4726,
+      "y": 75,
+      "width": 1613,
+      "height": 580
+    },
+    "s5-electro-label": {
+      "x": 4756,
+      "y": 110,
+      "width": 250,
+      "height": 24
+    },
+    "s5-heat-label": {
+      "x": 5016,
+      "y": 110,
+      "width": 250,
+      "height": 24
+    },
+    "s5-water-label": {
+      "x": 5276,
+      "y": 110,
+      "width": 250,
+      "height": 24
+    },
+    "s5-gas-label": {
+      "x": 5536,
+      "y": 110,
+      "width": 250,
+      "height": 24
+    },
+    "s5-sewer-label": {
+      "x": 5796,
+      "y": 110,
+      "width": 250,
+      "height": 24
+    },
+    "s5-telecom-label": {
+      "x": 6056,
+      "y": 110,
+      "width": 250,
+      "height": 24
+    },
+    "s5-electro-tu": {
+      "x": 4756,
+      "y": 144,
+      "width": 250,
+      "height": 68
+    },
+    "s5-electro-contract": {
+      "x": 4756,
+      "y": 224,
+      "width": 250,
+      "height": 68
+    },
+    "s5-electro-temp": {
+      "x": 4756,
+      "y": 304,
+      "width": 250,
+      "height": 130
+    },
+    "s5-electro-confirm": {
+      "x": 4756,
+      "y": 446,
+      "width": 250,
+      "height": 90
+    },
+    "s5-electro-perm": {
+      "x": 4756,
+      "y": 548,
+      "width": 250,
+      "height": 90
+    },
+    "s5-heat-tu": {
+      "x": 5016,
+      "y": 174,
+      "width": 250,
+      "height": 58
+    },
+    "s5-heat-vynos": {
+      "x": 5016,
+      "y": 244,
+      "width": 250,
+      "height": 58
+    },
+    "s5-heat-perenos": {
+      "x": 5016,
+      "y": 314,
+      "width": 250,
+      "height": 68
+    },
+    "s5-heat-connect": {
+      "x": 5016,
+      "y": 394,
+      "width": 250,
+      "height": 68
+    },
+    "s5-heat-confirm": {
+      "x": 5016,
+      "y": 474,
+      "width": 250,
+      "height": 90
+    },
+    "s5-water-tu": {
+      "x": 5276,
+      "y": 174,
+      "width": 250,
+      "height": 58
+    },
+    "s5-water-vynos": {
+      "x": 5276,
+      "y": 244,
+      "width": 250,
+      "height": 58
+    },
+    "s5-water-perenos": {
+      "x": 5276,
+      "y": 314,
+      "width": 250,
+      "height": 68
+    },
+    "s5-water-connect": {
+      "x": 5276,
+      "y": 394,
+      "width": 250,
+      "height": 68
+    },
+    "s5-water-confirm": {
+      "x": 5276,
+      "y": 474,
+      "width": 250,
+      "height": 90
+    },
+    "s5-gas-tu": {
+      "x": 5536,
+      "y": 174,
+      "width": 250,
+      "height": 58
+    },
+    "s5-gas-vynos": {
+      "x": 5536,
+      "y": 244,
+      "width": 250,
+      "height": 58
+    },
+    "s5-gas-perenos": {
+      "x": 5536,
+      "y": 314,
+      "width": 250,
+      "height": 68
+    },
+    "s5-gas-connect": {
+      "x": 5536,
+      "y": 394,
+      "width": 250,
+      "height": 68
+    },
+    "s5-gas-confirm": {
+      "x": 5536,
+      "y": 474,
+      "width": 250,
+      "height": 90
+    },
+    "s5-sewer-tu": {
+      "x": 5796,
+      "y": 174,
+      "width": 250,
+      "height": 58
+    },
+    "s5-sewer-vynos": {
+      "x": 5796,
+      "y": 244,
+      "width": 250,
+      "height": 58
+    },
+    "s5-sewer-perenos": {
+      "x": 5796,
+      "y": 314,
+      "width": 250,
+      "height": 68
+    },
+    "s5-sewer-connect": {
+      "x": 5796,
+      "y": 394,
+      "width": 250,
+      "height": 68
+    },
+    "s5-sewer-confirm": {
+      "x": 5796,
+      "y": 474,
+      "width": 250,
+      "height": 90
+    },
+    "s5-telecom-tu": {
+      "x": 6056,
+      "y": 174,
+      "width": 250,
+      "height": 58
+    },
+    "s5-telecom-vynos": {
+      "x": 6056,
+      "y": 244,
+      "width": 250,
+      "height": 58
+    },
+    "s5-telecom-perenos": {
+      "x": 6056,
+      "y": 314,
+      "width": 250,
+      "height": 68
+    },
+    "s5-telecom-connect": {
+      "x": 6056,
+      "y": 394,
+      "width": 250,
+      "height": 68
+    },
+    "s5-telecom-confirm": {
+      "x": 6056,
+      "y": 474,
+      "width": 250,
+      "height": 90
+    }
+  },
+  "userEdges": []
+}

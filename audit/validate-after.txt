@@ -1,0 +1,12 @@
+# Validation report — data
+stages=5  nodes=154  intra_edges=127  cross_edges=8  npa=151  documents=774
+nodes per stage: stage1=46, stage2=17, stage3=38, stage4=47, stage5=6
+type counts:     alternative=6, auxiliary=8, condition=6, document=3, documentList=1, process=78, result=52
+
+ERRORS (0):
+
+WARNINGS (0):
+
+NPA garbled numbers (0):
+
+NPA duplicate acts (0 groups):

@@ -2,6 +2,9 @@
    canvas.jsx — render stages, sections, nodes, edges
    ============================================================ */
 
+import React from "react";
+import { LAYOUT_CONST, edgePath } from "./layout.jsx";
+
 const { useState, useEffect, useRef, useMemo, useCallback } = React;
 
 /* ---------- single node ---------- */
@@ -104,7 +107,7 @@ function NodeBox({ node, pos, selected, highlighted, dimLevel, onSelect, mode })
         aria-label={node.label}
       >
         <span className="node-track" />
-        <div className="node-label">{node.label}</div>
+        <div className="node-label">{node.label || (node.type === "documentList" ? `Перечень документов (${node.rawData?.items?.length || 0})` : "")}</div>
         {(mode !== "executive" && (node.process || node.duration)) && (
           <div className="node-meta">
             {node.process && <span className="node-proc">{node.process}</span>}
@@ -789,4 +792,4 @@ function ExecutiveOverview({ model, onJumpToStage }) {
   );
 }
 
-Object.assign(window, { NodeBox, StageBlock, CrossEdgesOverlay, ExecutiveOverview });
+export { NodeBox, StageBlock, CrossEdgesOverlay, ExecutiveOverview };

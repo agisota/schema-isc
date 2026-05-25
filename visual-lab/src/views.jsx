@@ -4,6 +4,8 @@
    - ConstellationView: radial sector chart
    ============================================================ */
 
+import React from "react";
+
 const { useMemo: useMemoV } = React;
 
 /* Display order of node types */
@@ -445,4 +447,4 @@ function ConstellationView({ model, selected, onSelectNode, activeRoute, critica
   );
 }
 
-Object.assign(window, { MatrixView, ConstellationView });
+export { MatrixView, ConstellationView };

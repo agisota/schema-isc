@@ -2,6 +2,9 @@
    panels.jsx — TopBar, LeftRail, Inspector, BottomBar
    ============================================================ */
 
+import React from "react";
+import { TRACK_LABELS, NODE_TYPE_LABELS } from "./data-loader.jsx";
+
 const { useState: useStateP, useEffect: useEffectP, useMemo: useMemoP, useRef: useRefP } = React;
 
 /* ---------- TopBar ---------- */
@@ -323,6 +326,9 @@ function LeftRail({
     { id: "result", label: "Результаты" },
     { id: "auxiliary", label: "Вспомог." },
     { id: "alternative", label: "Альтернативы" },
+    { id: "condition", label: "Условия / разделы" },
+    { id: "document", label: "Документы" },
+    { id: "documentList", label: "Перечни" },
   ];
 
   return (
@@ -745,4 +751,4 @@ function ValidationModal({ validation, onClose }) {
   );
 }
 
-Object.assign(window, { TopBar, StageTabs, LeftRail, Inspector, BottomBar, ValidationModal });
+export { TopBar, StageTabs, LeftRail, Inspector, BottomBar, ValidationModal };

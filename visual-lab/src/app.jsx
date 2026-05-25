@@ -2,6 +2,16 @@
    app.jsx — main composition: state, data loading, layout, render
    ============================================================ */
 
+import React from "react";
+import { createRoot } from "react-dom/client";
+import * as htmlToImage from "html-to-image";
+import "./styles.css";
+import { layoutModel } from "./layout.jsx";
+import { loadModel, relatedNodes } from "./data-loader.jsx";
+import { StageBlock, CrossEdgesOverlay, ExecutiveOverview } from "./canvas.jsx";
+import { MatrixView, ConstellationView } from "./views.jsx";
+import { TopBar, StageTabs, LeftRail, Inspector, BottomBar, ValidationModal } from "./panels.jsx";
+
 const { useState: useStateA, useEffect: useEffectA, useMemo: useMemoA, useCallback: useCallbackA, useRef: useRefA } = React;
 
 function App() {
@@ -19,7 +29,7 @@ function App() {
   );
   const [selected, setSelected] = useStateA(null);
   const [activeRoute, setActiveRoute] = useStateA("all");
-  const [visibleTypes, setVisibleTypes] = useStateA(new Set(["process", "result", "auxiliary", "alternative"]));
+  const [visibleTypes, setVisibleTypes] = useStateA(new Set(["process", "result", "auxiliary", "alternative", "condition", "document", "documentList", "group"]));
   const [criticalMode, setCriticalMode] = useStateA(false);
   const [usesLaterVisible, setUsesLaterVisible] = useStateA(false);
   const [activeStage, setActiveStage] = useStateA("stage1");
@@ -259,7 +269,7 @@ function App() {
     setExporting(true);
     await new Promise(r => setTimeout(r, 100));
     try {
-      if (!window.htmlToImage) {
+      if (!htmlToImage) {
         setToast("Библиотека html-to-image не загрузилась");
         setExporting(false);
         return;
@@ -270,7 +280,7 @@ function App() {
         setExporting(false);
         return;
       }
-      const dataUrl = await window.htmlToImage.toPng(target, {
+      const dataUrl = await htmlToImage.toPng(target, {
         pixelRatio: 2,
         backgroundColor: "#f7f3ea",
         cacheBust: true,
@@ -472,4 +482,4 @@ function App() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+createRoot(document.getElementById("root")).render(<App />);

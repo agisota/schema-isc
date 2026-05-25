@@ -230,10 +230,10 @@ function edgePath(srcPos, tgtPos, edge) {
   }
 }
 
-Object.assign(window, {
+export {
   LAYOUT_CONST,
   layoutStage,
   layoutModel,
   findNodePos,
   edgePath,
-});
+};

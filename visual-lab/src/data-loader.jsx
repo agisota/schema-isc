@@ -34,6 +34,10 @@ const NODE_TYPE_LABELS = {
   result: "Результат",
   auxiliary: "Вспомогательный",
   alternative: "Альтернатива",
+  condition: "Условие / раздел",
+  document: "Документ",
+  documentList: "Перечень документов",
+  group: "Группа",
 };
 
 async function loadModel() {
@@ -275,11 +279,11 @@ function relatedNodes(model, nodeId, maxDepth = 2) {
   return { nodeIds: visited, edgeIds: edgesInChain };
 }
 
-Object.assign(window, {
+export {
   loadModel,
   relatedNodes,
   STAGE_FILES,
   STAGE_DURATIONS_DAYS,
   TRACK_LABELS,
   NODE_TYPE_LABELS,
-});
+};
