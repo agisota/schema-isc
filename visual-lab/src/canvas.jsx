@@ -2,6 +2,9 @@
    canvas.jsx — render stages, sections, nodes, edges
    ============================================================ */
 
+import React from "react";
+import { LAYOUT_CONST, edgePath } from "./layout.jsx";
+
 const { useState, useEffect, useRef, useMemo, useCallback } = React;
 
 /* ---------- single node ---------- */
@@ -789,4 +792,4 @@ function ExecutiveOverview({ model, onJumpToStage }) {
   );
 }
 
-Object.assign(window, { NodeBox, StageBlock, CrossEdgesOverlay, ExecutiveOverview });
+export { NodeBox, StageBlock, CrossEdgesOverlay, ExecutiveOverview };

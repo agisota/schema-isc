@@ -58,6 +58,33 @@ construction phase (Этап 4).
 > Caveat: number splits are heuristic. A real multi-digit act could be
 > mis-split — every change is flagged for legal verification against pravo.gov.ru.
 
+## Increment 3 — Vite build migration
+
+Replaced the Babel-standalone + CDN-React runtime with a real Vite + React build.
+
+- `visual-lab/` is now a Vite app: `package.json`, `package-lock.json`,
+  `vite.config.js` (`base: '/visual-lab/'`), `index.html` (module entry → `src/app.jsx`).
+- The 6 `*.jsx` files moved to `visual-lab/src/` and converted from the shared-`window`
+  global pattern to ESM `import`/`export` (graph: `app → {layout,data-loader,canvas,
+  views,panels}`, `canvas → layout`, `panels → data-loader`). `styles.css` imported
+  from `app.jsx`; `html-to-image` + `react-dom/client` now npm imports.
+- Data moved to `visual-lab/public/data/` (served at `/visual-lab/data/`); old
+  `visual-lab/data/` removed. `documents-catalog.json` + `layout-overrides.json` now
+  shipped to the app bundle for later wiring.
+- `results.html` → `visual-lab/public/results.html`.
+- `npm run build` passes (45 modules, 218 kB JS / 32 kB CSS gzipped 69/6 kB).
+- **Runtime verification** without a browser: browser CDN is blocked here so
+  Playwright/headless-Chrome is unavailable; added `audit-smoke.mjs` (jsdom) +
+  `npm run test:smoke`. Smoke = PASS: app mounts, renders «Этап 1» tabs, renders the
+  corrected stage-5 cadastral content (Кадастров/Регистрация прав/Выписка), 0 console
+  errors.
+- Deploy (`.github/workflows/deploy-pages.yml`): build visual-lab, then assemble the
+  Pages artifact — whole repo served statically with the built atlas overlaid at
+  `/visual-lab/`. Runs on push to `main` only.
+
+> Limitation: no real-browser visual check possible in this environment (browser
+> download CDN blocked). jsdom smoke covers mount + content, not pixel layout.
+
 ## Pending (next increments)
 
 - Wire `documents-catalog.json` + `layout-overrides.json` into the loader.

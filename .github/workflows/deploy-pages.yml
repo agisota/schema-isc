@@ -23,14 +23,40 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: visual-lab/package-lock.json
+
+      - name: Build ИСЦ Атлас (visual-lab)
+        run: |
+          cd visual-lab
+          npm ci
+          npm run build
+
+      - name: Assemble Pages artifact
+        run: |
+          # Serve the whole repo statically (root Next export, /cockpit, /new, …)
+          # except the visual-lab source tree, then overlay the built atlas at
+          # /visual-lab/ so it is served from compiled assets.
+          mkdir -p _site
+          rsync -a --exclude='.git' --exclude='_site' --exclude='visual-lab' ./ _site/
+          mkdir -p _site/visual-lab
+          cp -r visual-lab/dist/. _site/visual-lab/
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
-      - name: Upload entire repository as Pages artifact
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

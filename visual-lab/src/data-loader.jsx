@@ -275,11 +275,11 @@ function relatedNodes(model, nodeId, maxDepth = 2) {
   return { nodeIds: visited, edgeIds: edgesInChain };
 }
 
-Object.assign(window, {
+export {
   loadModel,
   relatedNodes,
   STAGE_FILES,
   STAGE_DURATIONS_DAYS,
   TRACK_LABELS,
   NODE_TYPE_LABELS,
-});
+};
