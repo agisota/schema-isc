@@ -1,0 +1,880 @@
+{
+  "id": "stage1",
+  "name": "Приобретение прав на ОКН / земельный участок, в том числе предоставляемый из земель, находящихся в государственной или муниципальной собственности",
+  "sections": [
+    { "id": "main", "label": "" },
+    { "id": "serv", "label": "Установление сервитута", "color": "rgba(27,46,88,0.04)" },
+    { "id": "okn", "label": "Приобретение прав на ОКН (при необходимости)", "color": "rgba(58,95,138,0.06)" }
+  ],
+  "nodes": [
+    {
+      "id": "s1-grad",
+      "type": "process",
+      "label": "Формирование градостроительного потенциала и предоставление ЗУ",
+      "process": "1.0",
+      "track": "offbudget",
+      "data": {
+        "description": "Изменение категории ЗУ, внесение изменений в ГП, ПЗЗ, ДПТ",
+        "duration": "до 2 лет"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 0,
+      "sidebar": true
+    },
+    {
+      "id": "s1-cat",
+      "type": "auxiliary",
+      "label": "Изменение категории ЗУ",
+      "process": "1.0",
+      "track": "offbudget",
+      "data": {
+        "description": "Перевод земельного участка из одной категории в другую"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 1,
+      "sidebar": true
+    },
+    {
+      "id": "s1-gp",
+      "type": "auxiliary",
+      "label": "Внесение изменений и утверждение изменённого ГП",
+      "process": "1.0",
+      "track": "offbudget",
+      "data": {
+        "description": "Генеральный план муниципального образования"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 2,
+      "sidebar": true
+    },
+    {
+      "id": "s1-pzz",
+      "type": "auxiliary",
+      "label": "Внесение изменений и утверждение изменённых ПЗЗ",
+      "process": "1.0",
+      "track": "offbudget",
+      "data": {
+        "description": "Правила землепользования и застройки"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 3,
+      "sidebar": true
+    },
+    {
+      "id": "s1-dpt",
+      "type": "process",
+      "label": "Изменение и утверждение ДПТ",
+      "process": "1.0",
+      "track": "offbudget",
+      "data": {
+        "description": "Документация по планировке территории",
+        "duration": "180 дней"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 4,
+      "sidebar": true
+    },
+    {
+      "id": "s1-cond-formed",
+      "type": "result",
+      "label": "ЗУ ОБРАЗОВАН",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Условие: земельный участок уже сформирован и поставлен на кадастровый учёт"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "id": "s1-private",
+      "type": "process",
+      "label": "ЗУ в частной собственности",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Земельный участок находится в частной собственности"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "id": "s1-petition",
+      "type": "result",
+      "label": "Ходатайство об изъятии",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Подача ходатайства об изъятии земельного участка для государственных или муниципальных нужд"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "id": "s1-decision",
+      "type": "result",
+      "label": "Принятие решения об изъятии",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Решение уполномоченного органа об изъятии земельного участка"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "id": "s1-agreement",
+      "type": "result",
+      "label": "Заключение соглашения",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Соглашение об изъятии земельного участка"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "id": "s1-court",
+      "type": "auxiliary",
+      "label": "СУД",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Судебное разрешение спора при недостижении соглашения"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 0,
+      "col": 5
+    },
+    {
+      "id": "s1-public-encumbered",
+      "type": "process",
+      "label": "ЗУ в публичной собственности, обременён",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "ЗУ в государственной или муниципальной собственности, обременённый правами третьих лиц (аренда, сервитут и т.д.)"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 1,
+      "col": 1,
+      "colSpan": 2
+    },
+    {
+      "id": "s1-stop-rights",
+      "type": "result",
+      "label": "Прекращение прав 3-х лиц",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Прекращение прав третьих лиц на земельный участок"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "id": "s1-public",
+      "type": "process",
+      "label": "ЗУ в публичной собственности",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "ЗУ в государственной или муниципальной собственности, свободный от обременений"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "id": "s1-redistribute",
+      "type": "result",
+      "label": "Перераспределение / Мена",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Перераспределение земельных участков или мена"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "id": "s1-dpt-ref",
+      "type": "auxiliary",
+      "label": "ДПТ (см. процесс 2.1.1)",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Документация по планировке территории — ссылка на процесс Этапа 2"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "id": "s1-conclude-agreement",
+      "type": "result",
+      "label": "Заключение соглашения",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Заключение соглашения о перераспределении / мене ЗУ"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "id": "s1-no-torgi-label",
+      "type": "process",
+      "label": "БЕЗ ТОРГОВ",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Процесс 1.1 — Предоставление ЗУ без торгов. Срок: до 2 лет",
+        "duration": "до 2 лет",
+        "tall": true,
+        "height": 620,
+        "labelCol": true
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "id": "s1-pbp",
+      "type": "result",
+      "label": "Решение о предоставлении в ПБП / Заключение договора аренды или БП",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Решение о предоставлении ЗУ в постоянное бессрочное пользование или заключение договора аренды / безвозмездного пользования",
+        "wide": true
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 3,
+      "col": 1,
+      "colSpan": 4
+    },
+    {
+      "id": "s1-not-formed",
+      "type": "alternative",
+      "label": "ЗУ НЕ ОБРАЗОВАН",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Земельный участок не образован — требуется формирование",
+        "duration": "152 дня"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 4,
+      "col": 1
+    },
+    {
+      "id": "s1-schema-kpt",
+      "type": "process",
+      "label": "Схема расположения ЗУ на КПТ",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Подготовка схемы расположения земельного участка на кадастровом плане территории"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 4,
+      "col": 2
+    },
+    {
+      "id": "s1-approve-schema",
+      "type": "result",
+      "label": "Утверждение схемы",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Утверждение схемы расположения ЗУ на КПТ"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 4,
+      "col": 3
+    },
+    {
+      "id": "s1-pmt-ref",
+      "type": "result",
+      "label": "ПМТ (см. процесс 2.1.1)",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Проект межевания территории — ссылка на процесс Этапа 2"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 5,
+      "col": 2
+    },
+    {
+      "id": "s1-mezhevoy",
+      "type": "result",
+      "label": "Межевой план",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Подготовка межевого плана земельного участка"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 6,
+      "col": 1
+    },
+    {
+      "id": "s1-cadastr",
+      "type": "result",
+      "label": "Постановка на кадастровый учёт",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Государственный кадастровый учёт земельного участка"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 6,
+      "col": 2
+    },
+    {
+      "id": "s1-reg-rights",
+      "type": "process",
+      "label": "Регистрация прав",
+      "process": "1.1",
+      "track": "offbudget",
+      "data": {
+        "description": "Государственная регистрация прав на земельный участок"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 6,
+      "col": 3
+    },
+    {
+      "id": "s1-torgi-label",
+      "type": "process",
+      "label": "НА ТОРГАХ",
+      "process": "1.2",
+      "track": "offbudget",
+      "data": {
+        "description": "Процесс 1.2 — Предоставление ЗУ на торгах. Срок: 306 дней",
+        "duration": "306 дней",
+        "tall": true,
+        "height": 150,
+        "labelCol": true
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 7,
+      "col": 0
+    },
+    {
+      "id": "s1-torgi-formed",
+      "type": "process",
+      "label": "ЗУ ОБРАЗОВАН",
+      "process": "1.2",
+      "track": "offbudget",
+      "data": {
+        "description": "ЗУ образован, поставлен на кадастровый учёт. Срок: 146 дней",
+        "duration": "146 дней"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 7,
+      "col": 1
+    },
+    {
+      "id": "s1-auction-decision",
+      "type": "process",
+      "label": "Решение о проведении аукциона",
+      "process": "1.2",
+      "track": "offbudget",
+      "data": {
+        "description": "Принятие решения о проведении аукциона по продаже/аренде ЗУ"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 7,
+      "col": 2
+    },
+    {
+      "id": "s1-publish",
+      "type": "process",
+      "label": "Размещение извещения",
+      "process": "1.2",
+      "track": "offbudget",
+      "data": {
+        "description": "Публикация извещения о проведении аукциона"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 7,
+      "col": 3
+    },
+    {
+      "id": "s1-auction",
+      "type": "process",
+      "label": "Проведение аукциона",
+      "process": "1.2",
+      "track": "offbudget",
+      "data": {
+        "description": "Проведение аукциона по продаже/аренде ЗУ"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 7,
+      "col": 4
+    },
+    {
+      "id": "s1-protocol",
+      "type": "process",
+      "label": "Подписание протокола",
+      "process": "1.2",
+      "track": "offbudget",
+      "data": {
+        "description": "Подписание протокола о результатах аукциона",
+        "duration": "7 дн."
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 8,
+      "col": 4
+    },
+    {
+      "id": "s1-contract",
+      "type": "process",
+      "label": "Заключение договора аренды / купли-продажи",
+      "process": "1.2",
+      "track": "offbudget",
+      "data": {
+        "description": "Заключение договора аренды или купли-продажи земельного участка по результатам аукциона"
+      },
+      "layers": { "coverage": "full" },
+      "section": "main",
+      "row": 7,
+      "col": 5
+    },
+    {
+      "id": "s1-serv-public",
+      "type": "process",
+      "label": "ПУБЛИЧНЫЙ",
+      "process": "1.3",
+      "track": "offbudget",
+      "data": {
+        "description": "Установление публичного сервитута. Срок: 360 дней",
+        "duration": "360 дней"
+      },
+      "layers": { "coverage": "full" },
+      "section": "serv",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "id": "s1-serv-dpt",
+      "type": "result",
+      "label": "ДПТ (см. процесс 2.1.1)",
+      "process": "1.3",
+      "track": "offbudget",
+      "data": {
+        "description": "Документация по планировке территории"
+      },
+      "layers": { "coverage": "full" },
+      "section": "serv",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "id": "s1-serv-decision",
+      "type": "result",
+      "label": "Решение об установлении сервитута",
+      "process": "1.3",
+      "track": "offbudget",
+      "data": {
+        "description": "Решение об установлении публичного сервитута"
+      },
+      "layers": { "coverage": "full" },
+      "section": "serv",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "id": "s1-serv-agreement",
+      "type": "process",
+      "label": "Соглашение об установлении сервитута",
+      "process": "1.3",
+      "track": "offbudget",
+      "data": {
+        "description": "Соглашение об осуществлении публичного сервитута"
+      },
+      "layers": { "coverage": "full" },
+      "section": "serv",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "id": "s1-serv-private",
+      "type": "process",
+      "label": "ЧАСТНЫЙ",
+      "process": "1.3",
+      "track": "offbudget",
+      "data": {
+        "description": "Установление частного сервитута. Срок: 40 дней",
+        "duration": "40 дней"
+      },
+      "layers": { "coverage": "full" },
+      "section": "serv",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "id": "s1-serv-private-agreement",
+      "type": "process",
+      "label": "Соглашение об установлении сервитута",
+      "process": "1.3",
+      "track": "offbudget",
+      "data": {
+        "description": "Соглашение об установлении частного сервитута",
+        "wide": true
+      },
+      "layers": { "coverage": "full" },
+      "section": "serv",
+      "row": 1,
+      "col": 1,
+      "colSpan": 3
+    },
+    {
+      "id": "s1-okn-update",
+      "type": "process",
+      "label": "Актуализация охранных обязательств, в т.ч. план работ",
+      "process": "1.okn",
+      "track": "okn",
+      "data": { "description": "Актуализация охранных обязательств. Примечание: отсутствие регламента и срока" },
+      "layers": { "coverage": "partial" },
+      "section": "okn",
+      "row": 0,
+      "col": 0,
+      "colSpan": 6
+    },
+    {
+      "id": "s1-okn-task",
+      "type": "process",
+      "label": "Выдача задания органа охраны ОКН на исследование и проектирование",
+      "process": "1.okn",
+      "track": "okn",
+      "data": { "duration": "30 дн." },
+      "layers": { "coverage": "partial" },
+      "section": "okn",
+      "row": 1,
+      "col": 0,
+      "colSpan": 3
+    },
+    {
+      "id": "s1-okn-research-permit",
+      "type": "result",
+      "label": "Выдача разрешения на исследовательские работы",
+      "process": "1.okn",
+      "track": "okn",
+      "data": { "duration": "30 дн." },
+      "layers": { "coverage": "partial" },
+      "section": "okn",
+      "row": 1,
+      "col": 3,
+      "colSpan": 3
+    },
+    {
+      "id": "s1-okn-research",
+      "type": "process",
+      "label": "Исследовательские работы, в т.ч. с уточнением предмета охраны (при необходимости)",
+      "process": "1.okn",
+      "track": "okn",
+      "data": { "duration": "1,5 года" },
+      "layers": { "coverage": "partial" },
+      "section": "okn",
+      "row": 2,
+      "col": 0,
+      "colSpan": 6
+    },
+    {
+      "id": "s1-okn-agree-pd",
+      "type": "process",
+      "label": "Согласование проектной документации органом охраны ОКН",
+      "process": "1.okn",
+      "track": "okn",
+      "data": { "duration": "20 дн." },
+      "layers": { "coverage": "partial" },
+      "section": "okn",
+      "row": 3,
+      "col": 0,
+      "colSpan": 3
+    },
+    {
+      "id": "s1-okn-work-permit",
+      "type": "result",
+      "label": "Разрешение на проведение работ по сохранению ОКН",
+      "process": "1.okn",
+      "track": "okn",
+      "data": { "duration": "30 дн." },
+      "layers": { "coverage": "partial" },
+      "section": "okn",
+      "row": 3,
+      "col": 3,
+      "colSpan": 3
+    },
+    {
+      "id": "s1-okn-control",
+      "type": "process",
+      "label": "Осуществление государственного контроля (надзора). Представление отчётной документации. Утверждение. Выдача акта о приёмке выполненных работ по сохранению ОКН",
+      "process": "1.okn",
+      "track": "okn",
+      "data": { "duration": "до 3 лет", "wide": true },
+      "layers": { "coverage": "partial" },
+      "section": "okn",
+      "row": 4,
+      "col": 0,
+      "colSpan": 6
+    }
+  ],
+  "edges": [
+    {
+      "id": "s1-e1",
+      "source": "s1-grad",
+      "target": "s1-cat",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s1-e2",
+      "source": "s1-cat",
+      "target": "s1-gp",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s1-e3",
+      "source": "s1-gp",
+      "target": "s1-pzz",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s1-e4",
+      "source": "s1-pzz",
+      "target": "s1-dpt",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s1-e10",
+      "source": "s1-cond-formed",
+      "target": "s1-private",
+      "type": "conditional"
+    },
+    {
+      "id": "s1-e11",
+      "source": "s1-private",
+      "target": "s1-petition",
+      "type": "default"
+    },
+    {
+      "id": "s1-e12",
+      "source": "s1-petition",
+      "target": "s1-decision",
+      "type": "default"
+    },
+    {
+      "id": "s1-e13",
+      "source": "s1-decision",
+      "target": "s1-agreement",
+      "type": "default"
+    },
+    {
+      "id": "s1-e14",
+      "source": "s1-agreement",
+      "target": "s1-court",
+      "type": "alternative"
+    },
+    {
+      "id": "s1-e15",
+      "source": "s1-cond-formed",
+      "target": "s1-public-encumbered",
+      "type": "conditional",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s1-e16",
+      "source": "s1-public-encumbered",
+      "target": "s1-stop-rights",
+      "type": "default"
+    },
+    {
+      "id": "s1-e17",
+      "source": "s1-cond-formed",
+      "target": "s1-public",
+      "type": "conditional",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s1-e18",
+      "source": "s1-public",
+      "target": "s1-redistribute",
+      "type": "default"
+    },
+    {
+      "id": "s1-e19",
+      "source": "s1-redistribute",
+      "target": "s1-dpt-ref",
+      "type": "default"
+    },
+    {
+      "id": "s1-e20",
+      "source": "s1-dpt-ref",
+      "target": "s1-conclude-agreement",
+      "type": "default"
+    },
+    {
+      "id": "s1-e30",
+      "source": "s1-not-formed",
+      "target": "s1-schema-kpt",
+      "type": "conditional"
+    },
+    {
+      "id": "s1-e31",
+      "source": "s1-schema-kpt",
+      "target": "s1-approve-schema",
+      "type": "default"
+    },
+    {
+      "id": "s1-e32",
+      "source": "s1-not-formed",
+      "target": "s1-pmt-ref",
+      "type": "conditional"
+    },
+    {
+      "id": "s1-e33",
+      "source": "s1-mezhevoy",
+      "target": "s1-cadastr",
+      "type": "default"
+    },
+    {
+      "id": "s1-e34",
+      "source": "s1-cadastr",
+      "target": "s1-reg-rights",
+      "type": "default"
+    },
+    {
+      "id": "s1-e40",
+      "source": "s1-torgi-formed",
+      "target": "s1-auction-decision",
+      "type": "default"
+    },
+    {
+      "id": "s1-e41",
+      "source": "s1-auction-decision",
+      "target": "s1-publish",
+      "type": "default"
+    },
+    {
+      "id": "s1-e42",
+      "source": "s1-publish",
+      "target": "s1-auction",
+      "type": "default"
+    },
+    {
+      "id": "s1-e43",
+      "source": "s1-auction",
+      "target": "s1-protocol",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s1-e44",
+      "source": "s1-protocol",
+      "target": "s1-contract",
+      "type": "default"
+    },
+    {
+      "id": "s1-e50",
+      "source": "s1-serv-public",
+      "target": "s1-serv-dpt",
+      "type": "default"
+    },
+    {
+      "id": "s1-e51",
+      "source": "s1-serv-dpt",
+      "target": "s1-serv-decision",
+      "type": "default"
+    },
+    {
+      "id": "s1-e52",
+      "source": "s1-serv-decision",
+      "target": "s1-serv-agreement",
+      "type": "default"
+    },
+    {
+      "id": "s1-e53",
+      "source": "s1-serv-private",
+      "target": "s1-serv-private-agreement",
+      "type": "default"
+    },
+    {
+      "id": "s1-e35",
+      "source": "s1-approve-schema",
+      "target": "s1-mezhevoy",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "id": "s1-e36",
+      "source": "s1-pmt-ref",
+      "target": "s1-mezhevoy",
+      "type": "default",
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    { "id": "s1-okn-e1", "source": "s1-okn-update", "target": "s1-okn-task", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
+    { "id": "s1-okn-e2", "source": "s1-okn-task", "target": "s1-okn-research-permit", "type": "default" },
+    { "id": "s1-okn-e3", "source": "s1-okn-research-permit", "target": "s1-okn-research", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
+    { "id": "s1-okn-e4", "source": "s1-okn-research", "target": "s1-okn-agree-pd", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" },
+    { "id": "s1-okn-e5", "source": "s1-okn-agree-pd", "target": "s1-okn-work-permit", "type": "default" },
+    { "id": "s1-okn-e6", "source": "s1-okn-work-permit", "target": "s1-okn-control", "type": "default", "sourceHandle": "source-bottom", "targetHandle": "target-top" }
+  ]
+}
