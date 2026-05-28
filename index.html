@@ -187,9 +187,25 @@ button{font-family:inherit;font-size:inherit;cursor:pointer;color:inherit;border
     linear-gradient(90deg,var(--paper-grid-strong) 1px,transparent 1px) 0 0/130px 130px,
     var(--paper);
 }
-.viewport.src-mode{background:#fff;background-image:none}
 .viewport.grabbing{cursor:grabbing}
 .viewport.lensing{cursor:default}
+/* source layer reads as the original Минстрой poster — a deep-navy printed sheet, not clinical white */
+.viewport.src-mode{background:linear-gradient(180deg,#f3f5f8 0%,#e9edf2 100%)}
+.viewport.src-mode .pane{background:transparent}
+/* uncoloured source boxes must NEVER read as transparent or super-white holes:
+   they fall back to the original navy spine colour; inline data colours (navy/green/gray/yellow)
+   set in JS override this. Special null-bg cases get a class (срок bar / route spine). */
+.viewport.src-mode .snode.rect{background:#1b2e58;border:1px solid rgba(255,255,255,.10)}
+.viewport.src-mode .snode.rect.src-srok{background:#cfe6f4;border-color:rgba(27,46,88,.22)}
+.viewport.src-mode .snode.rect.src-spine{
+  background:linear-gradient(108deg,#1b2e58 0 55%,#2b7832 55% 78%,#6b7280 78% 100%);
+  border-color:rgba(255,255,255,.16)}
+/* dark-ink source text gets a light backing pill so it stays legible on the navy sheet */
+.viewport.src-mode .snode.text.src-darktext{background:transparent;box-shadow:none;padding:0}
+/* connectors + distribution wedges read as light lines/manifolds on the navy sheet (CSS beats the inline stroke) */
+.viewport.src-mode .sedge{stroke:rgba(27,46,88,.5)}
+.viewport.src-mode .sedge.lit{stroke:var(--gold-soft)}
+.viewport.src-mode .spoly{fill:rgba(27,46,88,.08)}
 .pane{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}
 .edges{position:absolute;top:0;left:0;overflow:visible;pointer-events:none}
 
@@ -315,11 +331,18 @@ button{font-family:inherit;font-size:inherit;cursor:pointer;color:inherit;border
   -webkit-backdrop-filter:blur(10px) saturate(1.3);backdrop-filter:blur(10px) saturate(1.3);
   border:1px solid rgba(16,30,55,.1);border-radius:9px;padding:7px 9px;box-shadow:0 5px 16px rgba(16,30,55,.09);
   display:flex;flex-direction:column;gap:2.5px;max-width:172px;opacity:.46;transition:opacity .15s}
-.legend[hidden]{display:none!important}
 .legend:hover{opacity:1}
 .legend .lg-h{font-size:8px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-faint);font-weight:700;margin-top:1px}
 .legend .lg-row{display:flex;align-items:center;gap:6px;font-size:9.5px;color:var(--ink-mut);line-height:1.25}
 .legend .sw{width:12px;height:7px;border-radius:2px;flex:0 0 auto}
+/* route swatches — analytical (atlas) palette by default; original Минстрой palette in source mode */
+.legend .sw-off{background:var(--r-offbudget)}
+.legend .sw-bud{background:var(--r-budget)}
+.legend .sw-okn{background:var(--r-okn)}
+.legend .sw-crit{background:var(--gold)}
+.mode-source .legend .sw-off{background:#1b2e58}
+.mode-source .legend .sw-bud{background:#2b7832}
+.mode-source .legend .sw-okn{background:#6b7280}
 .legend .lg-fn{font-size:9.5px;line-height:1.38;color:var(--ink-faint);opacity:.85}
 .legend .lg-div{height:1px;background:rgba(16,30,55,.08);margin:2px 0}
 
@@ -612,9 +635,9 @@ button{font-family:inherit;font-size:inherit;cursor:pointer;color:inherit;border
 .snode.src-sel{box-shadow:0 0 0 3px var(--gold),0 6px 20px rgba(16,30,55,.3)!important;z-index:7;border-radius:3px}
 .snode.text.src-sel{outline:2px solid var(--gold);background:rgba(194,146,42,.1)}
 .sourcewrap-svg{position:absolute;top:0;left:0;overflow:visible;pointer-events:none}
-.sedge{fill:none;stroke-width:1.9;opacity:.84;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round;transition:opacity .18s;cursor:pointer;pointer-events:stroke}
-.sedge:hover{opacity:1;stroke-width:2.8}
-.sedge.lit{opacity:1;stroke-width:2.5}
+.sedge{fill:none;stroke-width:2;opacity:.82;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round;transition:opacity .18s,stroke-width .18s;cursor:pointer;pointer-events:stroke}
+.sedge:hover{opacity:1;stroke-width:3.2}
+.sedge.lit{opacity:1;stroke-width:2.8}
 .spoly{fill:rgba(27,46,88,.16);stroke:none}
 .src-hint{position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:19;display:flex;align-items:center;gap:8px;
   background:var(--navy-800);color:var(--ink-on-dark-mut);border:1px solid var(--line-navy);border-radius:20px;
@@ -753,10 +776,10 @@ button{font-family:inherit;font-size:inherit;cursor:pointer;color:inherit;border
 
       <div class="legend" id="legend">
         <div class="lg-h">Маршруты</div>
-        <div class="lg-row"><span class="sw" style="background:var(--r-offbudget)"></span>Внебюджетный</div>
-        <div class="lg-row"><span class="sw" style="background:var(--r-budget)"></span>Бюджетный</div>
-        <div class="lg-row"><span class="sw" style="background:var(--r-okn)"></span>Сохранение ОКН</div>
-        <div class="lg-row"><span class="sw" style="background:var(--gold)"></span>Критич. веха</div>
+        <div class="lg-row"><span class="sw sw-off"></span>Внебюджетный</div>
+        <div class="lg-row"><span class="sw sw-bud"></span>Бюджетный</div>
+        <div class="lg-row"><span class="sw sw-okn"></span>Сохранение ОКН</div>
+        <div class="lg-row"><span class="sw sw-crit"></span>Критич. веха</div>
         <div class="lg-div"></div>
         <div class="lg-h">Тип узла</div>
         <div class="lg-row"><span class="lg-shape res"></span>Результат / веха</div>
@@ -50049,11 +50072,8 @@ async function boot(){
   try{ await loadScheme(); }catch(e){ console.warn('source layer:', e); }
   try{ await loadG7(); }catch(e){ console.warn('G7 эталон:', e); }
   try{ enrichSourceFromG7(); }catch(e){ console.warn('source↔эталон:', e); }
-  try{
-    const startMode=new URLSearchParams(location.search).get('mode');
-    if(startMode==='source'&&SCHEME) setMode('source');
-    else { fitAll(); selectDefault(); }
-  }catch(e){ console.warn('initial view:', e); }
+  try{ fitAll(); }catch(e){ console.warn('fitAll:', e); }
+  try{ selectDefault(); }catch(e){ console.warn('selectDefault:', e); }
   try{ setStatusOK(); }catch(e){ console.warn('setStatusOK:', e); }
   try{ updateCrumbs(); }catch(e){ console.warn('updateCrumbs:', e); }
 }
@@ -50558,21 +50578,14 @@ function applyTransform(){
 }
 function clampK(k){ return Math.max(0.04, Math.min(2.6, k)); }
 function vpSize(){ const r=$('#viewport').getBoundingClientRect(); return {w:r.width,h:r.height,r}; }
-function fitAll(){
-  if(mode==='source') return fitSourceOverview();
-  fitBox(0,0,world.w,world.h,0.06); focusStage=null; markStageCells(); updateCrumbs();
-}
+function fitAll(){ fitBox(0,0,world.w,world.h,0.06); focusStage=null; markStageCells(); updateCrumbs(); }
+/* the source poster is ~8:1 — fit to its true content box with minimal padding so the
+   band fills the frame as large as possible (vertically centered), then pan/zoom to read */
 function fitSourceOverview(){
-  if(!SCHEME||!sourceWorld.w){ fitBox(0,0,world.w,world.h,0.06); return; }
-  const padL=SCHEME.bbox.minx-40, padT=SCHEME.bbox.miny-40;
-  const ns=SCHEME.nodes.filter(n=>n.t!=='polygon'&&n.w&&n.h);
-  if(!ns.length){ fitBox(0,0,sourceWorld.w,sourceWorld.h,0.02); return; }
-  const minx=Math.min.apply(null,ns.map(n=>n.x-padL));
-  const miny=Math.min.apply(null,ns.map(n=>n.y-padT));
-  const maxx=Math.max.apply(null,ns.map(n=>n.x-padL+n.w));
-  const maxy=Math.max.apply(null,ns.map(n=>n.y-padT+n.h));
-  const m=16;
-  fitBox(minx-m,miny-m,(maxx-minx)+m*2,(maxy-miny)+m*2,0.012);
+  if(!SCHEME||!SCHEME.bbox){ return fitAll(); }
+  const b=SCHEME.bbox, padL=b.minx-40, padT=b.miny-40;
+  const cw=(b.maxx-b.minx), ch=(b.maxy-b.miny);
+  fitBox(b.minx-padL-20, b.miny-padT-20, cw+40, ch+40, 0.012);
   focusStage=null; markStageCells(); updateCrumbs();
 }
 function fitStage(order){
@@ -50620,8 +50633,9 @@ function setupPanZoom(){
   },{passive:false});
   $('#zoomIn').onclick=()=>zoomAtCenter(1.05);
   $('#zoomOut').onclick=()=>zoomAtCenter(1/1.05);
-  const zf=$('#zoomFit'); if(zf) zf.onclick=fitAll;
-  const zpc=$('#zoomPct'); if(zpc) zpc.onclick=fitAll;
+  const fitView=()=>{ mode==='source'?fitSourceOverview():fitAll(); };
+  const zf=$('#zoomFit'); if(zf) zf.onclick=fitView;
+  const zpc=$('#zoomPct'); if(zpc) zpc.onclick=fitView;
 }
 function zoomAtCenter(f){
   const {w:vw,h:vh}=vpSize(); const wx=(vw/2-view.x)/view.k, wy=(vh/2-view.y)/view.k;
@@ -51029,6 +51043,22 @@ function readableText(bg){
   const r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
   return (0.299*r+0.587*g+0.114*b)/255 < 0.56 ? '#ffffff' : '#101a2e';
 }
+/* original Минстрой route palette — used to recolour null-bg boxes the EPS left as
+   structural (uncoloured) fills so they never read as transparent / super-white holes. */
+const ROUTE_ORIG={offbudget:'#1b2e58',budget:'#2b7832',okn:'#6b7280',auxiliary:'#6b7280',condition:'#1b2e58',unknown:'#1b2e58'};
+const isHex=(c,hex)=>!!c&&String(c).toLowerCase().replace('#','')===hex;
+/* resolve the fill for a source rect, faithful to the original poster:
+   - explicit data colour wins;
+   - white-ink box  → solid route colour (navy / green / gray);
+   - yellow-ink box → navy doc panel;
+   - returns null for navy-ink labels (срок bars) and empty containers so the
+     CSS fallback classes (src-srok / src-spine / default navy) take over. */
+function srcRectFill(n){
+  if(n.bg && n.bg!=='transparent') return n.bg;
+  if(isHex(n.fg,'ffffff')) return ROUTE_ORIG[n.tr] || '#1b2e58';
+  if(isHex(n.fg,'e8c840')) return '#1b2e58';
+  return null;
+}
 /* snap jittery extracted font sizes (9.5, 19.8, 22.5, 23.2 …) onto a clean
    world-unit scale so the original 7→36 hierarchy reads consistently. */
 const FS_SCALE=[7,9,12,16,18,20,22,24,28,36];
@@ -51099,13 +51129,24 @@ function renderScheme(){
     if(n.h) d.style.height=n.h+'px';
     if(n.z) d.style.zIndex=n.z;
     if(n.t==='rect'){
-      if(n.bg && n.bg!=='transparent') d.style.background=n.bg;
-      d.style.color = n.fg || readableText(n.bg);
+      let fill=srcRectFill(n);                       // explicit data colour (incl. #ffffff) or null
+      const w=n.w||0, h=n.h||0, area=w*h;
+      const lightOrNull = !fill || isHex(fill,'ffffff');
+      // the original has NO tall white columns and NO large white slabs — those are route spines
+      // (navy/green/gray diagonal) or solid navy panels. Only the small footer cells stay light.
+      if(lightOrNull && h>440){ d.classList.add('src-spine'); fill=null; }
+      else if(lightOrNull && area>60000){ fill='#1b2e58'; }
+      else if(!fill && n.nt==='process'){ fill='#2b7832'; }
+      if(fill){ d.style.background=fill; }
+      else if(isHex(n.fg,'1b2e58') && !d.classList.contains('src-spine')){ d.classList.add('src-srok'); } // navy-ink срок label → light bar
+      // (else: src-spine diagonal, or default navy fill from CSS — never a white hole)
+      d.style.color = n.fg || readableText(fill||'#1b2e58');
       // rects carry no fs → derive a world-unit label size from box height
-      d.style.fontSize=Math.max(11,Math.min((n.h||40)*0.36,26))+'px';
+      d.style.fontSize=Math.max(11,Math.min((h||40)*0.36,26))+'px';
       if(n.l) d.textContent=n.l;
     } else {
-      d.style.color = n.fg || 'var(--ink)';
+      if(isHex(n.fg,'1b2e58')) d.classList.add('src-darktext');               // dark ink → light pill on navy sheet
+      d.style.color = n.fg || '#1b2e58';
       d.style.fontSize=snapFs(n.fs)+'px';            // world units → scales with zoom
       const long=(n.l||'').length>58;                // footnotes left, labels centered
       d.style.justifyContent = long?'flex-start':'center';
@@ -51127,9 +51168,9 @@ function setMode(m){
   mode=m;
   document.querySelectorAll('#modeSeg button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===m)));
   const srcOnly=m==='source';
-  $('#viewport').classList.toggle('src-mode',srcOnly);
-  $('#legend').hidden=srcOnly;
   document.querySelectorAll('#lensSeg button').forEach(b=>{ b.disabled=srcOnly; b.style.opacity=srcOnly?'.45':''; });
+  $('#viewport').classList.toggle('src-mode',srcOnly);
+  document.body.classList.toggle('mode-source',srcOnly);   // drives the legend's original-palette swatches
   if(srcOnly){
     if(lens) setLens('');
     $('#atlasLayer').hidden=true; $('#sourceLayer').hidden=false;
@@ -51140,7 +51181,9 @@ function setMode(m){
     world=atlasWorld;
   }
   $('#pane').style.width=world.w+'px'; $('#pane').style.height=world.h+'px';
-  focusStage=null; markStageCells(); fitAll(); updateCrumbs();
+  focusStage=null; markStageCells();
+  if(srcOnly) fitSourceOverview(); else fitAll();
+  updateCrumbs();
 }
 function drawMinimapSource(){
   const svg=$('#mmsvg'); if(!sourceWorld.w||!SCHEME) return;
@@ -51616,8 +51659,7 @@ function setStatusOK(){
   const ids=new Set(DATA.nodes.map(n=>n.id));
   $('#stDangling').textContent=DATA.flows.filter(f=>!ids.has(f.s)||!ids.has(f.t)).length;
   $('#stUpdated').textContent=fmtDateTime(DATA.meta.generatedAt||DATA.meta.exportedAt||DATA.meta.contractVersion);
-  const q=new URLSearchParams(location.search);
-  if(q.get('mode')!=='source'&&q.get('tour')!=='0') setTimeout(()=>startTour(false),700);
+  setTimeout(()=>startTour(false),700);
 }
 
 /* ===================================================== DRAWER */
@@ -51647,7 +51689,7 @@ function wire(){
   $('#edges').addEventListener('click',e=>{ const p=e.target.closest('.edge'); if(p&&p.dataset.t) focusOnNode(p.dataset.t); });
   $('#sourceLayer').addEventListener('click',e=>{ const p=e.target.closest('.sedge'); if(p&&p.dataset.t) selectSource(p.dataset.t); });
   $('#lbClose').onclick=()=>setLens('');
-  $('#fitAllBtn').onclick=fitAll;
+  $('#fitAllBtn').onclick=()=>{ mode==='source'?fitSourceOverview():fitAll(); };
   $('#fitStageBtn').onclick=()=>fitStage(focusStage||4);
   { const DENS=['compact','comfort','spacious'], DLBL=['Плотно','Стандарт','Просторно'];
     $('#densSlider').oninput=e=>{ const v=+e.target.value; density=DENS[v]||'comfort'; $('#densVal').textContent=DLBL[v]||'Стандарт';
